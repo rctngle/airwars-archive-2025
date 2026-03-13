@@ -1,0 +1,5 @@
+.DS_Store
+.env
+setup/node_modules/
+setup/database/
+*.sql.gz
