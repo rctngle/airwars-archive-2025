@@ -21,9 +21,10 @@ import CivcasMapPointLayer from './civcas-map-point-layer';
 import ReactMapboxGl from 'react-mapbox-gl';
 import { Marker } from 'react-mapbox-gl';
 import { Layer } from 'react-mapbox-gl';
+import MAPBOX_ACCESS_TOKEN from '../config/mapbox-token';
 
 const mapConfig = {
-	accessToken: process.env.MAPBOX_TOKEN || '',
+	accessToken: MAPBOX_ACCESS_TOKEN,
 	dragRotate: false,
 	attributionControl: false,
 	zoomControl: false

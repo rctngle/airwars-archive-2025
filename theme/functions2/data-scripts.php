@@ -135,7 +135,11 @@ function airwars_read_data(string $dir, string $filename): array
 	]);
 
 	if (!is_file($path) || !is_readable($path)) {
-		throw new \RuntimeException("File not found or not readable: {$path}");
+		$r2_key = 'data/' . trim($dir, "/\\") . '/' . $filename;
+		$fetched = airwars_r2_fetch($r2_key, $path);
+		if (!$fetched) {
+			throw new \RuntimeException("File not found or not readable: {$path}");
+		}
 	}
 
 	// 2. Decide how to parse based on the extension.

@@ -35,11 +35,16 @@ function airwars_get_conflict_data_static_url() {
 }
 
 function airwars_get_conflict_data_static_file_contents($filename) {
-	return file_get_contents(airwars_get_conflict_data_static_dir() . '/' . $filename);
+	$local_path = airwars_get_conflict_data_static_dir() . '/' . $filename;
+	if (file_exists($local_path)) {
+		return file_get_contents($local_path);
+	}
+	return airwars_r2_get_contents($filename);
 }
 
 function airwars_get_conflict_data_static_json($filename) {
-	return json_decode(airwars_get_conflict_data_static_file_contents($filename));
+	$contents = airwars_get_conflict_data_static_file_contents($filename);
+	return $contents ? json_decode($contents) : null;
 }
 
 

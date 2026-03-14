@@ -60,8 +60,9 @@ RUN cd /var/www/html/wp-content/plugins \
 ARG ACF_PRO_KEY
 RUN if [ -n "$ACF_PRO_KEY" ]; then \
         cd /var/www/html/wp-content/plugins \
-        && curl -sL -o acf-pro.zip "https://connect.advancedcustomfields.com/v2/plugins/download?p=pro&k=${ACF_PRO_KEY}&t=6.3" \
-        && unzip -q acf-pro.zip && rm acf-pro.zip; \
+        && curl -sL -o acf-pro.zip "https://connect.advancedcustomfields.com/v2/plugins/download?p=pro&k=${ACF_PRO_KEY}" \
+        && unzip -q acf-pro.zip && rm acf-pro.zip \
+        || echo "WARNING: ACF Pro download failed — skipping"; \
     fi
 
 # Copy theme

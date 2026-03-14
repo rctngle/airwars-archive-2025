@@ -37,6 +37,7 @@ include dirname(__FILE__) . '/functions2/api.php';
 include dirname(__FILE__) . '/functions2/auth.php';
 include dirname(__FILE__) . '/functions2/belligerent.php';
 include dirname(__FILE__) . '/functions2/civcas-incident.php';
+include dirname(__FILE__) . '/functions2/r2.php';
 include dirname(__FILE__) . '/functions2/conflict-data.php';
 include dirname(__FILE__) . '/functions2/conflict.php';
 include dirname(__FILE__) . '/functions2/data-exporter.php';

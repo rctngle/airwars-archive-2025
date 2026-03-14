@@ -1,6 +1,7 @@
 /* global __dirname */
 
 const path = require('path');
+const webpack = require('webpack');
 // const LiveReloadPlugin = require('webpack-livereload-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -75,6 +76,9 @@ module.exports = [{
 	},
 	plugins: [
 		// new LiveReloadPlugin(),
+		new webpack.DefinePlugin({
+			'process.env': JSON.stringify({})
+		}),
 		new MiniCssExtractPlugin({
 			filename: 'styles/[name].css',
 			chunkFilename: 'styles/[name].css'
