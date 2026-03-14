@@ -1,0 +1,345 @@
+
+@import "reset-css";
+@import "breakpoints";
+
+$info-left-width: 230px;
+$nav-heights: 420px 420px 420px 420px;
+@function navHeight($size){
+	@return nth($nav-heights, index($breakpoints, $size));
+}
+
+$content-max-widths: 100vw 100vw 100% 1420px;
+@function contentMaxWidth($size){
+	@return nth($content-max-widths, index($breakpoints, $size));
+}
+
+
+
+
+@import "colors";
+@import "typography";
+@import "header";
+@import "footer";
+@import "mixins";
+@import "article";
+@import "article-mil";
+@import "article-civ";
+@import "article-news";
+@import "article-about";
+@import "article-report";
+@import "meta-list";
+@import "pagination";
+@import "media";
+@import "form-elements";
+@import "home-conflict";
+@import "conflict";
+@import "map";
+@import "slider";
+@import "charts";
+@import "pickaday";
+@import "filters";
+@import "tooltip";
+@import "arabic";
+@import "archive";
+@import "neighbourhood-map";
+@import "hebrew";
+@import "conflictdata";
+@import "archive-visual";
+@import "scrollers";
+@import "moh";
+
+
+
+@import "charts-strikes-timeline";
+@import "credibles";
+@import "maps";
+@import "stacked-multiple-chart";
+@import "earthquakemap";
+@import "preview";
+@import "tiny-slider";
+
+
+html {
+	box-sizing: border-box;
+	font-size: 16px;	
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			font-size: bodyFontSizes($breakpoint);
+		}
+	}
+	--content-max-width: 100%;
+	@include breakpoint(lg){
+		--content-max-width: 1420px;	
+	}
+	
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+main, footer {
+	//display: none !important;
+}
+
+img {
+	display: block;
+}
+
+h1 {
+	@include header;
+	margin-bottom: 0.8rem;
+	line-height: 1.2;
+	@include breakpoint(xsm){
+		line-height: 1;
+	}
+}
+
+h4 {
+	@include tag;
+}
+
+h2 {
+	font-weight: bold;
+	letter-spacing: 0.03em;
+}
+
+a:link, a:visited, a:active, a:hover {
+	color: #000;
+}
+
+p {
+	margin-bottom: 0.8em;
+}
+
+
+
+
+$left-flexes: 0 0 200px, 0 0 $info-left-width, 0 0 $info-left-width, 0 0 $info-left-width;
+@function leftFlex($size){
+	@return nth($left-flexes, index($breakpoints, $size));
+}
+
+$main-flexes: 1 1 50%, 1 1 50%, 0 0 660px, 0 1 770px;
+@function mainFlex($size){
+	@return nth($main-flexes, index($breakpoints, $size));
+}
+
+$right-flexes: 1 1 50%, 1 1 50%, 1 0 380px, 0 1 420px;
+@function rightFlex($size){
+	@return nth($right-flexes, index($breakpoints, $size));
+}
+
+
+body > svg {
+	width: 0;
+	height: 0;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+	@include body-text;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	// background-color: darkkhaki;
+	// @each $breakpoint in $breakpoints {
+	// 	@include breakpoint($breakpoint){
+	// 		background-color: backgroundColor($breakpoint) !important;
+	// 	}
+	// }
+	&::before {
+		content: 'none';
+		position: absolute;
+		color: transparent;
+		pointer-events: none;
+	}	
+	@each $name, $size in $breakpoints-keys {		
+		@include breakpointKeys($name){
+			&::before {		
+				content: quote($name);
+			}
+		}
+	}
+}
+
+
+
+header.short + main {
+	margin-top: var(--header-height);
+}
+
+body.airwars-home-new,
+// body.news_and_analysis,
+body.airwars-homepage,
+body.report.single {
+	.page-title h1 {
+		//display: none;
+	}
+}
+
+body.conflict.archive,
+body.mil.archive,
+body.news_and_analysis.archive,
+body.report.archive,
+body.civ.archive,
+body.about.team,
+body.event.archive,
+body.boards,
+body.conflict_data.archive,
+body.about.volunteer  {
+	background-color: $bg-color;
+}
+
+main {
+	overflow-x: hidden;
+	flex-grow: 1;	
+	margin-top: 0px;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			margin-top: navHeight($breakpoint);
+		}
+	}
+}
+
+.content {
+	max-width: 100vw;
+	// /border: 1px solid red;
+	//overflow: hidden;
+	margin: 0 auto;	
+	// @each $breakpoint in $breakpoints {
+	// 	@include breakpoint($breakpoint){
+	// 		width: contentMaxWidth($breakpoint);
+	// 	}
+	// }
+	width: var(--content-max-width);
+	.full {
+		padding: 0 15px;
+		@include breakpoint(sm){
+			padding: 0 20px;
+		}
+	}
+}
+
+.info-left {
+	//border: 1px solid red;
+	padding: 0 0 0 15px;
+	@include breakpoint(xsm){
+		padding: 0 0 0 20px;
+	}
+	flex: 0 1 100%;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			flex: leftFlex($breakpoint);
+		}
+	}	
+}
+
+.info-main {
+	flex: 0 1 100%;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			flex: mainFlex($breakpoint);
+		}
+	}
+}
+.info-right {
+	
+	display: none;
+	@include breakpoint(md){
+		display: block;
+	}
+
+	padding: 20px 20px 10px 10px;
+	flex: 0 1 100%;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			flex: rightFlex($breakpoint);
+		}
+	}
+}
+
+
+// IPHONE 5
+
+@media (max-width: 320px) {
+
+	.chart-container svg .axis.x {
+		g.tick {
+			display: none;
+		}
+		g.tick:nth-child(3n-7) {			
+			display: block;
+		}
+	}
+	body.ar,
+	body.conflict_ar {
+		footer #newsletter {
+			input[type="email"]{
+				max-width: 222px;
+				@include breakpoint(xsm){
+					max-width: none;
+				}
+			}
+		}
+	}
+	.chart-container {
+		.legend-controls {
+			.controls {
+				padding-left: 12px;
+				label {
+					font-size: 86%;
+					padding: 4px 6px 2px 6px;
+					margin-right: 0;
+				}
+				.control:nth-child(1){
+					label {
+						margin-right: 8px;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+body.page.anatomy-of-a-russian-cluster-munition-strike-ukraine,
+body.investigating-a-massacre-the-afrin-hospital-attack-one-year-on {
+	header, footer, #donate {
+		display: none;
+	}
+	main {
+		position: fixed;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-color: #000;
+		margin-top: 0;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+	}
+	.video-wrapper {
+		position: relative; 
+		padding-bottom: 56.25%;
+		height: 0; 
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.video-wrapper iframe {
+		position: absolute; 
+		top: 0;
+		left: 0;
+		width: 100%; 
+		height: 100%;
+	}
+
+}

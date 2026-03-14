@@ -1,0 +1,244 @@
+@mixin link-underline($offset:2px, $thickness:1px, $color:inherit) {
+	text-decoration: underline;
+	text-decoration-thickness: $thickness;
+	text-underline-offset: $offset;
+	text-decoration-color: $color;
+}
+
+
+@font-face {
+	font-family: 'Atlas-Grotesk-Web';
+	src: url('../fonts/Atlas Grotesk Web-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atlas-Grotesk-Web';
+	src: url('../fonts/Atlas Grotesk Web-Regular It.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+@font-face {
+	font-family: 'Atlas-Grotesk-Web';
+	src: url('../fonts/Atlas Grotesk Web-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atlas-Grotesk-Web';
+	src: url('../fonts/Atlas Grotesk Web-Bold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atlas-Typewriter-Web';
+	src: url('../fonts/Atlas Typewriter Web-Bold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atlas-Typewriter-Web';
+	src: url('../fonts/Atlas Typewriter Web-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Spectral:400,400i,600');
+
+@font-face {
+	font-family: 'Noto Kufi Arabic';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/NotoKufiArabic-Regular.woff') format('woff');
+}
+@font-face {
+	font-family: 'Noto Kufi Arabic';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../fonts/NotoKufiArabic-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Kufi Arabic';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../fonts/NotoKufiArabic-Bold.woff') format('woff');
+}
+
+@mixin system {
+	letter-spacing: 0.02em;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Arabic", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Arabic";
+//	font-family: 'Inter-Web', sans-serif;
+}
+
+$body-font-sizes: 16px 16px 17px 17px;
+@function bodyFontSizes($size){
+	@return nth($body-font-sizes, index($breakpoints, $size));
+}
+
+// $arabic-body-font-sizes: 14px 15px 15px 19px;
+// @function arabicBodyFontSizes($size){
+// 	@return nth($arabic-body-font-sizes, index($breakpoints, $size));
+// }
+
+$secondary-font-sizes: 13px 13px 14px 14px;
+@function secondaryFontSizes($size){
+	@return nth($secondary-font-sizes, index($breakpoints, $size));
+}
+
+$serif-font-sizes: 20px 21px 21px 21px;
+@function serifFontSizes($size){
+	@return nth($serif-font-sizes, index($breakpoints, $size));
+}
+
+$serif-line-heights: 28px 30px 30px 30px;
+@function serifLineHeights($size){
+	@return nth($serif-line-heights, index($breakpoints, $size));
+}
+
+$news-header-font-sizes: 30px 30px 38px 38px;
+@function newsHeaderFontSize($size){
+	@return nth($news-header-font-sizes, index($breakpoints, $size));
+}
+
+@mixin incident-small-caps($color:#666) {
+	color: $color;
+	text-transform: uppercase;
+	font-size: 9.5px;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+}
+
+@mixin body-text {
+	font-family: 'Atlas-Grotesk-Web', sans-serif;
+	font-size: 16px;	
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			font-size: bodyFontSizes($breakpoint);
+		}
+	}	
+	line-height: 1.45;	
+	@include breakpoint(xsm){
+		line-height: 1.4;
+	}
+}
+
+@mixin navigation {
+	font-family: 'Atlas-Grotesk-Web', sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+
+$header-font-sizes: 20px 21px 24px 24px;
+@function headerFontSize($size){
+	@return nth($header-font-sizes, index($breakpoints, $size));
+}
+
+$arabic-header-font-sizes: 18px 19px 21px 21px;
+@function arabicHeaderFontSize($size){
+	@return nth($arabic-header-font-sizes, index($breakpoints, $size));
+}
+
+@mixin arabic-header {
+	font-size: 18px;
+	font-weight: 500;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			font-size: arabicHeaderFontSize($breakpoint);
+		}
+	}
+}
+
+@mixin news-header {
+	font-size: 24px;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			font-size: newsHeaderFontSize($breakpoint);
+		}
+	}
+}
+
+@mixin header {
+	font-size: 19px;
+	font-weight: 500;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			font-size: headerFontSize($breakpoint);
+		}
+	}
+}
+
+
+strong {
+	font-weight: 500;
+}
+@mixin serif-text {
+	font-family: 'Spectral';
+	font-size: 19px;
+	line-height: 1.45;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			font-size: serifFontSizes($breakpoint);
+		}
+	}
+
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			line-height: serifLineHeights($breakpoint);
+		}
+	}	
+	b, strong {
+		font-weight: 700;
+	}
+	-webkit-font-smoothing: auto;
+	letter-spacing: -0.01em;
+	
+}
+
+em {
+	font-style: italic;
+}
+
+@mixin secondary-text {
+	font-size: 14px;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			font-size: secondaryFontSizes($breakpoint);
+		}
+	}
+	line-height: 1.45;	
+	letter-spacing: 0.025em;
+	
+}
+
+@mixin tag {
+	font-size: 11px;
+	letter-spacing: 0.12em;
+	@include breakpoint(xsm){
+		letter-spacing: 0.1em;
+		font-size: 11.49px;	
+	}
+	text-transform: uppercase;
+	font-weight: bold;
+	color: $grey;
+}
+
+@mixin arabic-reading {
+	font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web', sans-serif;
+	font-size: 19px;
+	letter-spacing: 0;
+	// @each $breakpoint in $breakpoints {
+	// 	@include breakpoint($breakpoint){
+	// 		font-size: arabicBodyFontSizes($breakpoint) !important;
+	// 	}
+	// }
+}
+

@@ -1,0 +1,1281 @@
+
+$mobile-menu-item-height: 35px;
+
+
+$nav-item-padding-right: 15px 30px 20px 25px;
+@function navItemPaddingRight($size){
+	@return nth($nav-item-padding-right, index($breakpoints, $size));
+}
+
+body.palestinian-militants-in-israel,
+body.israeli-military-in-syria-the-gaza-strip,
+body.israeli-military-in-syria-the-gaza-strip-arabic,
+body.all-belligerents-in-libya,
+body.palestinian-militants-in-israel-hebrew,
+body.palestinian-militants-in-israel-arabic {
+	.content.conflict {
+		@include breakpoint(md){
+			top: 73px;
+		}
+	}
+}
+
+header.header--pinned {
+	.mobile-page-title {
+		opacity: 0;
+	}
+}
+
+body.israel-and-gaza-2023 {
+	header {
+		text-shadow: 0 0 10px rgba(0,0,0,1);
+	}
+	header.fixed {
+		background: #000;
+	}
+}
+
+html {
+	--header-height: 54px;
+	@include breakpoint(xsm){
+		--header-height: 60px;
+	}
+}
+
+body.embed {
+
+	header {
+		display: none;
+	}
+	main {
+		margin-top: 0 !important;
+	}
+}
+
+body.iframe {
+	overflow: hidden;
+	max-height: 100vh;
+	header, footer {
+		display: none;
+	}
+	main {
+		margin-top: 0 !important;
+		height: 100vh;
+		overflow: hidden;
+	}
+	.annotation {
+		display: none;
+	}
+	.postdata {
+		display: none;
+	}
+	article {
+		margin-bottom: 0;
+		height: 100%;
+		padding-top: 40px;
+	}
+	.map-container {
+		height: calc(100vh - 165px);
+	}
+	.timeline-controls-container {
+		margin-bottom: 0;
+	}
+	#posts {
+		height: 100vh;
+
+	}
+	#selected-features {
+		height: 100% !important;
+	}
+	
+}
+
+@mixin dark {
+
+	.logo img {
+		filter: none;
+		@include breakpoint(xsm){
+			filter: invert(85%);	
+		}
+		
+	}
+	.page-title h1 {
+		color: #2d2220;
+	}
+	color: #2d2220;
+	a:link, a:visited {
+		color: #2d2220;
+		&:hover {
+			border-color: #2d2220;
+		}
+	}
+	p {
+		color: #2d2220;
+	}
+	.page-title {
+		a:link, a:visited {
+			color: #2d2220;		
+
+		}
+	}
+	.nav-conflict ul {
+		a:link, a:visited {
+			color: #2d2220;
+		}
+	}
+	
+	h1 {
+		a:link, a:visited {
+			color: #2d2220 !important;	
+		}
+	}
+	
+
+	.logo-navigation nav a:hover {
+		border-bottom-color: #2d2220;
+	}
+	ul a:link.active, a:visited.active {
+		border-bottom-color: #2d2220;
+	}
+}
+
+body.mil header {
+	
+	background-image: url('../images/plane-image.jpg');
+	background-position: center 65%;
+}
+
+
+
+body.no-header {
+	main {
+		margin-top: 0;
+	}
+	#form {
+		background-color: #333;
+		color: #FFF;
+		padding: 20px;
+		button {
+			color: #000;
+			font-weight: bold;
+			border-radius: 4px;
+			font-size: 16px;
+			margin-top: 10px;
+		}
+	}
+}
+body.us-forces-in-somalia header {
+	background-position: center top center;
+	@include breakpoint(md){
+		background-position: center top -28vw;	
+	}
+	
+}
+
+body.all-belligerents-in-libya-2011 header,
+body.all-belligerents-in-libya-2011-arabic header {
+	@include breakpoint(md){
+		background-position: center 0;	
+	}
+	text-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+}
+
+body.all-belligerents-in-libya-2011-arabic header {
+	.caption {
+		color: #FFF;
+	}
+}
+
+body.all-belligerents-in-libya-2011 header {
+	.caption {
+		@include dark;
+		text-shadow: none;
+
+		
+	}	
+}
+
+body.us-forces-in-yemen header,
+body.us-forces-in-yemen-arabic header {
+	background-position: center top 120px;
+	@include breakpoint(xsm){
+		background-position: center top 10vw;
+	}
+	@include breakpoint(sm){
+		background-position: center top;
+	}
+	@include breakpoint(md){
+		background-position: center top -12vw;
+	}	
+	.mobile-page-title,
+	.conflict,
+	.caption {
+		@include dark;	
+	}
+
+	@include breakpoint(xsm){
+		.logo-navigation {
+			@include dark;
+		}
+	}
+	
+
+	.mobile-gradient {
+		position: absolute;
+		//z-index: 1;
+
+		background: linear-gradient(180deg, #fff4e5 60%, #fff4e500 100%);
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 280px;
+		@include breakpoint(xsm){
+			height: 170px;
+		}
+		@include breakpoint(sm){
+			opacity: 0.5;
+		}
+		@include breakpoint(md){
+			opacity: 0.3;
+		}
+	}
+	p.caption {
+		
+
+		@include breakpoint(xsm){
+			right: auto;
+			left: 15px;
+		}
+		@include breakpoint(md){
+			left: auto;
+			right: 10px;
+		}
+	}
+}
+
+body.all-belligerents-in-libya header,
+body.all-belligerents-in-libya-arabic header {
+	background-position: center top 0;
+	@include breakpoint(md){
+		background-position: center top 0;
+	}
+	//@include dark;
+}
+
+body.turkish-military-in-iraq-and-syria header,
+body.turkish-military-in-iraq-and-syria-arabic header {
+	@include breakpoint(md){
+		
+	}
+
+	@include breakpoint(xsm){
+		background-position: center bottom -6vw;		
+	}
+	// @include breakpoint(md){
+	// 	background-position: center bottom -16vw;
+	// }
+	@include breakpoint(lg){
+		background-position: center bottom -8vw;
+	}
+
+
+	// background-position: center bottom -170px;
+	// @include dark;
+	
+}
+
+body.russian-military-in-syria header,
+body.russian-military-in-syria-arabic header {
+	text-shadow: 0 0 10px rgba(0,0,0,0.2);	
+	background-position: center;
+	@include breakpoint(xsm){
+		background-position: center top -6vw;		
+	}
+	@include breakpoint(md){
+		background-position: center top -10vw;
+	}
+	@include breakpoint(lg){
+		background-position: center top -12vw;
+	}
+	.caption {
+		color: #FFF;
+	}
+	//@include dark;
+}
+
+
+body.us-forces-in-pakistan header,
+body.us-forces-in-pakistan-arabic header {
+	@include breakpoint(lg){
+		background-position: center top -6vw;
+	}
+}
+
+body.coalition-in-iraq-and-syria header,
+body.coalition-in-iraq-and-syria-arabic header {
+	text-shadow: 0 0 10px rgba(0,0,0,0.3);
+	background-position: center bottom;
+	@include breakpoint(sm){
+		background-position: center bottom -5vw;
+	}
+	@include breakpoint(md){
+		background-position: center bottom -5vw;
+	}
+	.caption {
+		color: #FFF;
+	}
+}
+
+
+
+
+
+body.airwars-homepage header {
+	@include breakpoint(md){
+		background-position: center bottom -300px;	
+	}
+	@include breakpoint(lg){
+		background-position: center bottom -400px;	
+	}
+	.page-title {
+		display: none;
+	}
+}
+
+
+
+
+body.about header {
+	&.fixed {
+		.content > .page-title {
+			display: block;
+		}
+	}
+}
+
+
+header.bij {
+//	@include dark;
+	background-image: url('../images/bij-office-3.jpg');
+	background-position: center 60%;
+	&.fixed {
+		article {
+			display: none;
+		}
+	}
+	nav {
+		text-shadow: 0 0 5px rgba(0,0,0,0.4);
+	}
+}
+
+body.about,
+body.about_ar,
+body.event {
+	header {
+		background-image: url('../images/Mosul-Iraq-May-2017.jpg') !important;
+		text-shadow: 0 0 10px rgba(0,0,0,0.3);
+		
+		@include breakpoint(md){
+			background-position: center bottom -22vw;
+		}
+		@include breakpoint(md){
+			background-position: center top -22vw;
+		}
+		.caption {
+			color: #FFF;
+			text-shadow: 0 0 4px rgba(0,0,0,0.8);
+		}
+		//@include dark;
+	}
+}
+body.news_and_analysis header.short {
+	overflow: hidden;
+}
+
+header {
+	position: relative;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	color: #FFF;
+	overflow: visible;
+	@include breakpoint(xsm){
+		overflow: hidden;		
+	}
+	@include navigation;
+
+	height: 380px;
+	@each $breakpoint in $breakpoints {
+		@include breakpoint($breakpoint){
+			height: navHeight($breakpoint);
+		}
+	}
+
+
+
+	background-image: url('../images/innocence.jpg');
+
+	background-position: center 60%;
+	background-size: cover;
+
+	background-repeat: no-repeat;
+	background-color: #666;
+	
+	@include breakpoint(xsm){
+		position: absolute;
+	}
+
+	@media (max-width: 767px) {
+		//background-image: none !important;
+	}
+	&.short {
+		height: var(--header-height);
+		
+		background-image: none !important;
+		min-height: 0;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: 11;
+		background-color: $dark-blue;
+		.content {
+			position: relative;
+		}
+		.caption {
+			display: none;
+		}
+		&.open {
+			overflow: visible;
+		}
+		.mobile-page-title {
+			display: none;
+			
+		}
+
+	}
+
+	&.fixed {
+		position: fixed;
+
+		height: var(--header-height);
+		min-height: 0;
+		box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+		.content.mobile-page-title {
+			display: none;
+
+		}
+
+		.content:not(.conflict) {
+			height: var(--header-height) !important;
+		}
+		.content.intro {
+			display: none;			
+		}
+		.caption {
+			display: none;
+		}
+		.nav-conflict {
+			display: none;
+		}
+		h1 {
+			max-width: 400px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+
+	&.short.expanded.fixed {
+		height: 300px;
+		.content:not(.conflict):not(.mobile-page-title) {			
+			height: 300px !important;
+		}
+	}
+
+	&.fixed.expanded {
+		height: 420px;
+		.content:not(.conflict):not(.mobile-page-title) {			
+			height: 420px !important;
+		}
+		.content.mobile-page-title {
+			display: flex;
+			@include breakpoint(md){
+				display: none;	
+			}
+			
+
+		}
+	}
+
+	&.fixed.expanded, &.short.expanded {
+	
+		.content.intro {
+			display: block;			
+		}
+		.nav-conflict {
+			display: block;
+			&.hide {
+				display: none;
+			}
+		}
+	}
+
+	&.fixed.expanded:not(.short) {
+		.caption {
+			display: block;
+		}
+	}
+
+
+
+
+	.caption {
+		margin-bottom: 0;
+		padding: 0;
+		color: #FFF;
+		font-size: 11px;
+		font-weight: 500;
+		width: 300px;
+		right: 10px;
+		position: absolute;
+		bottom: 10px;
+		color: #ccc;
+		line-height: 1.3;
+		top: auto;
+		display: none;
+		@include breakpoint(xsm){
+			display: block;
+		}
+	}
+
+	
+
+	> article {
+		position: absolute;
+		bottom: 0;
+		background: transparent;
+		margin-bottom: 0;
+		h1 {
+			color: #000;
+			@include news-header;
+		}
+	}
+	.content:not(.bij) {
+		&.mobile-page-title {
+			body.airwars-homepage & {
+				display: none;
+			}
+			padding: 70px 0 0 15px;
+			height: auto;
+			.info-main {
+				padding-left: 10px;
+			}
+			@include breakpoint(xsm){
+				padding: 65px 0 0 20px;
+				height: 0;
+			}
+			@include breakpoint(md){
+				display: none;
+			}
+			h1 {
+				position: relative;
+				max-width: none;
+				
+
+				@include breakpoint(xsm){
+					top: -2px;
+					max-width: 180px;	
+				}
+
+				//margin-bottom: 0;
+				a:link, a:visited {
+					color: #FFF;
+					text-decoration: none;
+					@include breakpoint(xsm){
+						color: #FFF;
+
+					}
+
+				}
+			}
+		}
+		&.logo-navigation {
+			background-color: $dark-blue;
+			@include breakpoint(xsm){
+				background-color: transparent;
+			}
+			position: fixed;
+			z-index: 9;
+			top: 0;
+			left: 0;
+			right: 0;
+			align-items: baseline;
+			@include breakpoint(sm){
+				align-items: initial;
+			}
+			height: var(--header-height);
+
+			.page-title {
+				display: none;
+				@include breakpoint(md){
+					display: block;
+				}
+				a {
+					text-decoration: none;
+				}
+			}
+			nav > ul {
+				padding-left: 0px;
+				@include breakpoint(xsm){
+					padding-left: 10px;	
+				}
+				
+				@include breakpoint(sm){
+					padding-left: 0;
+				}
+			}
+			nav {
+				background: $dark-blue;
+				@include breakpoint(xsm){
+					background: transparent;
+				}
+			}
+		}
+		
+		display: flex;
+		flex-flow: row wrap;
+		
+		
+
+		@include breakpoint(xsm){
+			background-color: transparent;
+			height: 420px;
+		}
+
+		@include breakpoint(md){
+			justify-content: space-between;
+		}
+		@include breakpoint(md){
+			flex-flow: row nowrap;
+		}
+		align-content: flex-start;
+
+
+		&:nth-child(1){
+			.info-left {
+				order: 1;
+			}
+			.page-title {
+				order: 2;
+				@include breakpoint(xsm){
+					order: 3;
+				}
+				@include breakpoint(sm){
+					order: 3;
+				}
+				@include breakpoint(md){
+					order: 2;
+				}
+			}
+			> nav {
+				// padding-left: 0;
+				// @include breakpoint(xsm){
+				// 	padding-left: 10px;	
+				// }
+				
+				// @include breakpoint(md){
+				// 	padding-left: 0;
+				// }
+
+				order: 3;
+				@include breakpoint(xsm){
+					order: 2;
+				}				
+				@include breakpoint(sm){
+					order: 2;
+				}
+
+				@include breakpoint(md){
+					order: 3;
+				}
+			}
+		}
+	}
+
+	.content.about-title {
+		position: absolute;
+		bottom: 0;
+		top: auto;
+
+		.page-title h1 {
+
+			margin-bottom: 0.35em;
+			@each $breakpoint in $breakpoints {
+				@include breakpoint($breakpoint){
+					font-size: newsHeaderFontSize($breakpoint);
+				}
+			}
+		}
+	}
+
+	.content.conflict {
+		position: relative;
+		top: 0;		
+		height: auto;
+
+		@include breakpoint(xsm){
+			height: 0;
+			z-index: 10;
+		}
+		@include breakpoint(md){
+			height: 0;
+			top: 53px;
+
+		}
+
+		.info-left {
+			padding-top: 20px;
+			display: none;
+
+			@include breakpoint(xsm){
+				display: block;
+			}
+		}
+		h1 {
+			font-size: 17px;
+			line-height: 1.2;
+		}
+		ul {
+			display: block;
+		}
+	}
+	
+	.logo.info-left {
+		padding-top: 9px;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding-bottom: 10px;
+		
+
+		
+		@include breakpoint(xsm){
+			max-width: 150px;
+			padding-top: 12px;
+			display: block;
+			padding-bottom: 0;
+		}
+		@include breakpoint(sm){
+			max-width: none;
+			padding-top: 8px;
+			max-width: none;
+		}
+	}	
+
+	.mobile-nav-toggle {
+		color: #FFF;
+		border: 1px solid #FFF;
+		padding: 2px 6px 0 6px;
+		display: block;
+		margin-right: 15px;
+		position: relative;
+		bottom: 2px;
+		@include breakpoint(xsm){
+			display: none;
+		}
+		&:active {
+			background-color: #FFF;
+			color: #000;
+		}
+		&:active {
+			background-color: #FFF;
+			color: #000;
+			@include breakpoint(xsm){
+				background-color: transparent;
+				color: #FFF;
+			}
+		}
+	}
+
+	.content.intro {
+		text-shadow: 0 0 10px rgba(0,0,0,0.8);
+
+		position: absolute;
+		bottom: 0;
+		display: block;
+		@include breakpoint(xsm){
+			bottom: auto;
+			position: static;
+			text-shadow: none;
+			display: block;
+		}
+		.full {
+			display: flex;
+			color: #FFF;
+			@include header;
+			font-weight: 400;
+			position: relative;
+			bottom: 0;
+			align-items: flex-end;
+			padding-top: 65px;
+			@include breakpoint(xsm){
+				position: absolute;
+			}
+			p {
+				line-height: 1.3;
+				flex: 1 0 100%;
+				@include breakpoint(xsm){
+					flex: 0 1 70%;
+				}
+				@include breakpoint(md){
+					flex: 0 1 63%;					
+				}
+			}
+			a:link, a:visited {
+				color: #FFF;
+			}
+			p.read-more {
+				padding-left: 20px;
+				flex: 0 1 40%;
+				font-size: 16px;
+			}
+		}
+	}
+
+	img {
+		width: 160px;
+		@include breakpoint(xsm){
+			width: 100%;	
+		}
+		@include breakpoint(sm){
+			width: 190px;	
+		}
+	}
+
+	nav {
+		padding: 0;
+		flex: 1 0 100%;
+
+		@include breakpoint(xsm){
+
+			font-size: 14px;
+			flex: 1 0 auto;
+			padding: 0 20px 0 0;
+		}
+		@include breakpoint(sm){
+			font-size: initial;
+			//flex: none;
+		}
+	}
+
+	nav.open > ul {
+		display: block;
+		@include breakpoint(xsm){
+			display: flex;
+		}
+	}
+
+	ul {
+		font-weight: 500;
+		a:link, a:visited {
+			color: #FFF;
+			text-decoration: none;
+			&.active {
+
+				@include breakpoint(xsm){
+					@include link-underline(1px, 2px);		
+				}
+				
+
+			}
+			&:hover {
+				@include breakpoint(xsm){
+				//	border-bottom: 2px solid #FFF;	
+				}
+				@include link-underline(1px, 2px);
+				
+			}
+		}
+	}
+
+	.nav-conflict, .page-title {
+		position: relative;
+		h1 {
+
+			padding: 5px 0 0 0;
+
+			@include breakpoint(xsm){
+				padding: 26px 0 0 0;
+			}
+			@include breakpoint(sm){
+				padding: 10px 0 0 20px;
+			}
+			@include breakpoint(md){
+				padding: 27px 0 0 0;	
+			}
+			
+		    line-height: 1.05;
+		    flex: 0 1 241px;
+		    display: inline-block;
+		    a:link, a:visited {
+				color: #FFF;
+				//text-decoration: none;
+		    }
+			
+		}
+		
+		@include breakpoint(sm){		
+		
+			
+			
+			padding-right: 15px;
+		}
+	}
+
+	.nav-conflict {
+		width: 100%;
+		padding-left: 0;
+		@include breakpoint(xsm){
+			width: auto;
+			height: 0;
+			padding-left: 10px;
+		}
+		@include breakpoint(sm){
+			padding-left: 0;
+			flex-grow: 1;
+		}
+		&.hide {
+			display: none;
+			@include breakpoint(md){
+				display: block;
+			}
+			
+		}
+
+		ul {
+			
+			padding-top: 0;
+			width: 100%;
+			@include breakpoint(xsm){
+				position: absolute;
+				width: 360px;
+			}
+			@include breakpoint(md){
+				padding-top: 20px;
+			}
+
+			a:link, a:visited {
+				color: #fff;
+				//text-decoration: none;
+				@include breakpoint(xsm){
+					color: #FFF;
+				}
+			}
+			li {
+
+				padding: 0px 0 6px 15px;
+				@include breakpoint(xsm){
+					padding: 0;
+				}
+			}
+		}
+	}
+
+
+	h1 {
+		.fa-angle-down {
+			font-size: 16px;
+			position: relative;
+			top: -2px;
+			display: none;
+		}
+	}
+	.nav-conflict ul li, nav > ul > li ul li {
+		height: auto;
+		@include breakpoint(xsm){
+
+			line-height: 27px;
+
+			a {
+				display: inline-block;
+				padding-left: 15px;
+				text-indent: -15px;				
+			}
+		}
+
+	}
+	.nav-israeli-military-in-syria-the-gaza-strip {
+	//	margin-bottom: 6px;
+	}
+	
+
+	nav > ul > li ul {
+
+		padding-top: 0;
+		@include breakpoint(xsm){
+			padding-top: 12px;	
+		}
+		
+		@include breakpoint(md){
+			padding-top: 20px;
+		}
+
+		@include breakpoint(xsm){
+			width: 305px;
+			left: 0;
+			position: absolute;	
+		}
+
+
+	}
+
+	&.open {
+		overflow: visible;
+		//height: auto;
+		.logo-navigation {
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+		}
+		.content {
+			height: auto;
+			//position: relative;
+		}
+		nav > ul {
+			display: block;
+
+			li {
+				padding: 0;
+				> span, > a {
+					display: block;
+					padding: 8px 15px 6px 15px;
+
+
+				}
+				ul li {
+					padding: 0;
+					a {
+						padding: 8px 0 6px 0;	
+					}
+					
+				}
+				&.arabic {
+					> span, > a {
+						padding: 6px 15px 8px 15px;
+					}
+					ul {
+						padding-right: 0;
+						li {
+							font-weight: 400;
+							padding-right: 0;
+							a {
+								padding-top: 6px;
+								padding-bottom: 8px;
+							}
+						}
+					}	
+				}
+				
+				&.mobile-subnav-open {
+					
+					ul {
+						display: block;
+						li {
+							background: #192933;
+							a {
+								padding-left: 15px;
+								padding-right: 15px;	
+							}
+							
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	nav > ul {
+
+		display: none;
+		flex-grow: 1;
+		justify-content: flex-end;
+
+		@include breakpoint(xsm){
+			display: flex;
+		}
+		position: relative;
+		height: 100%;
+		i {
+			padding-left: 0px;
+			position: relative;
+			top: 1px;
+
+		}
+		li.en-about {
+
+			> a {
+				display: none;
+			}
+		}
+		li.arabic {
+			font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+			margin-right: 0;
+			font-weight: bold;
+			text-align: right;
+
+
+
+			&.home {
+				display: block;
+				@include breakpoint(xsm){
+					display: none;
+				}
+			}
+			&.about {
+
+
+					@include breakpoint(xsm){
+						padding-right: 0;	
+					}
+				
+
+				> span {
+					display: block;
+					@include breakpoint(xsm){
+						display: none;
+					}
+				}
+				> a {
+					display: none;
+					@include breakpoint(xsm){
+						display: inline-block;
+					}					
+				}
+				ul {
+					padding-right: 0;
+				}
+			}
+			> a {
+				border-bottom: 2px solid transparent;
+				display: block;
+				line-height: 1.2;
+				span {
+					top: -3px;
+					@include breakpoint(xsm){
+						top: 0px;
+					}
+				}
+			}
+			span {
+				font-size: 90%;
+				position: relative;
+			
+			}
+			ul {
+				padding-right: 30px;
+				font-size: 90%;				
+				right: 0;
+				left: auto;
+				li {
+					a {
+						position: relative;
+						top: 1px;						
+					}
+					
+				}
+			}			
+		}
+		li {
+			border-top: 1px solid #26526f;
+			@include breakpoint(xsm){			
+				border-top: none;
+			}
+
+		}
+		> li {
+			z-index: 0;
+			
+			position: relative;
+			padding-top: 31px;
+			margin-right: 0;
+			
+			cursor: pointer;			
+
+			@each $breakpoint in $breakpoints {
+				@include breakpoint($breakpoint){
+					padding-right: navItemPaddingRight($breakpoint);
+				}
+			}
+
+			
+			ul {	
+
+				display: none;
+				// &.open {
+				// 	// display: block;
+				// }			
+				// @include breakpoint(xsm){
+				// 	&.open {
+				// 		// display: none;
+				// 	}					
+				// }
+				li {
+					padding-left: 15px;
+					@include breakpoint(xsm){
+						padding-left: 0;
+					}
+				}
+			}
+
+			&.subnav-open {
+				z-index: 1;
+				ul {
+					display: block;
+				}
+			}
+			&.conflicts ul {
+				
+				li {
+					order: 2;
+				}
+				li.nav-israel-and-gaza-2023 {
+					order: 1;
+				}
+				@include breakpoint(xsm){
+					width: 530px;
+					column-count: 2;
+					li {
+						break-inside: avoid;
+						-webkit-column-break-inside: avoid;
+					}
+					li.nav-all-belligerents-in-libya {
+						white-space: nowrap;
+					}		
+				}
+			
+			}
+			a {
+				
+				display: block;				
+				
+				@include breakpoint(xsm){
+					display: inline;
+				}
+				span.long-title {
+					display: inline;
+					@include breakpoint(xsm){
+						display: none;
+					}
+					@include breakpoint(sm){
+						display: inline;
+					}
+
+				}
+			}
+		}
+		
+
+	}
+}

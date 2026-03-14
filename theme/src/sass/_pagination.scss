@@ -1,0 +1,161 @@
+nav.navigation.pagination {
+
+	h2 {
+		display: none;
+	}
+	.nav-links {
+		display: flex;
+		justify-content: center;
+		margin: 0 auto 30px auto; 
+		width: 200px;
+		a.next {
+			margin-left: auto;
+		}
+		span.current {
+			font-weight: bold;
+		}
+		a, span {
+			padding: 0 5px;
+			text-decoration: none;
+		}
+		i {
+			font-size: 15px;
+			position: relative;
+			top: -2px;
+		}
+	}
+}
+
+
+
+#posts {
+	position: relative;
+	nav.navigation.pagination:nth-of-type(1) {
+		//position: absolute;
+		display: none;
+		@include breakpoint(sm){
+			display: none;
+		}
+		margin: 0;
+
+		i {
+			font-size: 80%;
+		}
+		font-size: 13px;
+		left: 25px;
+		right: 25px;
+		top: -31px;
+		//z-index: -1;
+
+		@include breakpoint(md){
+			top: -32px;
+			font-size: 14px;
+			left: 100px;
+			right: 100px;
+		}
+
+		span {
+			
+			position: relative;
+			top: -2px;
+//			color: #888;
+		}
+		.nav-links {
+			height: 0;
+			margin-bottom: 0;
+			width: 100%;
+			justify-content: space-between;
+			align-content: flex-end;
+		}
+		.page-numbers {
+			display: none;
+		}
+		.prev.page-numbers, .next.page-numbers {
+			display: block;
+			//flex-grow: 1;			
+			width: 115px;
+			@include breakpoint(md){
+				width: 130px;
+			}
+
+			
+		}
+		.next {
+			text-align: right;
+		}
+		.prev {
+			text-align: left;
+		}
+	}
+}
+
+
+
+
+
+.single {
+	.pagination {
+		display: none;
+	}
+}
+
+
+	.pagination {
+		--padding: 15px;
+		margin: 3rem 0 3rem 0;
+		text-align: center;
+		grid-column: 1/-1;
+		//color: #FFF;
+		display: flex;
+		justify-content: center;
+		--border-color: rgba(0,0,0,0.1);
+		font-size: 14px;
+
+		.current {
+			background: rgba(0,0,0,0.1);
+			//color: #fff;
+			font-weight: 500;
+			display: inline-block;
+			border: none;
+		}
+		a:hover {
+			background: #FFF;
+		}
+		.prev {
+			padding: 10px var(--padding) 8px var(--padding);
+			border-right: 1px solid var(--border-color);
+		}
+		.next {
+			padding: 10px var(--padding) 8px var(--padding);
+		}
+		a, span {
+			min-width: 45px;
+		}
+		a {
+			text-decoration: none;
+			span {
+				@include linkunderline;
+				text-transform: capitalize;
+			}
+		}
+		&__inner {
+			
+			display: flex;
+			align-items: center;
+			border: 1px solid var(--border-color);
+	//		border-right: none;
+			justify-content: center;
+			border-radius: 8px;
+			overflow: hidden;
+			> * {
+				padding: 10px var(--padding) 8px var(--padding);
+				display: block;
+				height: 100%;
+				border-right: 1px solid var(--border-color);
+				&:nth-last-child(1){
+					border-right: none;
+				}
+
+			}
+		}
+	}

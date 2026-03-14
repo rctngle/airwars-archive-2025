@@ -1,0 +1,897 @@
+$red: #fe3933;
+$yellow: #ffca4d;
+
+
+body.the-credibles,
+body.the-credibles-new {
+
+	.title-language {
+		display: flex;
+		flex: 1 0 100%;
+		//justify-content: space-between;
+		align-items: baseline;
+		h1 {
+			flex: 0 1 80%;
+			@include breakpoint(xsm){
+				flex: 0 1 56%;
+			}
+			@include breakpoint(sm){
+				flex: 0 1 61.5%;
+			}
+			@include breakpoint(md){
+				flex: 0 1 64%;
+			}
+			font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+			&.ar {
+
+
+				@include breakpoint(xsm){
+					direction: rtl;
+					padding-right: 30px;	
+				}
+				
+			}
+		}
+		.lang-switcher {
+			display: flex;
+			a {
+				padding: 3px 5px 0 6px;
+				text-decoration: none;
+				display: block;
+				border-radius: 3px;
+				font-size: 14px;
+				&.active {
+					background: transparentize($red, 0.8);
+				}
+			}
+		}
+	}
+	.left.ar {
+		direction: rtl;
+		font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+	}
+	.mobile-page-title {
+		display: none;
+	}
+	#posts {
+		margin-bottom: 160px;
+	}
+
+	.media-container {
+		position: absolute;
+		right: 0;
+		top: 290px;
+
+		margin-bottom: 20px;
+		display: none;
+		@include breakpoint(xsm){
+			display: block;
+		}
+		.media {
+			.counter {
+				color: #fff;
+				padding: 1px 4px 0px 4px;
+				position: absolute;
+				// left: -100px;
+				// width: 100px;
+				top: -19px;
+				right: 0;
+				font-weight: bold;
+				font-size: 13px;
+				background: #000;
+			}
+			&.ground-level {
+				display: none;
+				position: relative;
+
+				&:nth-child(1){
+					display: block;
+				}
+				img {
+					width: auto;
+					height: 100%;
+					max-height: 200px;
+					max-width: 500px;
+
+					@include breakpoint(sm){
+						max-height: 250px;
+						max-width: 590px;
+					}
+					
+
+//					border: 1px solid #FFF;
+				}
+			}
+			img {
+				float: right;
+				box-shadow: 0 0 10px rgba(0,0,0,0.4);
+				width: 431px;
+			}
+			&.graphic {
+				overflow: hidden;
+				img {
+					filter: blur(10px);
+				}
+			}
+		}
+	}
+
+	h2 {
+		margin-bottom: 6px !important;
+		padding: 0 !important;
+
+		//color: yellow;
+		//text-decoration: underline;
+		font-size: 16px;
+
+
+	}
+
+	.description {
+		column-count: 1 !important;
+	}
+	.named-victims {
+		//display: none;
+		border-top: 1px solid #000;
+		margin-top: 80px !important;
+
+
+		font-size: 12px;
+		//margin-top: 40px;
+
+		//background: $names-color;
+		padding-bottom: 100px;
+		.content {
+			column-count: 7;
+			padding-top: 40px;
+			display: block;
+			padding-bottom: 80px;
+		}
+		.content div {
+		//	color: $names-text-color;
+			padding-left: 1.5em;
+			text-indent: -1.5em;
+			&:hover {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+	.all-victim-container {
+
+		h1 {
+			flex: 1 0 100%;
+		}
+		@include breakpoint(xsm){
+			display: flex;			
+		}	
+		flex-flow: row wrap;
+		padding-top: 30px !important;
+		
+		.family {
+			flex: 1 0 100%;
+			margin-top: 20px;
+
+			.victims {
+				flex-flow: row wrap;
+				display: block;
+				@include breakpoint(xsm){
+					display: flex;			
+				}	
+			}
+		}
+		.victim {
+			
+			margin-bottom: 10px;
+			flex: 0 1 calc(50% - 10px);
+			@include breakpoint(sm){
+				flex: 0 1 calc(33.3% - 10px);	
+			}
+			
+
+			height: auto;
+			
+			margin-right: 10px;
+			
+			position: relative;
+			//background-color: #ddd;
+			border: 1px solid #000;
+			span {
+				font-size: 14px;
+				font-weight: 500;
+				color: #777;
+				text-transform: lowercase;
+				&::after {
+					content: ', ';
+				}
+				&:nth-last-child(1)::after {
+					content: '';
+				}
+			}
+			.image {
+				background-position: center;
+				background-size: cover;
+				height: 100px;
+				width: 100px;
+
+			}
+			.text-content {
+				padding: 15px 10px;
+				.name {
+					font-size: 20px;
+					line-height: 1.1;
+					font-weight: 500;
+				}
+			}
+			&.has-image {
+				display: flex;
+				justify-content: space-between;
+				.text-content {
+					
+				}
+			}
+		}
+	}
+	header .page-title {
+		display: none !important;
+	}
+	.chart-container,
+	.conflict-data-container {
+
+		.totals {
+
+			display: flex;
+			text-align: center;
+			padding: 0 15px 0 15px;
+			@include breakpoint(md){
+				padding: 0 20px 0 20px;
+			}
+			justify-content: space-between;
+			.total {
+				flex: 0 1 calc(33.3% - 10px);
+				padding: 10px 5px;
+				@include breakpoint(sm){
+					padding: 10px;
+				}
+				@include breakpoint(md){
+					
+					flex: 0 1 calc(33.3% - 15px);
+				}
+				background: #FFF;
+				border: 1px solid $red;
+				color: $red;
+				margin-bottom: 20px;
+				
+				position: relative;
+				i {
+					color: #666;
+					position: absolute;
+					top: 8px;
+					right: 9px;
+				}
+			}
+			.value {
+				font-weight: bold;
+				line-height: 1;
+				font-size: 24px;
+				@include breakpoint(sm){
+					font-size: 28px;
+				}
+				@include breakpoint(md){
+					font-size: 40px;
+				}
+			}
+			.label {
+				margin: 0 auto;
+				font-size: 12px;
+				@include breakpoint(md){
+					font-size: 14px;
+				}
+				max-width: 160px;
+			}
+		}
+	}
+
+	
+	.code {
+		
+		
+		
+		a:link, a:visited {
+			font-size: 24px;
+			font-weight: 600;
+			color: $red !important;
+			border-bottom: 1px solid $red;				
+		}
+
+
+		
+	}
+	article {
+		background-image: none;
+	}
+	.timeline-outer {
+
+		
+	}
+	.controls {
+		height: 0px;
+		display: block;
+		justify-content: space-between;		
+		padding: 0 20px;
+		@include breakpoint(xsm){
+			display: flex;			
+		}
+		&.started {
+			display: none;
+		}
+		.map-controls-sidebar {
+			position: relative;
+			overflow: visible;
+			left: auto;
+			width: 100%;
+			margin-top: 15px;
+			@include breakpoint(xsm){
+				margin-top: 0;
+				width: 340px;
+			}
+		
+		}
+		//margin: 20px 15px 0 15px;
+		
+		position: relative;
+		top: 15px;
+		margin-top: 20px;
+		z-index: 3;
+		@include breakpoint(sm){
+			top: 30px;			
+
+		}
+		i {
+			position: absolute;
+			color: #FFF;
+			top: 9px;
+			font-size: 12px;
+			left: 33px;
+		}
+		p.error {
+			color: #FFF;
+			font-size: 12px;
+			padding: 5px 0 0 37px;
+			color: #999;
+
+		}
+		input {
+			width: 100%;
+			@include breakpoint(xsm){
+				width: 300px;	
+			}
+			
+			display: block;
+			border: none;
+			font-family: 'Atlas-Grotesk-Web', 'Noto Kufi Arabic';
+			padding: 8px 10px 7px 36px;
+			font-size: 14px;
+			color: #FFF;
+			outline: none;
+			background: #000;
+			//border: 1px solid #FFF;
+			&::placeholder {
+				color: #999;
+			}
+		}
+		input:focus {
+			background: #000;
+			+ i {
+				color: $red;	
+			}
+		}
+	}
+
+
+	.full-intro {
+		position: relative;
+		z-index: 10;
+		p {
+			font-size: 16px;
+			@include breakpoint(xsm){
+				font-size: 17px;	
+			}
+			
+			@include breakpoint(md){
+				font-size: 19px;	
+			}
+			line-height: 1.45;
+			text-shadow: 0 0 1px #FFF, 0px 0px 2px #FFF, 0px 0px 2px #FFF, 0px 0px 4px #FFF, 0px 0px 5px #FFF,  0px 0px 4px #FFF;
+			strong {
+				font-weight: bold;
+			}
+		}
+		.full {
+			margin-top: 10px;
+			@include breakpoint(xsm){
+				margin-top: 30px;
+			}
+			@include breakpoint(md){
+				margin-top: 60px;
+			}
+
+			display: flex;
+			flex-flow: column nowrap;
+
+			@include breakpoint(xsm){
+				flex-flow: row wrap;
+				display: flex;
+			}
+			
+			padding: 0;
+			h1 {
+				//order: 1;
+				//flex: 1 0 100%;
+				margin-bottom: 10px;
+				font-weight: 600;
+			}
+			a {
+				display: block;
+			}
+			justify-content: space-between;
+		}
+		.left {
+			order: 3;
+			flex: 0 1 calc(70% - 20px);
+		}
+		.right {
+			order: 2;
+			@include breakpoint(xsm){
+				order: 3;
+			}
+			flex: 0 1 calc(30% - 20px);
+		}
+
+		h1, .value {
+			font-size: 8.5vw;
+			@include breakpoint(xsm){
+				font-size: 44px;	
+			}
+			
+			@include breakpoint(md){
+				font-size: 50px;	
+			}
+			
+
+		}
+		.stat {
+			.label {
+				max-width: 250px;
+				margin: 0 auto;
+				font-size: 14px;
+				@include breakpoint(xsm){
+					font-size: 16px;
+				}
+			}
+			text-align: center;
+			margin-bottom: 15px;		
+			border-bottom: 2px solid #efefef;
+			padding: 0 0 15px 0;
+			@include breakpoint(xsm){
+				border-bottom: none;
+				padding: 0 0 0 0;
+				margin-bottom: 28px;
+			}
+
+			&:nth-child(1) {
+				border-top: 2px solid #efefef;
+				padding-top: 15px;
+				@include breakpoint(xsm){
+					padding-top: 0;
+					border-top: none;
+				}
+				.value {
+					color: $red;
+				}
+			}
+			.value {
+				font-weight: 600;
+				line-height: 1;
+				font-feature-settings: normal;
+			}
+		}
+	}
+}
+
+
+.chart-container[data-chart-id='the-credibles'],
+article[data-postname="the-credibles-new"] .conflict-data-container {
+	
+	.incidents {
+		background-color: #f2f2f2;
+		@include breakpoint(xsm){
+			background-color: #FFF;
+		}
+		
+		@include breakpoint(xsm){
+			min-height: 740px;	
+		}
+
+		@include breakpoint(sm){
+			min-height: 645px;
+		}
+		@include breakpoint(md){
+			min-height: 540px;
+		}
+	}
+
+
+	.map-switches {
+		border: none;
+		.option {
+			border: none;
+		}
+		&.disabled {
+			display: none;
+		}
+		&.casualties-selected {
+			.casualties-option {
+				background-color: $red;
+				color: #000;
+			}
+			.incidents-option {
+				background-color: #000;
+				//color: $yellow;
+				color: #999;
+			}
+		}
+		.incidents-option {
+			margin-right: 0;
+			background-color: $yellow;
+			color: #000;			
+		}
+		.casualties-option {
+			color: #999;
+			background-color: #000;
+		}
+	}
+	.map-legend {
+		display: block;
+		z-index: 100;
+		color: #FFF;
+		background-color: #000;
+		
+		position: absolute;
+		top: 0;	
+		font-weight: 500;	
+		margin-bottom: 0;
+		display: flex;
+		
+
+		.incidents-option {
+			margin-right: 0;
+			background-color: $yellow;
+			color: #000;			
+		}
+		> div {
+			padding: 7px 10px 5px 10px;
+		}
+
+
+		.option {
+			
+			
+			cursor: pointer;
+			//margin: 4px 0;
+			display: flex;
+			align-items: baseline;
+			
+		}
+		.casualties-option {
+			color: #999;
+
+		}
+		font-size: 12px;
+		right: 0;
+
+	}
+	.group {
+		//border: 1px solid red;
+		display: block;
+	}
+	.label {
+		font-weight: normal;
+		//margin-bottom: 1rem;
+	}
+	h2 {
+		//border-bottom: 1px solid #333;
+		margin: 0 0 1rem 0;
+		padding: 0 20px;
+	}
+	h4 {
+
+		margin-bottom: 5px;
+	}
+
+	
+	
+
+	.description {
+		padding: 0 15px;
+		@include breakpoint(md){
+			padding: 0 20px;			
+		}
+		font-size: 14px;
+		column-count: 2;
+		p {
+			text-align: left !important;
+		}
+		&.airwars {
+			p {
+				display: none;
+			}
+			p:nth-child(-n+2) {
+				display: block;
+			}
+		}
+
+	}
+	.incident-header {
+		display: flex;
+		flex-flow: row wrap;
+
+		@include breakpoint(xsm){
+			display: flex;
+			flex-flow: row nowrap;
+		}
+		justify-content: space-between;
+		align-items: baseline;
+		height: auto;
+		margin-top: 0;
+		padding: 15px 15px 0 15px;
+		//flex-flow: row wrap;
+
+		@include breakpoint(sm){
+			height: 70px;
+			//flex-flow: row nowrap;
+			padding: 20px 20px 0 20px;
+		}
+		//overflow: hidden;
+		//background: #000;
+		position: relative;
+
+		.date {
+			flex: auto;
+			//text-align: right;
+			@include breakpoint(xsm){
+				//text-align: left;
+				flex: 1 0 240px;	
+			}
+			
+			font-weight: normal;
+
+		}
+		.code {
+			flex: 0 0 110px;
+			// /padding-right: 20px;
+			
+			font-weight: 600;
+		}
+		.location {
+			text-align: left;
+			display: block;
+			font-size: 14px;
+			@include breakpoint(xsm){
+				margin-bottom: 1rem;
+				font-size: 15px;
+				text-align: right;
+				display: none;
+			}
+
+			
+			@include breakpoint(md){
+				display: block;
+			}
+			flex-grow: 1;
+
+			font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+			
+			
+		}
+		.exact-location {
+			margin-bottom: 1rem;
+			display: block;
+			font-size: 14px;
+			span {
+				font-size: 12px;
+				font-family: 'Atlas-Typewriter-Web';
+			}
+			@include breakpoint(xsm){
+				display: none;
+			}
+		}
+		.close {
+			position: relative;
+			right: -8px;
+			@include breakpoint(xsm){
+				background-color: #FFF;
+				position: absolute;
+				right: -30px;
+				top: 0;
+			}
+			
+			width: 30px;
+			height: 30px;
+			
+			text-align: center;
+			font-size: 20px;	
+			color: $red;
+			padding-top: 2px;
+			&:hover {
+				background-color: $red;
+				color: #000;
+				cursor: pointer;
+			}
+		}
+	}
+
+
+	.timeline-outer .timeline-bars { 
+		//overflow: hidden;
+		justify-content: space-between;
+		> div.day {
+			background-color: $red;
+			bottom: 1px;
+			flex: 1 1 2px;
+			//max-height: calc(100% - 1px);
+			&.shown {
+				background-color: #000;
+			}
+		}
+		.time-marker {
+			width: 0;
+			position: relative;
+			top: 0px;
+			background: #000;
+			border-left: 1px solid #dcdcdc;
+			font-size: 10px;
+			height: 70px;
+			@include breakpoint(sm){
+				height: 76px;
+				font-size: 12px;	
+			}
+			
+			
+			span {
+				background: #FFF;
+				padding: 0 0 0 5px;
+				transform: rotate(-90deg);
+				transform-origin: 0 50%;
+				@include breakpoint(sm){
+					padding-left: 3px;
+					min-width: 60px;
+					transform: none;
+				}
+
+				
+
+				display: inline-block;
+			}
+			span.date-2019 {
+				display: inline-block;
+				@include breakpoint(sm){
+					display: none;
+				}
+				@include breakpoint(lg){
+					display: inline;
+
+				}
+			}
+
+		}
+	}
+	.rc-slider .rc-slider-track {
+		background-color: $red !important;
+		opacity: 0.12;
+
+	}
+	
+	.incidents-container {
+		display: flex;
+		
+		height: auto;
+		position: relative;
+		@include breakpoint(xsm){
+			
+			height: 0;	
+			position: absolute;
+		}
+		justify-content: space-between;
+		top: 0px;
+		padding: 0;
+		z-index: 4;
+		@include breakpoint(xsm){
+			top: 15px;
+			padding: 0 15px;
+		}
+		@include breakpoint(md){
+			top: 30px;
+			padding: 0 20px;
+		}
+		.incidents {
+
+			flex: 1 0 100%;
+			@include breakpoint(xsm){
+				flex: 0 1 50%;
+			}
+		}
+
+		.incidents.intro {
+			flex: 0 1 40%;
+			.totals {
+				display: none;
+				background: transparent;
+				padding: 0;
+				margin: 1rem 0;
+				.total {
+					background: transparent;
+					border: 1px solid #000;
+				}
+			}
+			padding: 40px 0;
+			h1 {
+				font-size: 38px;
+				line-height: 1.15;
+
+				span {
+					font-weight: 400;
+				}
+			}
+			.start {
+				margin-top: 1rem;
+				border: 1px solid #FFF;
+				padding: 10px 15px;
+				display: inline-block;
+				text-decoration: none;
+			}
+		}
+		.map-meta {
+			max-width: 45%;
+			flex: 0 1 auto;
+			padding: 0 0 0 20px;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: space-between;
+			height: 0;
+			position: relative;
+			display: none;
+			@include breakpoint(xsm){
+				display: block;
+			}
+			.lat-lng {
+				.location {
+					@include breakpoint(md){
+						display: none;
+					}
+					font-size: 12px;
+					font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+				}
+				.value {
+					font-family: 'Atlas-Typewriter-Web';	
+					font-weight: bold;
+				}
+				.accuracy {
+					font-size: 12px;
+					@include breakpoint(md){
+						font-size: 14px;
+					}
+				}
+				padding: 12px 15px 10px 15px;
+				@include breakpoint(md){
+					padding: 20px 20px 20px 20px;
+				}
+				background: #FFF;
+
+				text-align: right;
+
+			}
+			
+		}
+	}
+}

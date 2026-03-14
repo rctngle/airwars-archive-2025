@@ -1,0 +1,54 @@
+### OLD SERVER
+
+mysqldump -u root -p wordpress > wordpress_backup_02.sql
+
+##########################################
+
+### NEW SERVER
+
+# webadmin own
+
+cd /var/www/html
+sudo chown -R webadmin:webadmin ./
+
+# sync db backup
+rsync -avzh rectangle@157.245.72.162:/var/sftp/uploads/db/wordpress_backup_02.sql /var/www/db/
+
+# sync aam
+rsync -avzh rectangle@157.245.72.162:/var/www/airwars.org/wp-content/aam /var/www/html/wp-content/
+
+# sync plugins
+rsync -avzh rectangle@157.245.72.162:/var/www/airwars.org/wp-content/plugins /var/www/html/wp-content/
+
+# sync uploads
+rsync -avzh --append-verify rectangle@157.245.72.162:/var/www/airwars.org/wp-content/uploads /var/www/html/wp-content/
+
+# sync themes
+rsync -avzh --append-verify rectangle@157.245.72.162:/var/sftp/uploads/airwars-new /var/www/html/wp-content/themes/
+
+# import database
+cd /var/www/db/
+mysql -ureadwrite -pwqRoqFzaCV42 airwars < wordpress_backup_02.sql
+
+# www-data own
+cd /var/www/html
+sudo chown -R www-data:www-data ./
+
+
+
+
+
+
+
+SELECT table_schema "airwars", sum( data_length + index_length ) / 1024 / 1024 "Data Base Size in MiB"  FROM information_schema.TABLES GROUP BY table_schema;  
+SELECT table_schema "wordpress", sum( data_length + index_length ) / 1024 / 1024 "Data Base Size in MiB"  FROM information_schema.TABLES GROUP BY table_schema;  
+
+
+
+ns1.greenhost.nl
+ns2.greenhost.net
+ns3.greenhost.nl
+
+ns1.digitalocean.com
+ns2.digitalocean.com
+ns3.digitalocean.com

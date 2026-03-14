@@ -1,0 +1,33 @@
+$breakpoints: xsm, sm, md, lg;
+$breakpoint-values: 768px, 1024px, 1260px, 1420px;
+$background-colors: #cacaca, blue, green, tan;
+
+$breakpoints-keys: (
+	'xsm': 767px,
+	'sm': 1024px,
+	'md': 1260px,
+	'lg': 1420px
+) !default;
+
+@mixin breakpointKeys($breakpoint) {
+	@if map-has-key($breakpoints-keys, $breakpoint) {
+		@media (min-width: map-get($breakpoints-keys, $breakpoint)) {
+			@content;
+		}
+	}
+}
+
+
+@function backgroundColor($size){
+	@return nth($background-colors, index($breakpoints, $size));
+}
+
+@mixin breakpoint($size) {
+	@media (min-width: screen-size($size)) {
+		@content;
+	}
+}
+
+@function screen-size($size) {
+	@return nth($breakpoint-values, index($breakpoints, $size));
+}

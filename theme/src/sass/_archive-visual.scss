@@ -1,0 +1,452 @@
+.panel {
+	&:hover {
+		img {
+			transform: scale(1.05);
+		}
+	}
+	&__video {
+		z-index: 1;
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+		width: 100%;
+		height: 100%;
+		background-color: tan;
+		video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&:hover {
+		.panel__video {
+			opacity: 1;
+		}
+	}
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 0;
+	color: #FFF;
+	text-decoration: none;
+	margin-bottom: 15px;
+	
+	@include breakpoint(xsm){
+		margin-bottom: 0;
+	}
+	@include flexvertical;
+	
+	h1 {
+		line-height: 1.2;
+	}
+	h4 {
+		margin-bottom: 0.8rem;
+	}
+	&__collaborationbyline {
+		color: #777;
+		font-size: 15px;
+		margin-top: 0.8rem;	
+	}
+	&__types {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		display: flex;
+		z-index: 2;
+
+	}
+	&__info {
+		flex-grow: 1;
+	}
+	&__type {
+		background-color: #ea312e;
+		border-radius: 5px;
+		padding: 4px 8px 3px 8px;
+		font-size: 15px;
+		font-weight: 500;
+		color: #FFF;
+		.dot {
+			font-size: 0.8em;
+			position: relative;
+			top: -0.2em;
+		}
+	}
+	&__thumb {
+		height: 0;
+		padding-bottom: 60%;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		background-color: #FFF;
+
+	}
+	&__image {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;			
+		overflow: hidden;
+		img {
+			transition: 200ms;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__excerpt {
+		
+		display: -webkit-box;
+		-webkit-line-clamp: 5;
+		-webkit-box-orient: vertical;  
+		overflow: hidden;
+		@include breakpoint(xsm){
+			display: block;
+		}
+	}
+	&.output_type-report {
+		
+		.panel__image {
+			background-color: #233743	;
+			padding: 10px;
+			img {
+				@include imagecontain;
+			}
+		}
+	}
+}
+
+.share {
+	margin-bottom: 2rem;
+}
+
+.awards {
+
+}
+
+
+.partnerships {
+	&__logos {	
+
+		grid-template-columns: repeat(3, 1fr);
+		
+		@include breakpoint(lg){
+			grid-gap: 100px;	
+		}	
+	}
+}
+
+.awards {
+	
+	&__logos {
+		grid-template-columns: repeat(2, 1fr);
+		@include breakpoint(lg){
+			grid-gap: 50px;	
+		}
+	}
+}
+
+.partnerships,
+.awards {
+	grid-column: 1/-1;
+	padding: 0 0px;
+	margin: 2rem 0;
+
+	@include breakpoint(xsm){
+		margin-bottom: 0;
+		padding: 0 60px;		
+	}
+	@include breakpoint(lg){
+		padding: 0 120px;
+	}
+	img {
+		@include imagecontain;
+	}
+	&__text {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	&__logos {
+		display: grid;
+		grid-gap: 20px;	
+		
+		@include breakpoint(xsm){
+			grid-gap: 50px;	
+			grid-template-columns: repeat(5, 1fr);	
+		}
+		
+		
+		
+	}
+	img {
+		mix-blend-mode: multiply;
+	}
+}
+
+
+
+a.award:hover {
+
+}
+
+.award {
+	text-decoration: none;
+	&:nth-last-child(1){
+		display: none;
+		@include breakpoint(xsm){
+			display: block;
+		}
+	}
+	&__logo {
+
+//		height: 60px;
+		max-width: 160px;
+		margin: 0 auto 1rem auto;
+		
+		
+		position: relative;
+		padding-bottom: 30%;
+		
+		> div {
+			position: absolute;
+			inset: 0;
+		}
+	}
+	&__year {
+		font-size: 0.7rem;
+		text-align: center;
+		font-weight: 500;
+		border-top: 1px solid rgba(0,0,0,0.2);
+		padding-top: 1rem;
+	}
+	&__names {
+		font-size: 0.75rem;
+		text-align: center;
+	}
+	&__name {
+		margin-bottom: 0.5rem;
+		&:nth-last-child(1){
+			border-bottom: none;
+		}
+	}
+}
+
+.researchgrid,
+.investigations {
+	
+	grid-gap: 20px;
+		
+	@include breakpoint(xsm){
+		grid-template-columns: repeat(2, 1fr);
+		padding: 0 20px;
+		display: grid;		
+	}
+	
+	
+	
+	a:link, a:visited, a:active, a:hover {
+		color: inherit;
+	}
+
+	
+}
+
+.investigations {
+	margin-top: 30px;
+	padding: 0 15px;
+	@include breakpoint(sm){
+		margin-top: 50px;
+		grid-gap: 50px;
+		padding: 0 50px;
+		grid-template-columns: repeat(2, 1fr);
+	}	
+	.panel {
+		background-color: #fff;
+		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		h1 {
+
+
+		}
+	}
+	.tagstable {
+		padding: 0px 0 10px 0;
+		background-color: transparent;
+		border-top: 1px solid #ddd;
+	}
+	.tagstable__label {
+		color: #777;
+	}
+	.tagstable__row {
+		padding: 5px 25px 6px 25px;
+		@include borderbottom(#ddd);
+	}
+	.panel__info {
+		padding: 15px;
+		flex-grow: 1;
+		@include flexvertical;
+		@include breakpoint(xsm){
+			padding: 25px;	
+		}
+	}
+	.panel__excerpt {
+		flex-grow: 1;
+		@include breakpoint(xsm){
+			font-size: 1rem;
+		}
+		font-size: 14px;
+	}
+
+}
+
+
+.tagstable {
+	
+	
+	//flex-grow: 1;
+	&__date {
+		font-size: 0.8rem;
+	}
+	&__date {
+		font-size: 0.8rem;
+	}
+	&__label {
+		@include incident-small-caps;
+		
+		font-size: 10px;
+		span {
+			padding-top: 3px;
+			display: block;
+		}
+	}
+	.tag {
+		box-shadow: 0 0 4px #00000029;
+	}
+	&__terms {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	&__row {
+		
+		display: grid;
+		align-items: baseline;
+		grid-template-columns: 1fr 1.5fr;
+		
+	}
+
+}
+
+.researchgrid,
+.investigations,
+.visualfeatured {
+	.tags {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.tag {
+		margin: 4px 4px 0 0;
+		padding: 2px 6px 0px 6px;
+		background-color: $blue;
+		background-color: #78497c;
+		text-transform: capitalize;
+//		@include incident-small-caps(#fff);
+		font-size: 12px;
+		font-weight: 500;
+		border-radius: 2px;
+		color: #FFF;
+		&.belligerent {
+			background-color: #7874b0;
+		}
+		&.output_type {
+			background-color: #3f5e70;
+		}
+		&.language {			
+			background-color: #406f61;
+			&.ar {
+				font-family: 'Atlas-Grotesk-Web', 'Noto Kufi Arabic';	
+				font-weight: normal;
+
+			}
+		}
+	}
+	.tagstable__date {
+		color: #fff;
+		font-size: 1rem;
+	}
+	.panel img {
+
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+
+
+.researchgrid {
+	color: #FFF;
+	padding: 0 15px;
+	@include breakpoint(md){
+		grid-template-columns: repeat(4, 1fr);		
+	}
+	@include breakpoint(sm){
+		grid-gap: 30px;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.output_type-bar-chart {
+		.researchgrid__thumb {
+			> div img {
+				object-fit: contain;
+			}
+		}
+	}
+
+	.panel {
+		background-color: #071d2b;
+		box-shadow: 0 0 10px rgba(0,0,0,0.25);
+	}
+	
+	.panel__info {
+		padding: 15px;
+	}
+	.panel__excerpt {
+		font-size: 14px;
+	}
+
+	.tagstable {
+		padding: 5px 0 10px 0;
+		background: #233743;
+	}
+	.tagstable__label {
+		color: #FFF;
+	}
+	.tagstable__row {
+		padding: 3px 15px 6px 15px;
+		@include borderbottom(rgba(255,255,255,0.15));
+	}
+
+	h4 {
+		display: none;
+	}
+	
+}
+
+.visualnavigation {
+	margin-bottom: 2rem;
+	background-color: #eeeeee;
+	padding: 0px 0 20px 0;
+	border-bottom: 1px solid #DDD;
+	@include breakpoint(xsm){
+		padding: 1rem 0 2rem 0;	
+	}
+	#filter-bar {
+		padding: 0;
+	}
+
+}
+
+.visualresults {
+	text-align: center;
+	padding: 0 0 1.5rem 0;
+	font-size: 14px;
+	color: #777;
+}

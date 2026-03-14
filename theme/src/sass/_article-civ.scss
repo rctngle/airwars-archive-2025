@@ -1,0 +1,303 @@
+.mapboxgeolocation {
+	position: relative;
+}
+.geolocation-map {
+	height: 400px;
+	background-color: #ddd;
+	margin-bottom: 2rem;
+	button {
+		display: none;
+	}
+}
+.geojson-container {
+	display: none;
+}
+
+.declassified-assessments {
+	@include secondary-text;
+}
+
+
+.victims {
+	&__victim {
+		padding-bottom: 5px;
+		margin-bottom: 1rem;
+	}
+
+	&__name {
+		font-family: 'Atlas-Grotesk-Web', 'Noto Kufi Arabic';
+	}
+	&__label {
+		margin: 2rem 0 1rem 0;
+		font-weight: 500;
+	}
+	.commas {
+		@include commas;
+	}
+}
+article.type-civ {
+
+	.sources.info-main-block, .stats.info-main-block, .summary.info-main-block {
+		display: block;
+		@include breakpoint(md){
+			display: none;
+		}
+	}
+
+	.info-main-block.victims {
+		padding-top: 0 !important;
+		p.family-label {
+			margin-bottom: 0;
+			font-weight: 500;
+		}
+		ul {
+			margin-bottom: 0.8em;
+
+			//list-style-type: disc;
+		}
+		li {
+			span::after {
+				content: ', ';
+			}
+			span:nth-last-child(1)::after {
+				content: '';
+			}
+		}
+		.victim-age {
+			text-transform: lowercase;
+		}
+	}
+
+	h2 {	
+		br {
+			display: block;
+			@include breakpoint(xsm){
+				display: none;
+			}
+		}
+	}
+
+	.info-left {
+		i {
+			position: relative;
+			font-size: 11px;
+			top: -1px;
+			@include breakpoint(xsm){
+				font-size: 13px;				
+			}
+		}
+		.meta-block {
+			
+			span.geo-link {
+
+				&.show-warning {
+					span.lat-lng {
+						display: none;
+					}
+					span.warning {
+						display: block;
+					}
+				}
+				span.lat-lng:hover {
+					text-decoration: underline;
+					cursor: pointer;
+				}
+				span.warning {
+					color: $warning-color;
+					display: none;
+					a { 
+						color: $warning-color;
+						text-decoration: underline;
+					}
+					i {
+						position: relative;
+						top: 0;
+						font-size: 11px;
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+.content .info-main-block.belligerents {
+	padding-bottom: 30px;
+
+	.meta-list {
+
+		margin-bottom: 1.8em;
+	}
+}
+
+.main-strike-report {
+	margin-bottom: 20px;
+}
+
+.strike-report {
+	//margin: 0 0 0 0;
+	padding: 10px;
+	background-color: #f2f2f2;
+	position: relative;
+	> div.report {
+		@include secondary-text;
+	}
+	br {
+		display: block;
+		content: '';
+		margin-bottom: 0.8em;
+	}
+}
+
+.strike-report, .report {
+	p.original-language {
+		display: none;
+
+	}
+	p.english-language {
+		margin-bottom: 0;
+	}
+	&.original {
+		p.original-language {
+			display: block;
+			margin-bottom: 0;
+		}
+		p.english-language {
+			display: none;
+		}
+	}
+}
+
+.declassified-link,
+.official-source {
+	i {
+		font-size: 12px;
+		position: relative;
+		top: -1px;
+		padding-right: 3px;
+	}
+}
+
+.declassified-link {
+	margin-right: 10px;
+}
+
+.official-source {
+	flex: 0 1 auto;
+	margin-left: 10px;
+	@include breakpoint(xsm){
+		margin-left: 0;
+		flex: 0 1 19%;	
+	}
+	text-align: right;
+	z-index: 0;
+
+	font-family: 'Atlas-Grotesk-Web';
+
+	
+	a:link:hover, a:visited:hover {
+	
+		text-decoration: underline !important;
+		
+	}
+	a:link {
+		background: none !important;
+		text-shadow: none !important;
+		display: block;
+	}
+}
+
+.partner-strike-reports, .civilian-casualty-statements {
+	+ h2 {
+		margin-top: 1.6rem;
+	}
+}
+
+.civilian-casualty-statements-list, .official-source {
+	li {
+		position: relative;
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}
+
+.statement-border {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;	
+	display: flex;
+	justify-content: space-between;
+	background-color: #f2f2f2;
+	@include secondary-text;
+	border-bottom: 1px solid #dedede;
+	
+	align-content: baseline;
+	padding: 7px 10px 4px 10px;
+
+	// margin: 0.6rem -10px 0 -10px;
+	// @include breakpoint(xsm){
+	// 	margin: 0.8rem -10px 0 -10px;	
+	// }
+
+	a:link, a:visited, i {
+		color: #666;
+	}
+	align-items: center;
+	.statement-title {
+		font-weight: 500;
+		flex-grow: 1;
+	}
+	.statement-border-nav {
+		display: flex;
+		// flex: 1 1 auto;
+		// @include breakpoint(xsm){
+		// 	flex: 1 1 70%;	
+		// }
+		user-select: none;
+		justify-content: flex-end;		
+		color: #666;
+		&.original {
+			.or {
+				text-decoration: underline;
+				color: #000;
+			}
+			.en {
+				text-decoration: none;
+				color: #666;
+			}
+	
+		}
+	
+		.en {
+			text-decoration: underline;
+			color: #000;
+		}
+		&.language {
+			li {
+				display: flex;
+			}
+			.or {
+				padding-left: 3px;
+			}
+			.en {
+				padding-right: 3px;
+			}
+			li div {
+				cursor: pointer;
+			}
+
+		}
+		.active {
+			
+		}
+		li {
+			cursor: pointer;
+			padding-left: 20px;			
+			div {
+				text-align: right;
+				cursor: pointer;
+			}
+		}
+	}
+}

@@ -1,0 +1,272 @@
+$annotation-color: #6791ad;
+
+article.type-mil {
+
+	br {
+		content: '';
+		display: block;
+		margin-bottom: 0.8em;
+	}
+
+	// &.single-date {
+	// 	.date-description {
+	// 		color: red;
+	// 		display: none !important;
+	// 	}
+	// }
+
+	padding: 30px 0;
+
+	> div.content.annotated:nth-last-child(2){
+		.report {
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+	}
+	.content.original {
+		display: none;
+	}
+
+	.info-main .report {
+		height: 100%;
+		border-radius: 0;
+		@include breakpoint(xsm){
+			background-image: none;
+		}
+
+	}
+
+	.report-strike {
+
+		position: relative;
+		& + p {
+			margin-top: 0.8em;
+		}
+		.strike-info {
+
+			@include tag;
+			color: $annotation-color;
+			position: relative;
+			width: auto;
+			right: auto;
+			top: auto;
+			padding: 5px 0 5px 10px;
+
+			@include breakpoint(md){
+				padding: 5px 0 5px 20px;
+				width: 190px;
+				position: absolute;
+				top: 0;
+				right: -190px;				
+			}
+		}
+		.strike-info.active {
+			background-color: lighten($annotation-color, 32%);
+		}
+		.strike-description {
+			padding-left: 35px;
+			position: relative;
+			padding-right: 10px;
+			&::before {
+				content: '•';
+				font-size: 22px;
+				top: -4px;
+				position: absolute;
+				left: 10px;
+			}
+		}
+		.strike-description.active {
+			background-color: lighten($annotation-color, 32%);
+		}
+	}
+	.underline-header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.info-main .info-main-block {
+		padding-top: 0;
+		margin-bottom: 0;
+		@include breakpoint(md){
+			padding-right: 10px;
+		}
+	}
+}
+
+article.type-mil .content.media {
+	.info-left {
+		padding: 0;
+	}
+	margin-top: 20px;
+	.media-embed {
+		margin: 0 0 20px 0;
+	}
+
+}
+
+
+article.type-mil .content.original {
+
+	.info-left {
+		padding: 10px 0 10px 15px;
+
+		@include breakpoint(xsm){
+			padding: 10px 0 10px 20px;
+		}
+		.meta-block.notes {
+			flex: 1 0 100%;
+		}
+		p {
+			font-size: 12px;
+			margin-top: 0.2rem;
+			padding-right: 10px;
+			
+			@include breakpoint(xsm){
+				padding-right: 20px;				
+			}
+		}
+	}
+
+	.report {
+		> * {
+			padding: 0 10px;
+			p {
+				padding: 0;
+			}
+		}
+	}
+}
+article.type-mil .content.annotated {
+
+	&.summary {
+		.info-left {
+			color: #000;
+			.days-summary {
+				border: none;
+			}
+		}
+		.info-main, .info-left {
+			border-top: none;
+		}
+		.report {
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			
+		}
+	}
+	.info-right {
+		//border-top: 1px dashed $annotation-color;
+	}
+	.info-left {
+
+		color: $annotation-color;
+		padding: 0;
+
+		@include breakpoint(xsm){
+			border-top: 1px dashed $annotation-color;
+			padding: 10px 0 10px 20px;
+		}
+		.days-summary {
+			border-top: 1px dashed #bbb;
+			border-bottom: 1px dashed #bbb;
+			flex: 0 1 100%;
+			padding: 10px 15px 0 15px;
+			display: flex;
+			flex-flow: row wrap;
+
+			@include breakpoint(xsm){
+				display: block;
+				padding: 0;
+				border: none;
+
+			}
+			.date-description {
+				display: flex;
+				@include breakpoint(xsm){
+					display: block;
+				}
+			}	
+			.meta-block {
+				order: 1;
+				&.summary {
+					flex-grow: 1;
+				}
+			}
+			.actions, .date {
+				order: 0;
+			}
+		}
+		
+		.meta-block {
+			.report-date {
+				font-weight: 500;
+			}
+			.country-name {
+				width: 45px;
+				font-weight: bold;
+				display: inline-block;
+			}
+		}
+	}
+	.info-main {
+		@include breakpoint(xsm){
+			border-top: 1px dashed $annotation-color;	
+		}		
+	}
+}
+
+article.type-mil .content.original {
+	.report {
+		border-radius: 5px;
+	}
+}
+
+article.type-mil .tab-switch {
+	display: flex;
+	margin-bottom: 4px;
+	> div {
+		cursor: pointer;
+		font-weight: normal;
+		border-radius: 5px;
+		border: 1px solid transparent;
+		@include secondary-text;
+		&.active {
+			border: 1px solid $annotation-color;
+			background-color: $annotation-color;
+			color: #FFF;
+
+		}
+		padding: 3px 7px 0 7px;
+		text-align: center;
+		height: 26px;
+		@include breakpoint(xsm){
+			height: auto;
+		}
+		margin-top: 5px;
+		&.original {
+			display: none;
+			@include breakpoint(xsm){
+				display: block;
+			}
+		}
+	}
+
+}
+
+article.original {
+	&.no-annotation {
+		.tab-switch {
+			display: none;
+		}	
+	}
+	
+	.content.header {
+		display: flex;
+	}
+	.content {
+		display: none;
+	}
+	.content.original, .content.tab-switch {
+		display: flex;
+	}
+}

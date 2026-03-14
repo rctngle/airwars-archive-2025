@@ -1,0 +1,592 @@
+.postdata {
+	margin: 2rem 0 2rem 0;
+	@include breakpoint(xsm){
+		margin: 3rem 0 4rem 0;
+	}
+	&__content {
+		@include breakpoint(xsm){
+			display: grid;
+			grid-template-columns: 1.5fr 1fr;
+			grid-gap: 40px;	
+		}
+		
+	}
+	h4 {
+		@include breakpoint(xsm){
+			margin: 2.4rem 0 0 0;	
+		}
+		
+	}
+	.langswitcher {
+		margin-top: 0;
+		font-size: 15px;
+		justify-content: flex-start;
+	}
+}
+
+
+article[data-postname="russian-military-in-ukraine-casualty-map"],
+[data-slug*="russian-military-in-ukraine"]{
+	.timeline-block.monitored {
+		border-bottom: 1px solid $russian-military-in-ukraine;
+	}
+	.bar {
+		fill: $russian-military-in-ukraine;
+	}
+	.rc-slider-track {
+		background-color: transparentize($russian-military-in-ukraine, 0.7);
+	}
+	.timeline-container .rc-slider .rc-slider-handle::before {
+		background-color: $russian-military-in-ukraine;
+	}
+
+	#selected-features {
+		.incidents {
+			max-height: none;
+			@include breakpoint(xsm){
+				max-height: 470px;	
+			}				
+			@include breakpoint(md){
+				max-height: 480px;
+			}
+		}
+	}
+}
+
+article[data-postname="us-forces-in-somalia-fatalities-and-strikes-map"],
+[data-slug*="us-forces-in-somalia"]{
+	.timeline-block.monitored {
+		border-bottom: 1px solid #b96749;
+	}
+	.bar {
+		fill: #b96749;
+	}
+	.rc-slider-track {
+		background-color: transparentize($us-forces-in-somalia, 0.7);
+	}
+	.timeline-container .rc-slider .rc-slider-handle::before {
+		background-color: #8a4d37;
+	}
+
+	#selected-features {
+		.incidents {
+			max-height: none;
+			@include breakpoint(xsm){
+				max-height: 470px;	
+			}				
+			@include breakpoint(md){
+				max-height: 480px;
+			}
+		}
+	}
+}
+
+article[data-postname="us-forces-in-yemen-fatalities-and-strikes-map"],
+[data-slug*="us-forces-in-yemen"]{
+	.timeline-block.monitored {
+		border-bottom: 1px solid #3f5177;
+	}
+	.bar {
+		fill: #3f5177;
+	}
+	.rc-slider-track {
+		background-color: transparentize($us-forces-in-yemen, 0.7);
+	}
+	.timeline-container .rc-slider .rc-slider-handle::before {
+		background-color: #415275;
+	}
+	.yemen-event {
+		position: absolute;
+		font-size: 12px;
+		top: -20px;
+		color: #888;
+		i {
+			font-size: 80%;
+			margin-right: 5px;
+			position: relative;
+			top: -1px;
+		}
+		a {
+			color: currentColor;
+		}
+	}
+	#selected-features {
+		.incidents {
+			max-height: none;
+			@include breakpoint(xsm){
+				max-height: 240px;	
+			}				
+			@include breakpoint(md){
+				max-height: 240px;
+			}
+		}
+	}
+}
+
+article[data-postname="us-forces-in-somalia-fatalities-and-strikes-map"],
+article[data-postname="us-forces-in-yemen-fatalities-and-strikes-map"],
+[data-slug*="us-forces-in-somalia"],
+[data-slug*="us-forces-in-yemen"]{
+	#selected-features.strike-target,
+	#selected-features.strike-locations,
+	#selected-features.militant-fatalities {
+		.incident {
+			grid-template-columns: 100px 1fr 60px 90px;
+		}
+	}
+	#selected-features.civilian-fatalities {
+		.incident {
+			grid-template-columns: 100px 1fr 60px 60px 90px;
+		}	
+	}
+
+	.map-container {	
+		height: 100%;
+		overflow: auto;
+		#selected-features {
+			
+			// &.strike-locations .incidents {
+			// 	max-height: none;
+			// 	@include breakpoint(xsm){
+			// 		max-height: 500px;	
+			// 	}
+			// 	@include breakpoint(md){
+
+			// 	}
+			// }
+			position: relative;
+			margin-top: 0;
+			background: transparent;
+			border: none;
+			box-shadow: none;			
+			.incidents {				
+				height: auto;			
+			}
+		}
+	}
+
+	.map-controls-sidebar {
+		position: absolute;
+		z-index: 4;
+		top: 0;
+		right: 0;
+		left: 0;
+		width: auto;
+		bottom: auto;
+		@include breakpoint(xsm){
+			
+			width: 300px;
+			top: 20px;
+			right: 20px;			
+			left: auto;
+		}
+		@include breakpoint(md){
+			left: auto;
+			top: 30px;
+			
+			right: 50px;	
+			width: 400px;	
+		}
+		p {
+			display: none;
+			@include breakpoint(xsm){
+				display: block;
+			}
+			font-size: 12px;
+		}
+	}
+	#selected-features {
+		@include breakpoint(xsm){
+			margin-bottom: 20px;
+			border-left: 1px solid #DDD;	
+			border-bottom: 1px solid #ddd;
+		}
+		.sort, .incidents {
+			background-color: #FFF;
+			@include breakpoint(xsm){
+				border-right: 1px solid #DDD;
+			}
+			
+		}
+		.sort {				
+			@include breakpoint(xsm){
+				border-top: 1px solid #DDD;	
+			}
+		}
+		.map-legend {
+			border-top: 1px solid #ddd;
+			border-bottom: none;
+			@include breakpoint(xsm){
+				border-bottom: 1px solid #DDD;
+			}
+		}
+		
+	}
+}
+
+article[data-postname*="israeli-military-in"],
+.conflict-map-timeline[data-slug*="israeli-military-in"] {
+	.timeline-controls-container {
+		display: none;
+	}
+}
+
+article[data-postname="all-belligerents-in-libya-2012-present-casualty-and-strikes-map"],
+[data-slug*="all-belligerents-in-libya-2012"]{
+	.timeline-block.monitored {
+		border-bottom: 1px solid #b19458;
+	}
+	.bar {
+		fill: #b19458;
+	}
+	.rc-slider-track {
+		background-color: transparentize($all-belligerents-in-libya, 0.7);
+	}
+
+	#selected-features.civilian-fatalities {
+		.incident {
+			grid-template-columns: 70px 65px 1fr 40px 84px;
+		}
+	}
+	#selected-features.strikes {
+		.incident {
+			grid-template-columns: 12px 70px 65px 1fr 40px 84px;
+		}
+	}
+
+	.map-legend {
+		display: none;
+	}
+
+	#selected-features {
+		position: relative;
+		border-bottom: 1px solid #ddd;
+		&.hidden.strikes {
+
+			+ .map-legend {
+				@include breakpoint(xsm){
+					display: block;	
+				}
+				
+				.legend-items {
+					display: block;
+					column-count: 2;
+					div {
+						break-inside: avoid-column;	
+					}
+				}		
+			}
+		}
+	}
+}
+
+
+article[data-postname="all-belligerents-in-libya-2011-casualty-and-strikes-map"],
+[data-slug*="all-belligerents-in-libya-2011"] {
+
+
+
+	.rc-slider-track {
+		background-color: transparentize($all-belligerents-in-libya-2011, 0.6);
+	}
+	.bar {
+		fill: $all-belligerents-in-libya-2011;
+	}
+	.svg-container {
+		border-bottom: 1px solid $all-belligerents-in-libya-2011;
+	}
+
+	#selected-features.civilian-fatalities {
+		.incident {
+			grid-template-columns: 85px 65px 1fr 1fr 84px;
+		}
+	}
+	#selected-features.strikes {
+		.incident {
+			grid-template-columns: 12px 85px 65px 1fr 1fr 84px;
+		}
+	}
+
+}
+
+article[data-postname="all-belligerents-in-libya-2011-casualty-and-strikes-map"],
+article[data-postname="all-belligerents-in-libya-2012-present-casualty-and-strikes-map"],
+[data-slug*="all-belligerents-in-libya-2011"],
+[data-slug*="all-belligerents-in-libya-2012"] {
+
+	
+
+	.map-controls-sidebar {
+		z-index: 5;
+		left: auto;
+		width: 100%;
+		@include breakpoint(xsm){
+			top: 20px;
+			right: 20px;			
+			width: 395px;
+		}
+
+		@include breakpoint(md){
+			right: 50px;	
+		}
+		.incidents {
+			max-height: 370px;
+			.belligerent span {
+				&::after {
+					content: ' ';
+				}
+			}
+		}	
+	}
+}
+
+article[data-postname="russian-military-in-syria-casualty-map"],
+article[data-postname="russian-military-in-syria-casualty-map"],
+[data-slug*="russian-military-in-syria"] {
+	.timeline-block.monitored {
+		border-bottom: 1px solid #1a87a9;
+	}
+	.bar {
+		fill: #1a87a9;
+	}
+	.rc-slider-track {
+		background-color: transparentize(#2fb0d8, 0.7);
+	}
+	
+	.rc-slider-handle::before {
+		background-color: #16586d;
+	}
+}
+
+
+article[data-postname="turkish-military-in-iraq-and-syria-casualty-map"],
+[data-slug*="turkish-military-in-iraq"] {
+	.timeline-block.monitored {
+		border-bottom: 1px solid #239e83;
+	}
+	.bar {
+		fill: #239e83;
+	}
+	.rc-slider-track {
+		background-color: transparentize($turkish-military, 0.7);
+	}
+	.exception {
+		color: $turkish-military;
+		font-weight: 500;
+	}
+	.rc-slider-handle::before {
+		background-color: #156552;
+	}
+}
+
+
+
+
+#selected-features {
+
+	&.hidden {
+		display: none;
+	}
+	z-index: 3;
+	font-size: 12px;	
+	-webkit-overflow-scrolling: touch;
+	background-color: rgba(255,255,255,0.9);
+	border-left: 1px solid var(--line-color);
+	@include breakpoint(xsm){		
+		background-color: #FFF;
+		box-shadow: none;		
+	}
+
+	.close {
+		display: block;
+		@include breakpoint(xsm){
+			display: none;
+		}
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 22px;
+		text-align: center;
+		line-height: 1.6;
+		&:active {
+			background: $blue;
+			color: #FFF;
+		}
+	}
+
+	.sort {		
+		.result {
+			padding-bottom: 6px;
+		}		
+		padding: 8px 10px;
+		height: 40px;
+		border-bottom: 1px solid var(--line-color);
+		.incident {
+			@include incident-small-caps;			
+		}
+	}
+	.incidents {
+		padding: 5px 10px 10px 10px;
+		top: 0px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: auto;
+	}
+	.incidents {
+		
+		.result.incident {
+			display: block;
+			border-bottom: none;
+			padding-bottom: 7px;
+			span.value {
+				font-weight: 500;
+			}
+		}
+		
+	}
+
+	.incidents {
+		.incident {
+			padding: 3px 0;
+			border-bottom: 1px solid var(--line-color);	
+		}
+		
+		.reporting {
+			text-transform: capitalize;
+		}
+	}
+
+	.incident {
+		display: grid;
+		grid-template-columns: 65px 100px 1fr 0.9fr 84px;
+		align-items: baseline;
+		font-feature-settings: 'tnum';
+		i {
+			transition: 150ms;
+		}
+
+		
+
+		&:nth-last-child(1){
+			border-bottom: none;
+		}
+
+		&.expandable {
+			cursor: pointer;
+			&:hover {
+				i {
+					transform: scale(1.3);
+				}
+			}
+		}
+		.expand {
+			
+
+		}
+		body.british-ekia & {
+			flex-flow: row wrap;
+		
+			grid-template-columns: 12px 70px 65px 1fr 40px 84px;
+		
+		}
+		body.shahed-map & {
+			flex-flow: row wrap;
+			.statement {
+				padding: 10px 0;
+			}
+			grid-template-columns: 15px 60px 100px 70px 1fr 84px;
+			.launched {
+				//text-align: center;
+			}
+			.incident .accuracy {
+				color: #999;
+			}
+			.source {
+				display: flex;
+				align-items: baseline;
+				margin-bottom: 5px;
+				h5 {
+					margin-right: 5px;
+				}
+				a {
+					text-decoration: none;
+					span:not(.arrow) {
+						@include linkunderline;
+					}
+					.arrow {
+						@include system;
+					}
+				}
+			}
+		}
+		.uniquid {
+			font-weight: 500;			
+		}
+		.belligerent {
+			font-weight: 500;	
+		}
+		
+		.statement {
+			grid-column: 1/-1;
+			padding: 20px 0 20px 0;
+			color: #666;
+			h5 {
+				@include incident-small-caps;
+				margin-bottom: 5px;
+			}
+			strong {
+				color: #000;
+				font-weight: 500;
+			}
+		}
+
+		.casualties,
+		.militant-fatalities {
+			text-align: center;			
+			font-weight: 500;			
+		}
+		.injured {
+			text-align: center;
+		}
+		.date {			
+			text-align: right;
+		}
+		.strike-target {
+			font-weight: 500;
+			//flex: 0 1 26%;
+			span {
+				display: block;
+				padding-bottom: 2px;
+			}
+			
+		}
+		.strike-status {
+			font-weight: 500;
+			//flex: 0 1 26%;
+		}
+	}
+
+	.additional-info {
+		display: grid;
+		grid-column: 1/-1;
+		padding: 10px 0;
+		line-height: 1.5;
+		grid-template-columns: 1fr 1fr;
+		.label {
+			@include incident-small-caps;
+
+		}
+		.location {
+			font-family: 'Atlas-Grotesk-Web', 'Noto Kufi Arabic';
+		}
+		.lat-lng {
+			font-family: 'Atlas-Typewriter-Web';
+		}
+		.accuracy {
+			color: #999;
+		}
+	}
+}

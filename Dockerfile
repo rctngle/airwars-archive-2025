@@ -26,6 +26,17 @@ RUN apt-get update && apt-get install -y \
         opcache \
     && rm -rf /var/lib/apt/lists/*
 
+# Install AWS CLI (for R2 S3-compatible downloads)
+RUN curl -sL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o /tmp/awscliv2.zip \
+    && unzip -q /tmp/awscliv2.zip -d /tmp \
+    && /tmp/aws/install \
+    && rm -rf /tmp/aws /tmp/awscliv2.zip
+
+# Install Node.js for theme build
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install WP-CLI
 RUN curl -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x /usr/local/bin/wp
@@ -55,6 +66,14 @@ RUN if [ -n "$ACF_PRO_KEY" ]; then \
 
 # Copy theme
 COPY theme/ /var/www/html/wp-content/themes/airwars-new/
+
+# Build theme assets
+ARG MAPBOX_ACCESS_TOKEN
+RUN cd /var/www/html/wp-content/themes/airwars-new \
+    && echo "export default '${MAPBOX_ACCESS_TOKEN}';" > src/javascript/config/mapbox-token.js \
+    && npm install --legacy-peer-deps \
+    && npm run build \
+    && rm -rf node_modules
 
 # Install theme Composer dependencies
 RUN cd /var/www/html/wp-content/themes/airwars-new && composer install --no-dev --no-interaction

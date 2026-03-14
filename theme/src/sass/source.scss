@@ -1,0 +1,258 @@
+@font-face {
+	font-family: 'Atlas-Grotesk-Web';
+	src: url('../fonts/Atlas Grotesk Web-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atlas-Grotesk-Web';
+	src: url('../fonts/Atlas Grotesk Web-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atlas-Typewriter-Web';
+	src: url('../fonts/Atlas Typewriter Web-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
+
+html {
+	font-size: 15px;
+}
+
+body {
+	font-family: 'Atlas-Grotesk-Web', 'Noto Sans Arabic', sans-serif;
+	line-height: 1.4;
+	background-color: #ddd;
+	margin: 0;
+}
+
+strong {
+	font-weight: 500;
+}
+
+h1 {
+
+}
+
+form {
+	
+	
+
+	.acf-input {
+		textarea {
+			background-color: #e9e9e9;
+			border: none;
+			padding: 0.5rem 1rem;
+			font-size: 0.8rem;
+			max-height: 100px;
+		}		
+	}
+	.acf-table {
+		border: none;
+		font-size: 0.8rem;
+
+		td, th {
+			padding: 0 !important;
+			border: none !important;
+			padding-right: 0.5rem !important;
+		}
+	}
+	[data-name=source_content_translated],
+	[data-name=source_includes_video] {
+		padding-top: 0 !important;
+	}
+	[data-type=true_false] {
+		border-top: none !important;
+	}
+	[data-type=group]{
+		grid-column: span 2;
+		border-top: 1px solid #ddd;
+	}
+	[data-type=taxonomy]{
+		border-top: none !important;
+	}
+	.acf-fields {
+		label {
+			margin-bottom: 0;
+		}
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 0 1.5rem;
+
+		> .acf-field {
+
+			padding: 0;
+			margin-bottom: 1.2rem;
+			padding-top: 0.8rem;
+			.acf-label {
+				margin-bottom: 0.3rem;
+				label {
+					margin-bottom: 0;	
+				}
+				
+			}
+		}
+		
+	}
+	table {
+
+	}
+
+	input[type=number], select, button {
+		background-color: #ddd;
+		border: none;
+		font-size: 0.9rem;
+		padding: 0.3rem 0.4rem;
+		border-radius: 0.1rem;
+	}
+	input[type=checkbox]{
+		margin: 0 0.4rem 0 0;
+		cursor: pointer;
+	}
+
+	input[type=number] {
+		font-size: 0.8rem !important;
+		background-color: #e9e9e9;
+		font-family: 'Atlas-Typewriter-Web', monospace;
+	}
+
+}
+button {
+	margin-bottom: 1rem;
+}
+
+input[type=submit], button {
+	background-color: #0474ff;
+	color: #fff;
+	border: none;
+	padding: 0.5rem 0.6rem 0.4rem 0.6rem;
+	border-radius: 0.2rem;
+	font-size: 1rem;
+	font-family: 'Atlas-Grotesk-Web';
+	cursor: pointer;
+	&:hover {
+		background-color: #005bcd;
+	}
+}
+
+h2 {
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	margin: 0 0 1rem 0;
+	span {
+		display: block;
+		font-weight: normal;
+		font-size: 1rem;
+		padding: 0.3rem 0.5rem 0.2rem 0.5rem;
+		margin-left: 0.5rem;
+		background-color: #f2f2f2;
+		font-family: 'Atlas-Typewriter-Web';
+		border-radius: 3px;
+		border: 1px solid #ddd;
+		color: #333;
+	}
+}
+
+br {
+	margin-bottom: 0;
+	height: 0;
+	display: none;
+}
+.containers {
+	padding: 1.5rem;
+	&.logged-in {
+		
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-gap: 1.5rem;
+	}
+	&.logged-out {
+		.container:nth-child(2){
+			max-width: 900px;
+			margin: 0 auto;
+		}
+		.container:nth-child(1){
+			display: none;
+		}
+	}
+}
+.container {
+	background-color: #fff;
+	// max-width: 800px;
+	// margin: 2rem auto;
+	padding: 1.5rem;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}	
+
+.element,
+.window {
+	margin-top: 4rem;
+	h3 {
+		margin: 0 0 1rem 0;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		border: 1px solid #f2f2f2;
+
+	}
+}
+
+.element {
+	img {
+		max-width: 500px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	}
+}
+#assessment-content {
+	font-size: 0.9rem;
+	> div:nth-last-child(1){
+		border-bottom: 0;
+		> div {
+
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 0.7rem;
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+	}
+}
+.wrap {
+	word-wrap: break-word;
+}
+.block {
+	font-size: 0.9rem;
+	margin: 4rem 0;
+	h2 {
+		margin-bottom: 1rem;
+	}
+}
+#assessment-content,
+.block {
+	a {
+		color: #0474ff;
+		word-wrap: break-word;
+	}
+	> div {
+		display: grid;
+		grid-template-columns: 170px minmax(0, 1fr);
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 0.5rem;
+		padding-bottom: 0.5rem;
+		span {
+			color: #777;
+		}
+	}
+}

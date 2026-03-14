@@ -1,0 +1,94 @@
+@mixin borderbottom($color: #000) {
+	border-bottom: 1px solid $color;
+	&:nth-last-child(1){
+		border-bottom: none;
+	}
+}
+@mixin flexvertical {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+
+@mixin imageblock {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+@mixin imagecontain {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	display: block;
+}
+@mixin imagecover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+@mixin linkunderline($offset:2px, $thickness:1px, $color: inherit) {
+	text-decoration: underline;
+	text-decoration-thickness: $thickness;
+	text-underline-offset: $offset;
+	text-decoration-color: $color;
+	span {
+		text-decoration: underline;
+		text-decoration-color: $color;
+		text-decoration-thickness: $thickness;
+		text-underline-offset: $offset;		
+	}
+}
+
+@mixin extension($background-color:red, $right: false) {
+	--width: calc(calc(100vw - var(--content-max-width)) / 2);
+	@if $right {
+		right: calc(var(--width) * -1);
+		//background: linear-gradient(to right, $background-color, #fff);
+	} @else {
+		left: calc(var(--width) * -1);
+		//background: linear-gradient(to left, $background-color, #fff);
+	}
+
+	content: '';
+	position: absolute;
+	
+	width: var(--width);
+
+	top: 0;
+	bottom: 0;
+	background: $background-color;
+}
+
+@mixin absolute {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+
+@mixin clamp($numlines: 4) {
+	display: -webkit-box;
+	-webkit-line-clamp: $numlines;
+	-webkit-box-orient: vertical;  
+	overflow: hidden;
+}
+
+
+@mixin commas {
+	span, div {
+		&::after {
+			content: ', ';
+		}
+		&:nth-last-child(1)::after {
+			content: '';
+		}
+	}
+}
+
+.system {
+	letter-spacing: 0.02em;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+

@@ -1,0 +1,2732 @@
+section {
+	margin-bottom: 30px;
+	@include breakpoint(xsm){
+		margin-bottom: 60px;		
+	}
+	@include breakpoint(md){
+		margin-bottom: 100px;		
+	}
+}
+
+
+main > .title {
+	margin-top: 20px;
+}
+
+.title {
+	margin-bottom: 0;
+	a {
+		text-decoration: none;
+	}
+}
+
+@mixin box {
+	border-radius: 5px;
+	padding: 13px;
+}
+
+.featureinvestigation {
+	--highlight: #fff;
+	
+	&__gradient {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		background: linear-gradient(to bottom, #016fba 20%, transparent);
+		@include breakpoint(xsm){
+			display: none;
+		}
+	}
+	&__banner {
+		text-decoration: none;
+		max-height: 440px;
+		display: block;
+		border-radius: 5px;
+		overflow: hidden;
+		position: relative;
+		background-color: #016fba;
+		height: 300px;
+		@include breakpoint(xsm){
+			height: auto;
+		}
+		img {
+
+			position: relative;
+			//top: -25px;
+			z-index: 0;
+			@include imagecover;
+			object-position: left center;
+			@include breakpoint(xsm){
+				top: 0;
+				@include imageblock;
+			}
+			//transform: scale(1.3);
+		}
+	}
+	&__button {
+		margin-top: 1rem;
+		// position: absolute;
+		// right: 20px;
+		// top: 105px;
+		// @include breakpoint(xsm){
+		// 	position: relative;
+		// 	margin-top: 0;
+		// 	right: auto;
+		// 	top: auto;
+		// }
+		span {
+			// display: none;
+			// @include breakpoint(xsm){
+			// 	display: inline;
+			// }
+		}
+	}
+
+	&__logo {
+		img {
+			width: 14rem;
+			@include breakpoint(xsm){
+
+				width: 12rem;
+			}
+			@include breakpoint(sm){
+				width: 15.1rem;
+			}
+			display: block;
+			height: auto;
+		}
+	}
+	&__text {
+		
+		z-index: 2;
+
+		color: var(--highlight);
+		position: absolute;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		z-index: 2;
+		width: 100%;
+		padding: 2.4rem 2.8rem;
+		bottom: 0;
+		top: 0;
+		@include breakpoint(xsm){
+			position: absolute;
+			
+			padding: 2rem 3rem;
+			width: auto;
+		
+		}
+		@include breakpoint(sm){
+			bottom: 1.8rem;
+			padding: 3rem 4.3rem;
+		}
+		@include breakpoint(lg){
+			
+			padding: 4rem 4.3rem;			
+		}
+		
+		h2 {
+			margin: 0;
+			font-weight: 400;
+			letter-spacing: -0.06rem;
+			color: #000;	
+			line-height: 1.15;
+			opacity: 0.8;
+			font-size: 1.4rem;
+			
+
+			@include breakpoint(xsm){
+				margin-top: 2rem;
+				font-size: 2.5vw;
+
+			}
+			@include breakpoint(sm){
+				font-size: 1.6rem;
+			}
+			@include breakpoint(md){
+				margin-top: 0;
+
+				font-size: 1.8rem;
+			}
+		}
+
+		button {
+			background-color: #000;
+			color: #fff;
+			border-radius: 5px;
+			padding: 0.5rem 2.65rem 0.5rem 2.65rem;
+			height: auto;
+
+			letter-spacing: -0.04rem;
+			font-size: 1.2rem;
+			@include breakpoint(xsm){
+				font-size: 2.3vw;
+
+			}
+			@include breakpoint(sm){
+				font-size: 1.4rem;		
+				padding: 0.7rem 3.6rem 0.6rem 3.6rem;
+			}
+			@include breakpoint(md){
+				font-size: 1.5;
+			}
+			cursor: pointer;
+			transition: 100ms;
+			&:hover {
+				background-color: #4f4e4d;
+			}
+			svg {
+				position: relative;
+				top: 2px;
+				width: 16px;
+				margin-left: 2px;
+				@include breakpoint(sm){
+					margin-left: 5px;
+					width: 18px;
+				}
+
+			}
+		}
+
+	}
+}
+
+// .featureinvestigation {
+// 	--highlight: #fff;
+	
+// 	&__gradient {
+// 		position: absolute;
+// 		inset: 0;
+// 		z-index: 1;
+// 		background: linear-gradient(to bottom, #016fba 20%, transparent);
+// 		@include breakpoint(xsm){
+// 			display: none;
+// 		}
+// 	}
+// 	&__banner {
+// 		text-decoration: none;
+// 		max-height: 340px;
+// 		display: block;
+// 		border-radius: 5px;
+// 		overflow: hidden;
+// 		position: relative;
+// 		background-color: #016fba;
+// 		height: 300px;
+// 		@include breakpoint(xsm){
+// 			height: auto;
+// 		}
+// 		img {
+
+// 			position: relative;
+// 			//top: -25px;
+// 			z-index: 0;
+// 			@include imagecover;
+// 			@include breakpoint(xsm){
+// 				top: 0;
+// 				@include imageblock;
+// 			}
+// 			//transform: scale(1.3);
+// 		}
+// 	}
+// 	&__button {
+// 		margin-top: 1rem;
+// 		// position: absolute;
+// 		// right: 20px;
+// 		// top: 105px;
+// 		// @include breakpoint(xsm){
+// 		// 	position: relative;
+// 		// 	margin-top: 0;
+// 		// 	right: auto;
+// 		// 	top: auto;
+// 		// }
+// 		span {
+// 			// display: none;
+// 			// @include breakpoint(xsm){
+// 			// 	display: inline;
+// 			// }
+// 		}
+// 	}
+// 	&__text {
+		
+// 		z-index: 2;
+// 		padding: 20px;
+// 		color: var(--highlight);
+// 		position: absolute;
+// 		display: flex;
+// 		flex-flow: column nowrap;
+// 		justify-content: space-between;
+// 		z-index: 2;
+// 		width: 100%;
+// 		@include breakpoint(xsm){
+// 			position: absolute;
+// 			top: 0;
+// 			bottom: 0;
+// 			width: auto;
+// 			padding: 30px;
+// 		}
+// 		h2, h1 {
+// 			font-weight: 400;
+// 			letter-spacing: -0.03rem;
+
+// 		}
+// 		h1 {
+// 			font-weight: 500;
+			
+// 			margin: 0 0 0.5rem 0;
+// 			font-size: 2.4rem;
+// 			line-height: 1.05;
+// 			@include breakpoint(xsm){
+
+// 				font-size: 4.5vw;	
+// 			}
+// 			@include breakpoint(sm){
+// 				margin: 0 0 1rem 0;
+// 				font-size: 3rem;
+// 			}
+// 			@include breakpoint(md){
+// 				margin-bottom: 0.5rem;
+// 				font-size: 3.4rem;
+// 			}
+// 		}
+// 		h2 {
+// 			margin: 0;
+			
+// 			line-height: 1.2;
+// 			opacity: 0.8;
+// 			font-size: 1.3rem;
+// 			@include breakpoint(xsm){
+// 				font-size: 2.5vw;	
+// 			}
+// 			@include breakpoint(sm){
+// 				font-size: 1.8rem;
+// 			}
+// 			@include breakpoint(md){
+// 				font-size: 2rem;
+// 			}
+// 		}
+
+// 		button {
+// 			background-color: var(--highlight);
+// 			color: #000;
+// 			border-radius: 5px;
+// 			padding: 0.3rem 0.65rem 0.2rem 0.65rem;
+// 			height: auto;
+// 			font-size: 1rem;
+// 			@include breakpoint(sm){
+// 				padding: 0.6rem 1rem 0.5rem 1rem;
+// 			}
+// 			svg {
+// 				position: relative;
+// 				top: 2px;
+// 				width: 16px;
+// 				margin-left: 2px;
+// 				@include breakpoint(sm){
+// 					margin-left: 5px;
+// 					width: 18px;
+// 				}
+
+// 			}
+// 		}
+
+// 	}
+// }
+.gazastatus {
+	opacity: 0;
+	transition: opacity 400ms;
+	--monitored: #ddd;
+	--published: #0474ff;
+	--researched: #aad2ff;
+	--stroke-weight: 2px;
+	--stroke: #000;
+	margin-bottom: 0;
+	border-top: 1px solid #ddd;
+	padding: 20px 0;
+	@include breakpoint(xsm){
+		padding: 20px;	
+	}
+	@include breakpoint(md){
+		padding: 40px;
+	}
+	.ctooltip {
+		text-align: left;
+		line-height: 1.3;
+	}
+	&__note {
+		font-style: italic;
+	    font-size: 13px;
+	    margin: 12px 20px;
+	    color: #8d8d8d;
+	    text-align: center;
+	}
+	&__header {
+
+		height: auto;
+		z-index: 1;
+		position: relative;
+		@include breakpoint(sm){
+			height: 80px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		@include breakpoint(md){
+			height: 90px;
+		}
+		@include breakpoint(lg){
+			height: 70px;
+		}
+		h1 {
+			flex-shrink: 0;
+			margin-right: 60px;
+			@include breakpoint(md){
+				margin-right: 0;
+			}
+		}
+	}
+	&__facts {
+		
+		
+
+		@include breakpoint(xsm){
+			display: flex;
+			align-items: center;			
+		}	
+	}
+	&__fact {
+		//flex: 0 1 260px;
+		text-align: center;
+		padding: 6px 10px 8px 10px;	
+
+		@include breakpoint(md){
+			padding: 8px 20px 12px 20px;
+		}
+	}
+	&__value {
+		font-size: 2.4rem;
+		@include breakpoint(xsm){
+			font-size: 2.1rem;	
+		}
+		
+		@include breakpoint(md){
+			font-size: 2.6rem;
+		}
+		font-weight: 500;
+	}
+	&__label {
+		display: flex;
+		justify-content: center;
+		span {
+			font-size: 0.8rem;
+		}
+		br {
+			display: block;
+			@include breakpoint(md){
+				display: none;
+			}
+		}
+	}
+	&__breakdown {
+		border: var(--stroke-weight) solid var(--stroke);
+		
+		//border-radius: 10px;
+		//overflow: hidden;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+		@include breakpoint(xsm){
+			display: flex;	
+		}
+	}
+
+	&--monitored {
+		background-color: var(--monitored);
+	}
+	&--published {
+		background-color: var(--published);
+		color: #FFF;
+		.incidentpreviews__moreinfo i {
+			color: #FFF;
+		}
+	}
+	&--researched {
+		background-color: var(--researched);
+	}
+	&__join {
+		display: none;
+		@include breakpoint(xsm){
+			display: block;
+		}
+		height: var(--stroke-weight);
+		background-color: var(--stroke);
+		flex: 1 0 25px;
+		
+		@include breakpoint(sm){
+			width: 25px;	
+		}
+		@include breakpoint(md){
+			width: 50px;
+		}
+		//margin-left: 20px;
+	}
+	&__timeline {
+		margin-top: 5px;
+		font-size: 0.7rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+		position: relative;
+		> div {
+			
+		}
+	}
+	&__total {
+		display: none;
+		@include breakpoint(xsm){
+			display: block;
+		}
+	}
+	&__start {
+		line-height: 1;
+		border-left: 1px solid #000;
+		padding-left: 8px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+	&__end {
+		line-height: 1;
+		border-right: 1px solid #000;
+		padding-right: 8px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+	&__chart {
+		
+		margin: 0 0 0 0 !important;
+		padding: 0 !important;
+		display: none !important;
+		@include breakpoint(xsm){
+			display: block !important;	
+		}
+	}
+	&__days {
+		margin: 0 0 0 0 !important;
+		display: flex;
+		align-items: flex-end;
+		> div {
+			padding-right: 1px;
+			flex-grow: 1;
+			height: 200px;
+			display: flex;
+			flex-flow: column;
+			justify-content: flex-end;
+			border-bottom: 1px solid #f2f2f2;
+			&:nth-last-child(1){
+				padding-right: 0;
+			}
+		}
+	}
+	&__activeday {
+		position: absolute;
+		left: 100px;
+		top: 0;
+		background-color: #FFF;
+		box-shadow: 0 0 5px rgba(0,0,0,0.13);
+		width: 130px;
+		overflow: hidden;
+		padding-top: 2px;
+		z-index: 1;
+		border-radius: 3px;
+		display: none;
+	}
+	&__daydate {
+		
+		border-bottom: 1px solid #ddd;
+		> div:nth-child(1){
+			font-weight: 500;	
+		}
+	}
+	&__datevalue {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__datevalue,
+	&__daydate {
+		padding: 1px 10px;
+		
+	}
+	&__day {
+		&:hover {
+			opacity: 0.3;
+		}
+	}
+	
+}
+
+
+.incidentfilters {
+	margin-bottom: 0;
+	--bg-color: #d6dee8;
+	background: var(--bg-color);
+	padding-top: 20px;
+	@include breakpoint(sm){
+		padding-top: 40px;
+	}
+}
+
+
+
+.citations {
+	margin: 0;
+	padding: 20px 0;
+	background-color: #efefef;
+	$self: &;
+	@include breakpoint(xsm){
+		padding: 40px 0 20px 0;
+	}
+	h4 {
+		margin-bottom: 10px;
+		color: #000;
+	}
+	&__all {
+		text-align: right;
+		font-size: 0.8rem;
+		grid-column: 1/-1;
+		
+		a {
+			text-decoration: none;
+			span.linktext {
+				@include linkunderline;
+			}
+		}
+	}
+	&--expanded {
+		#{$self}__inner {
+			display: grid;	
+		}
+		#{$self}__expand {
+			margin-top: 1rem;
+			span::before {
+				content: 'Hide ';
+			}
+		}
+	}
+	&__expand {
+		
+		@include breakpoint(xsm){
+			display: none;	
+		}
+		font-size: 0.9rem;
+		span {
+			&::before {
+				content: 'Show ';
+			}
+			cursor: pointer;
+			@include linkunderline;
+
+		}
+	}
+	&__inner {
+		display: none;
+		@include breakpoint(xsm){
+			display: grid;	
+		}
+		
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		.citation:nth-child(n+7) {
+			display: none;
+		}
+		@include breakpoint(xsm){
+
+			grid-template-columns: repeat(3, minmax(0, 1fr));		
+		}
+		
+		@include breakpoint(sm){
+
+			grid-template-columns: repeat(5, minmax(0, 1fr));	
+			.citation:nth-child(n+6) {
+				display: none;
+			}
+		}
+		@include breakpoint(md){
+			grid-template-columns: repeat(7, minmax(0, 1fr));	
+			.citation:nth-child(n+6) {
+				display: block;
+			}
+		}
+		
+		grid-gap: 12px;
+	
+	}
+}
+
+header.tax_citation {
+	.mobile-page-title {
+		display: none;
+	}
+}
+
+.citationheader {
+	padding: 30px 0 20px 0;
+	@include breakpoint(xsm){
+		padding: 40px 0 40px 0;
+	}
+	@include breakpoint(lg){
+		padding: 60px 0 40px 0;
+	}
+	//background-color: #FFF;
+	margin-bottom: 0;
+	h1 {
+		line-height: 1.3;
+		max-width: 700px;
+	}
+	h4 {
+		margin-bottom: 1rem;
+		color: #000;
+	}
+	&__grid {
+		display: grid;
+		grid-gap: 15px;
+		@include breakpoint(xsm){
+			grid-gap: 0 30px;
+			grid-template-columns: 2fr 1fr;
+		}
+	}
+	&__description {
+		max-width: 700px;
+		p:nth-last-child(1){
+			margin-bottom: 0;
+		}
+	}
+	&__type {
+		grid-column: 1/-1;
+		display: flex;
+		
+		@include breakpoint(xsm){
+			margin-bottom: 1rem;	
+		}
+		div {
+			padding: 3px 14px 1px 14px;
+			font-size: 0.9rem;
+			background-color: #fff;	
+			border-radius: 30px;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.06);
+		}
+		
+	}
+	&__published,
+	&__references {
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+	&__meta {
+		@include flexvertical;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	&__logo {
+		margin-bottom: 1rem;
+		width: 160px;
+
+		&.portrait {
+			height: 80px;
+		}
+		img {
+			overflow: hidden;
+			@include imagecontain;
+			object-position: top left;
+		}
+	}
+	&__link {
+		display: block;
+		padding: 6px 12px 5px 12px;
+		background-color: $blue;
+		text-decoration: none;
+		font-size: 0.9rem;
+		color: #FFF;
+		margin: 1rem 0 0.5rem 0;
+		&:link, &:visited {
+			color: #FFF;
+		}
+		transition: background-color 150ms;
+		span {
+			padding-left: 5px;
+			padding-bottom: 2px;
+		}		
+	}
+}
+
+.citationpreviews {
+	&__grid {
+		display: grid;
+		grid-gap: 15px;
+		@include breakpoint(xsm){
+			grid-gap: 20px;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include breakpoint(sm){
+			grid-template-columns: repeat(4, 1fr);	
+		}
+		
+		
+	}
+	.citation__content {
+		@include breakpoint(sm){
+			padding: 15px;
+		}
+	}
+	.citation--hasthumbnail .citation__title {
+		@include breakpoint(xsm){
+			font-size: 17px;
+		}
+	}
+	.citation__type {
+		@include breakpoint(sm){
+			padding: 17px 15px 12px 15px;
+		}
+		span {
+			@include breakpoint(xsm){
+
+			}
+			@include breakpoint(sm){
+				padding: 5px 8px 4px 8px;
+				font-size: 13px;
+			}
+		}
+	}
+	.citation__org {
+		@include breakpoint(xsm){
+			font-size: 15px;
+		}
+	}
+	.citation__title {
+		@include breakpoint(sm){
+			font-size: 20px;	
+		}
+		@include breakpoint(md){
+			font-size: 22px;
+		}
+
+		
+	}
+	.citation__logo {
+		width: 100px;
+	    height: 70px;
+	}
+}
+
+.citation {
+	font-size: 13px;
+	position: relative;
+	$self: &;
+	background-color: #222;
+	color: #fff;
+	line-height: 1.3;
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+	text-decoration: none;
+	&:link, &:visited {
+		color: #FFF;
+	}
+
+
+	
+
+	&__gradient {
+		@include absolute;
+		bottom: auto;
+		pointer-events: none;
+		height: 70px;
+		background-color: red;
+		display: none;
+
+	}
+	&__image {
+		aspect-ratio: 16/9;
+		position: relative;
+		img {
+			@include imagecover;
+		}
+	}
+	&__logo {
+		padding: 10px;		
+		width: 90px;
+		height: 60px;
+
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		img {
+			@include imagecontain;
+			object-position: top right;
+		}
+	}
+	&--nothumbnail {
+		@include flexvertical;
+		#{$self}__content {
+			flex-grow: 1;
+		}
+	}
+	&--haslogo {
+		#{$self}__title {
+			padding-top: 20px;
+		}
+	}
+	&.citation--hasthumbnail.citation--haslogo {
+		.citation__title {
+			padding-top: 0;
+		}
+	}
+	&--hasthumbnail {
+		#{$self}__type {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		#{$self}__logo {
+			
+		}
+		#{$self}__title {
+			font-size: 13px;
+		}
+
+	}
+	&__title {
+		font-weight: 500;
+		font-size: 16px;
+		flex-grow: 1;
+	}
+	&__org {
+		margin-top: 5px;
+		color: #999;
+	}
+	&__incidents {
+		color: #999;
+
+	}
+	&__type {
+		
+		padding: 8px;
+		span {
+			border-radius: 10px;
+			font-size: 11px;
+			background-color: #FFF;
+			color: #000;
+			font-weight: 500;	
+			padding: 4px 6px 3px 6px;
+		}
+	}
+	&__content {
+		padding: 10px;
+		@include flexvertical;
+	}
+	
+}
+
+// .ukrainereport {
+// 	@include flexvertical;
+// 	align-items: flex-end;
+// 	background-color: #222;
+// 	&__gradient {
+// 		@include absolute;
+// 		background: linear-gradient(to top, #000, transparent);
+// 	}
+// 	&__inner {
+// 		width: 250px;
+// 		margin: 0 auto;
+// 	}
+// 	color: #Fff;
+// 	&__cover {
+		
+// 		display: block;
+// 		position: relative;
+// 		display: block;
+
+// 		h1 {
+// 			line-height: 1.1;
+// 			position: absolute;
+// 			bottom: 0;
+// 			color: #FFF;
+// 			padding: 15px;
+// 		}
+// 		img {
+// 			@include imagecover;
+// 		}
+// 	}
+// 	&__logo {
+// 		position: absolute;
+// 		top: 15px;
+// 		left: 15px;
+// 		width: 60px;
+
+// 	}
+// 	&__link {
+// 		a {
+// 			color: #FFF !important;
+// 		}
+		
+// 		margin-top: 1rem;
+// 		font-size: 14px;
+// 	}
+// }
+
+//00e8894a
+
+.russian-military-in-ukraine .map-section {
+	margin-bottom: 60px;
+}
+
+.gazanote,
+.ukrainenote {
+	text-align: center;	
+	line-height: 1.7;
+	font-size: 0.9rem;
+	&__link {		
+		border-radius: 4px;
+		padding: 6px 8px 6px 8px;
+	}
+}
+
+.gazanote {
+	//display: none;
+	padding: 20px 0;
+	border-top: 1px solid #DDD;
+	@include breakpoint(xsm){
+		padding: 30px 0;
+	}
+	span {
+		margin-right: 5px;
+	}
+	a {
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	&__links {
+		max-width: 800px;
+		margin: 0 auto;
+
+		@include breakpoint(xsm){
+			display: flex;
+			justify-content: space-between;			
+		}
+		> div:nth-child(1) {
+			margin-bottom: 0.5rem;
+			@include breakpoint(xsm){
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__methodology {
+		background-color: #00e8894a;
+	}
+	&__donate {
+		background-color: #ffef97;
+	}
+}
+
+.ukrainenote {
+	margin-bottom: 60px;
+	em {
+		margin-bottom: 6px;
+		display: block;
+		font-style: italic;
+	}
+	&__link {
+		background-color: rgba(0,126,232,0.15);
+	}
+	br {
+		@include breakpoint(xsm){
+			//display: none;
+		}
+	}
+	&__links {
+		span.spacer {
+			padding: 0 5px;
+		}
+		a {
+			
+			@include linkunderline($color: #09458573);
+			
+		}
+	}
+}
+
+.repeattargets {
+	.subject__term {
+		max-height: none;
+	}
+}
+
+.deathsinjuries {
+	margin-top: 60px;
+	$self: &;
+	//background-color: #ddd;
+	//padding: 40px 0;
+	&__term {
+		@include box;
+		background-color: #FFF;
+
+	}
+	&__terms {
+		margin-top: 20px;
+		grid-gap: 20px;
+		display: grid;
+		
+
+		@include breakpoint(xsm){
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));			
+		}
+		@include breakpoint(sm){
+			grid-template-columns: repeat(4, minmax(0, 1fr));	
+		}
+		
+		.subject__gallery {
+			margin-bottom: 1rem;
+		}	
+	}
+	&__intro {
+		display: grid;
+		grid-template-columns: 355px 1fr;
+	}
+	&.subject .subject__incidents p {
+
+		font-size: 14px;
+		color: #000;
+		span {
+			background-color: rgba(0,126,232,0.15);
+			color: #000;
+			padding: 3px 4px 2px 4px;
+			text-transform: lowercase;
+		}
+	
+	}
+}
+
+
+.subject {
+	$self: &;
+	background-color: #ddd;
+	//margin: 0 0 0 0;
+	padding: 40px 0 40px 0;
+	margin-top: 60px;
+	.scroller__controls {
+		margin-bottom: 0;
+	}
+	&__description {
+		@include breakpoint(md){
+			max-width: 50%;
+		}
+	}
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 1rem;
+	}
+	h4 {
+		margin-bottom: 8px;
+		color: rgba(255,255,255,0.7);
+	}
+	.subject__incidents p {
+		font-size: 14px;
+		color: rgba(255,255,255,0.7);
+		span {
+			background-color: rgba(255,255,255,0.2);
+			color: #FFF;
+			padding: 3px 4px 2px 4px;
+			text-transform: lowercase;
+		}
+	}
+	.full {
+		margin-bottom: 1rem;
+		@include breakpoint(sm){
+
+			display: grid;
+			//grid-template-columns: repeat(4, 1fr);
+			
+
+		}
+		p {
+			grid-column: span 2;
+		}
+
+	}
+	&__gallerycontrols {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 0 5px 0;
+		button {
+			border: none;
+			width: 6px;
+			height: 6px;
+			background-color: rgba(255,255,255,0.4);
+			border-radius: 50%;
+			&.tns-nav-active {
+				background-color: #FFF;
+			}
+		}
+	}
+	.slider__controls {
+		display: flex;
+		div {
+			padding: 0 4px;
+		}
+
+	}
+	.slider__autoplay {
+		padding: 0 0 0 8px;
+	}
+	.scroller {
+		#{$self}__term {
+			
+			margin-right: 1rem;
+		}
+	}
+	&__term {
+		p {
+			margin-bottom: 0;
+			font-size: 14px;
+		}
+		max-height: 460px;
+		background-color: #222;
+		color: #FFF;
+		overflow: hidden;
+		display: flex;
+		flex-flow: column nowrap;
+		@include box;
+		// @include breakpoint(md){
+		// 	max-width: 340px;
+		// }
+		width: 300px;
+		@include breakpoint(xsm){
+			width: 330px;
+		}
+		h1 {
+			line-height: 1.2;
+			font-size: 1.2rem;
+			font-family: 'Atlas-Grotesk-Web', 'Noto Kufi Arabic', sans-serif;
+			span {
+				display: block;
+				color: #999;
+				font-weight: 500;
+			}
+		}
+		hr {
+			border: none;
+			border-bottom: 1px solid #444;
+		}
+		&.conflict_observations {
+			background-color: #1f5b5b;
+			.subject__civcaslink a:link {
+				background-color: green;
+			}
+		}
+		&.conflict_casualties {
+			background-color: #1c3c5e;
+			.subject__civcaslink a:link {
+				background-color: tan;
+			}
+		}
+	}
+	&__nextpause {
+		display: flex;
+	}
+	&__terms {
+
+		padding: 2rem 0;
+
+		display: grid;
+
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-gap: 20px;
+		
+	}
+	&__gallery {
+		width: 100%;
+		flex-grow: 1;
+	}
+	&__civcaslink {
+		margin-top: 1rem;
+		display: flex;
+		justify-content: center;
+		color: #FFF;
+		a:visited {
+			color: inherit;
+		}
+		a:link {
+			color: inherit;			
+
+			padding: 6px 10px 5px 10px;
+			background-color: $russian-military-in-ukraine;
+			text-decoration: none;
+			font-size: 15px;
+		}
+	}
+	&__ids {
+		--border-color: #666;
+
+		letter-spacing: 0;
+		
+		font-size: 13px;
+		color: rgba(255,255,255,0.6);
+		//@include commas;
+		span {
+
+			&::after {
+				content: ', ';
+			}
+			&:nth-last-child(1)::after {
+				content: '';
+			}
+		}
+		a {
+			color: inherit !important;
+			font-feature-settings: 'zero';
+			font-family: 'Atlas-Typewriter-Web';
+			text-decoration: none;
+			@include linkunderline;
+			&:hover {
+				color: #777 !important;
+			}
+		//	padding: 4px 6px 2px 6px;
+
+		}
+
+	}
+	&__image {
+		height: 200px;
+		background-color: #ddd;
+		img {
+			@include imagecover;
+		}
+		//position: absolute;
+	}
+	&__profile {
+		// img {
+		// 	@include imageblock;
+		// }
+		margin-bottom: 1rem;
+	}
+	&__caption {
+		font-size: 12px;
+		margin-top: 10px;
+		color: rgba(255,255,255,0.6);
+		@include clamp(2);
+	}
+	button {
+		display: inline;
+		padding: 0;
+	}
+	
+}
+
+main > #donate {
+
+	text-align: center;
+
+	a {
+		background-color: #6b9aff;
+		color: #FFF;
+		font-weight: 500;
+		display: block;
+		font-size: 16px;
+		line-height: 1.3;
+		@include breakpoint(xsm){
+			font-size: 18px;
+		}
+		@include breakpoint(sm){
+			font-size: 24px;	
+		}
+		
+		text-decoration: none;
+		padding: 15px;
+		&:hover {
+			background-color: #4d85ff;
+		}
+	}
+	span {
+		text-decoration: underline;
+	}
+}
+
+.home-conflict-data {
+
+}
+
+.home-osmp {
+	.visualfeatured {
+		background-color: #cad7de;
+		h4, p, h1 {
+			color: #222;
+		}
+	}
+}
+.home-conflict-data,
+.home-osmp {
+	margin-top: 0;
+	margin-bottom: 60px;
+	.conflictdata__item {	
+		min-height: 400px;
+	}
+	.conflictdatafeatured .conflictdata__item {
+		grid-template-columns: 1fr 1fr;
+		@include breakpoint(xsm){
+			grid-gap: 40px;
+		}
+	}
+	.conflictdatafeatured__inner {
+		margin: 0;
+		padding: 0;
+		.conflictdata__info {
+			display: flex;
+			justify-content: center;
+			flex-flow: column nowrap;
+			padding-right: 60px;
+
+		}
+	}
+	.conflictdata__excerpt {
+		max-width: 650px;
+	}
+
+}
+
+body.all-belligerents-in-libya-2011-arabic {
+	section#conflict-events {
+		.full {
+			padding-left: 0;
+			padding-right: 15px;
+		}
+		.conflict-events .gradient {
+			left: 0;
+			right: auto;
+			text-align: left;
+			background: linear-gradient(to left, transparent 0%, #FFF 80%);
+		}
+		.conflict-events {
+			direction: rtl;
+		}
+		.conflict-event-inner {
+			padding-right: 0;
+			padding-left: 16vw;
+		}
+		
+		.fa-arrow-circle-right {
+			display: none;
+		}
+		.fa-arrow-circle-left {
+			display: block;
+		}
+		.conflict-events .event {
+			margin: 0 0 0 10px;
+			@include breakpoint(xsm){
+				margin: 0 0 0 20px;
+			}
+		}
+
+		
+	}
+
+	
+}
+
+body.conflict.single {
+	.research .langswitcher {
+		display: none;
+	}
+}
+
+body.coalition-in-iraq-and-syria,
+body.coalition-in-iraq-and-syria-arabic,
+body.airwars-homepage,
+body.turkish-military-in-iraq-and-syria,
+body.israeli-military-in-iraq-syria,
+body.israeli-military-in-iraq-syria-arabic,
+body.single.ar {
+	section.stats, section.methodology {
+		.stats .stat, .actions .action {
+			margin-bottom: 20px;		 
+			border-bottom: 2px solid $bg-color;
+			h1 {
+				text-align: center;
+			}
+			flex: 1 0 100%;
+
+			@include breakpoint(xsm){
+				border-bottom: none;
+				margin-bottom: 0;
+				flex: 0 1 calc(50% - 10px);	
+			}
+			@include breakpoint(sm){
+				flex: 0 1 calc(25% - 15px);	
+			}
+			
+		}
+	}
+}
+
+.langswitcher {
+	display: flex;
+	justify-content: center;
+	padding: 0.6rem 0;
+	background-color: #f2f2f2;
+	span {
+		display: block;
+		margin-right: 10px;
+		padding-top: 4px;
+	}
+	font-size: 18px;
+	color: #333;
+	a:link, a:visited {
+		text-decoration: none;
+		background-color: #efdeea;
+		border-radius: 3px;
+		padding: 4px 8px 1px 8px;
+		margin-right: 5px;
+		display: block;
+		color: #723362;
+		&:hover {
+			background: #e1cfdc;
+		}
+		&:nth-of-type(2) {
+			font-family: 'Noto Kufi Arabic', sans-serif;
+			padding: 0px 8px 5px 8px;
+		}
+		&.active {
+			background-color: #a0568d;
+			color: #efdeea;
+		}
+	}
+}
+
+body.no-webgl section#map-timeline-container {
+	display: none;
+}
+
+#map-timeline-container {
+
+}
+
+body.israeli-military-in-syria-the-gaza-strip,
+body.israeli-military-in-syria-the-gaza-strip-arabic,
+body.israeli-military-in-syria-the-gaza-strip-hebrew {
+	#posts {
+		//`background: linear-gradient(90deg, #ffffff 50%, #ededed 50%);
+
+	}
+	article.type-conflict_data {
+		border-top: 1px solid #ddd;
+	}
+	section.gradings-breakdown {
+		background-color: transparent;
+		.top, .gradings {
+			background-color: #FFF;
+		}
+	}
+}
+
+
+section#conflict-events {
+	.full {
+		padding-right: 0;	
+
+	}
+	
+	.conflict-events {
+		position: relative;
+		.fa-arrow-circle-left {
+			display: none;
+		}
+		.conflict-event-inner {
+			white-space: nowrap;
+			overflow-x: auto;
+			padding-right: 16vw;
+		}
+		//display: flex;
+		.date {
+			font-weight: 500;
+		}
+		.gradient {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(to right, transparent 0%, #FFF 80%);
+			z-index: 1;
+			display: none;
+			@include breakpoint(xsm){
+				display: flex;
+			}
+			width: 300px;
+			@include breakpoint(md){
+				width: 300px;				
+			}
+			text-align: right;
+			font-size: 34px;
+			justify-content: center;
+			flex-flow: column nowrap;
+		}
+		.image {
+			height: 180px;
+			@include breakpoint(md){
+				height: 220px;				
+			}
+			overflow-x: hidden;
+			margin-bottom: 1rem;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		p {
+			font-size: 12px;
+			@include breakpoint(xsm){
+				font-size: 14px;
+			}
+		}
+		color: $dark-blue;
+		.quote {
+			font-weight: 500;
+			margin: 1rem 0 0 0;
+			p {
+				font-weight: normal;
+				margin: 1rem 0 0 0;
+				@include breakpoint(xsm){
+					margin: 1rem 0 0 1rem;					
+				}
+			}
+		}
+
+		.date {
+			color: $dark-blue;
+			margin-bottom: 10px;
+		}
+		.text {
+			font-size: 14px;
+		}
+		.date, .text, .quote {
+			padding: 0 10px;
+			@include breakpoint(xsm){
+				padding: 0 15px;				
+			}
+		}
+		.event {
+			font-size: 14px;
+			margin-right: 10px;
+			@include breakpoint(xsm){
+				font-size: 16px;
+				margin-right: 20px;
+			}
+			
+			vertical-align: top;
+			white-space: normal;
+			display: inline-block;
+			
+			background-color: #f2f2f2;
+//			border: 1px solid #ddd;
+			border-radius: 4px;
+
+			padding: 10px 0;
+			@include breakpoint(xsm){
+				padding: 15px 0;				
+			}
+			width: 80%;
+			@include breakpoint(xsm){
+				width: 300px;				
+			}
+			@include breakpoint(md){
+				width: 340px;				
+			}
+			img {
+				display: block;
+			}
+		}
+	}
+}
+
+section.methodology, section.stats {
+	.stats, .actions {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+
+		@include breakpoint(sm){
+			flex-flow: row nowrap;
+		}
+		.action, .stat {
+			h1 {
+				text-align: center;
+			}
+			flex: 1 0 100%;
+			@include breakpoint(xsm){
+				flex: 0 1 calc(33.3% - 13.3px);	
+			}
+			
+		}
+	}
+}
+
+
+section.methodology {
+	margin-bottom: 20px;
+	p {		
+		@include breakpoint(sm){
+			font-size: 90%;	
+		}
+	}
+}
+
+section.intro {
+	margin: 30px 0 50px 0 !important;
+	p {
+		//@include header;
+		font-size: 18px;
+		@include breakpoint(md){
+
+			font-size: 20px;
+		}
+		font-weight: normal;
+		a {
+			@include link-underline($thickness: 1.5px, $color: #000);
+		}
+	}
+	.full {
+		@include breakpoint(sm){			
+			column-gap: 1rem;
+			column-count: 2;
+			column-fill: balance;	
+		}
+	}
+}
+
+section.tweets {
+	margin-bottom: 30px;
+	padding: 60px 0;
+	.full {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+
+		@include breakpoint(sm){
+			flex-flow: row nowrap;			
+		}
+	}
+	.tweet {
+
+		margin-bottom: 20px;
+		width: 100%;
+		flex: 1 0 100%;
+		max-width: none;
+		@include breakpoint(xsm){
+			max-width: calc(50% - 10px);
+			width: calc(50% - 10px);
+			flex: 0 1 calc(50% - 10px);
+		}
+
+		@include breakpoint(sm){
+			margin-bottom: 0;
+			max-width: calc(25% - 15px);
+			width: calc(25% - 15px);
+			flex: 0 1 calc(25% - 15px);
+		}
+
+		position: relative;
+	}
+	twitter-widget {
+
+		width: 100% !important;
+		min-width: 0 !important;
+		margin-right: 0 !important;
+		max-width: none !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+}
+
+
+.incident {
+	.summary {
+		span {
+			display: block;
+		}
+	}
+	.code {
+		a {
+			text-decoration: none;
+		}
+		i {
+			position: relative;
+			top: -3px;
+			font-size: 70%;
+		}
+	}
+}
+
+.conflicting-truth {
+	background: #383838;
+	padding: 20px 0 10px 0;
+	margin: 40px 0 0 0;
+	@include breakpoint(sm){
+		margin: 80px 0 0 0;
+		padding: 40px 0;	
+	}
+	color: #FFF;
+	
+	a:link, a:visited {
+		color: #ffe200;
+	}
+	p a {
+		display: inline-block;
+		margin-top: 0.5rem;
+		padding: 8px 10px;
+		text-decoration: none;
+		border: 1px solid #ffe200;
+		&:hover {
+			background: transparentize(#ffe200, 0.9);
+
+		}
+	}
+	.full {
+		display: block;
+		@include breakpoint(xsm){
+			align-items: flex-start;
+			display: flex;	
+			justify-content: space-between;
+		}
+		
+		p, h2 {
+			margin-bottom: 1rem;
+		}
+		h2 span {
+			font-weight: 400;
+			color: #ffe200;
+		}
+		> div {
+			flex: 0 1 calc(50% - 10px);
+			@include breakpoint(sm){
+				flex: 0 1 calc(50% - 20px);
+			}
+		}
+		.text {
+			margin-top: 1rem;
+			@include breakpoint(xsm){
+				margin-top: 0;
+			}
+		}
+		h1 {
+			font-size: 32px;
+		}
+		.image {
+			background: #000;
+			img, video {
+				width: 100%;
+				box-shadow: 0 0 20px #000;
+			}
+		}
+	}
+}
+
+.content.named-victim {
+	margin-top: 40px;
+	display: none;
+	.title {
+		h1 {
+			font-weight: 400;
+		}
+	}
+	.full {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	h2 {
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+	}
+	.victim {
+		display: block;
+		justify-content: space-between;
+		
+		flex-flow: row wrap;
+		@include breakpoint(xsm){
+			display: flex;
+		}
+		@include breakpoint(sm){
+			flex-flow: row nowrap;
+		}
+		.victim-image {
+			background-position: center;
+			background-size: cover;
+			height: 250px;
+
+		}
+		h1 {
+			line-height: 1.25;
+			span {
+				font-weight: 500;
+				text-decoration: underline;
+			}
+		}
+		.incident {
+
+			flex: 0 1 calc(25% - 13.3px);
+			@include breakpoint(sm){
+				flex: 0 1 calc(25% - 13.3px);				
+			}
+		}
+		.image {
+			flex: 0 1 calc(35% - 13.3px);
+			@include breakpoint(sm){
+				flex: 0 1 calc(25% - 13.3px);
+			}
+			
+			margin-bottom: 20px;
+			@include breakpoint(xsm){
+				margin-bottom: 0;
+			}
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+		.description {
+			
+			flex: 0 1 calc(40% - 13.3px);
+			@include breakpoint(sm){
+				flex: 0 1 calc(50% - 10px);
+			}
+			margin-bottom: 20px;
+			@include breakpoint(xsm){
+				margin-bottom: 0;
+			}			
+		}
+	}
+}
+
+body.conflict.single {
+	section.stats {
+		margin-top: 10px;
+		margin-bottom: 30px;
+	}
+	// .langswitcher {
+	// 	display: none;
+	// }
+}
+
+section.stats, #selected-features .stats {
+	.length_of_campaign,
+	.battle_of_kharkiv {
+		.value {
+			max-width: 230px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+		}
+		.value > span {
+			padding: 0 18px;
+			position: relative;
+			display: block;
+			span {
+				display: block;
+			}	
+		}	
+		.date-label {
+			position: relative;
+			top: -12px;
+			font-weight: normal;
+			font-size: 16px;
+			
+		}
+	}
+	
+	.date-label {
+		font-size: 14px;
+	}
+	.date-value {
+
+	}
+	.stat {
+		display: block;
+		background-color: $bg-color;
+		background-color: $dark-blue;
+		text-align: center;
+		margin-bottom: 15px;
+		@include breakpoint(xsm){
+			margin-bottom: 20px;
+		}
+		padding: 20px;
+		color: #FFF;
+		text-decoration: none;
+		.label {
+			max-width: none;
+			@include breakpoint(md){
+				max-width: 80%;
+			}
+			margin: 0 auto;
+		}
+		.value {
+			font-weight: bold;
+			font-size: 50px;
+			position: relative;
+		}
+		.stat-note {
+			font-size: 0.8em;
+			opacity: 0.7;
+		}
+	}
+}
+
+
+// section.stats.conflicts {
+// 	margin-top: 30px;
+	
+// 	.stat {
+// 		a {
+// 			display: block;
+// 			height: 100%;
+
+// 		}
+// 		// border: 1px solid #FFF;
+// 		&:hover {
+// 			background-color: #f5f5f5;
+// 			.image h2 i {
+// 				display: block;
+// 			}
+// 		}
+// 		font-feature-settings: 'tnum';
+// 		text-align: left;
+// 		padding: 0;
+
+		
+// 		.summary {
+// 			display: none;
+
+// 		}		
+// 	}
+// }
+
+
+
+// body.conflict section.stats {
+
+
+// 	.stats {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		flex-flow: row wrap;	
+// 	}
+// }
+
+section .full > .title {
+	flex: 1 0 100%;
+	margin-bottom: 10px;
+}
+
+section.news.reports {
+	background-color: #383838;
+	color: #FFF;
+
+	a:link, a:visited {
+		color: #FFF;
+		text-decoration: none;
+	}
+	.author-date {
+		color: #777;
+	//	line-height: 1.35;
+	}
+
+	// @include breakpoint(xsm){
+	// 	margin-bottom: 20px;
+	// 	flex: 0 1 calc(50% - 10px);
+	// }
+
+	.reports-preview, .conflict-data-preview {
+		display: block;
+		.title {
+			//display: none;
+			h1 {
+				line-height: 1.2;
+			}
+		}
+		.author-date {
+			//display: none;
+			color: #a7a7a7;
+		}
+		&:nth-child(3) {
+			.title {
+				//display: block;
+			}
+			.image {
+				background-repeat: no-repeat;			
+				background-position: center;
+				background-size: contain;
+
+				background-color: #d8d8d8;
+			}
+
+			
+		}
+	}
+	@include breakpoint(xsm){
+		.reports-preview:nth-child(3) {
+			display: none;
+		}
+	}
+	@include breakpoint(sm){
+		.reports-preview:nth-child(3) {
+			display: block;
+		}
+	}
+
+	.full > .title {
+		display: flex;
+		justify-content: space-between;
+		h2 {
+			flex: 0 1 calc(33.3% - 13.3px);
+		}
+	}
+
+}
+
+section.research {
+	color: #FFF;
+	background-color: #ddd;
+	padding: 30px 0px;
+	margin-bottom: 0;
+	@include breakpoint(xsm){
+		padding: 40px 0;	
+	}
+	.researchgrid {
+
+		margin-top: 1.5rem;
+		padding: 0;
+		
+		grid-gap: 20px;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);	
+		@include breakpoint(xsm){
+			
+			grid-template-columns: repeat(2, 1fr);	
+		}
+		@include breakpoint(sm){
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
+	}
+	.panel {
+
+	}
+}
+
+section.news {
+	color: #FFF;
+	background-color: #000;
+	padding: 30px 0 40px 0;
+	margin-bottom: 0;
+	.full {
+
+		justify-content: space-between;
+		display: flex;
+		flex-flow: row wrap;
+		&::after {
+			content: "";
+			flex: 0 1 calc(33.3% - 13.3px);
+		}
+	}
+	article > a {
+		display: block;
+	}
+	article {
+		display: none;
+		background-color: transparent;
+	}
+	article:nth-child(-n+7) {
+		display: block;
+		margin-bottom: 15px;
+		flex: 1 0 100%;
+		@include breakpoint(xsm){
+			margin-bottom: 20px;
+			flex: 0 1 calc(50% - 10px);
+		}
+
+		@include breakpoint(sm){
+			flex: 0 1 calc(33.3% - 13.3px);
+		}
+	}
+	.title {
+		margin-bottom: 1rem;
+	}
+	.author-date {
+		color: #999;
+		line-height: 1.35;
+	}
+	.image {
+		background-size: cover;
+		background-position: center;
+		height: 250px;
+		margin-bottom: 1rem;
+	}
+	a:link, a:visited {
+		color: #FFF;
+		text-decoration: none;
+	}
+}
+
+
+section.title.conflicts {
+	background-color: $bg-color;
+	padding: 30px 0 20px 0;
+	.title {
+		margin-bottom: 0;
+	}
+	h1 {
+		margin-bottom: 0;
+	}
+}
+
+
+
+section.preview {
+	background: $bg-color;
+	padding-bottom: 40px;
+	margin-bottom: 0;
+	@include breakpoint(xsm){
+		padding-bottom: 80px;		
+	}
+	.civcas .image {
+		height: 180px;
+		background-position: center bottom;
+
+		background-size: cover;
+		position: relative;
+		color: #FFF;
+		h2 {
+			position: absolute;
+			top: 13px;
+			text-shadow: 0 0 5px rgba(0,0,0,0.3);
+			a {
+				text-decoration: none;
+			}
+			bottom: 0;
+			right: 0;
+			left: 13px;
+
+			i {
+				display: none;
+				position: absolute;
+				font-size: 90%;
+				right: 13px;					
+				bottom: 10px;
+
+			}
+		}
+	}
+
+	.civcas {
+		.meta-block {
+			padding-right: 0;
+		}
+	}
+	.conflicts {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+
+		.conflict[data-conflict-id='41465']{
+
+			// h1 {
+			// 	color: #364048;
+			// 	text-shadow: none;
+			// }
+			.image {
+				background-position: center 10%;
+			}
+		}
+		.conflict[data-conflict-id='41466']{
+			h1 {
+				// color: #3c3b3b;
+			}
+			.image {
+				background-position: center bottom;
+			}
+		}
+		.conflict[data-conflict-id='67823']{
+			h1{
+				color: #312c2c;
+			}
+			.image {
+				background-position: center top;
+			}
+		}
+		.conflict[data-conflict-id='41467']{
+			.image {
+				background-position: center top;
+			}
+		}
+		&::after {
+			content: "";
+			flex: 0 1 calc(33.3% - 20px);	
+		}
+		&.quads .conflict {
+			@include breakpoint(sm){
+				flex: 0 1 calc(33.3% - 20px);	
+				&:nth-child(1), &:nth-child(2), &:nth-child(3){
+					margin: 0 0 20px 0;
+				}	
+			}
+			
+		}
+		.conflict {
+
+			margin-bottom: 15px;
+			flex: 1 0 100%;
+			@include breakpoint(xsm){
+				margin-bottom: 20px;
+				flex: 0 1 calc(50% - 10px);
+			}
+
+
+			@include breakpoint(sm){
+				//flex: 0 1 calc(25% - 15px);	
+				flex: 0 1 calc(33.3% - 13.3px);	
+				&:nth-child(1), &:nth-child(2), &:nth-child(3){
+					margin: 0 0 20px 0;
+				}
+			}
+			
+			@include breakpoint(md){
+				
+			}
+			background-color: transparent;
+			background-color: $bg-color;
+			color: #000;
+			text-align: left;
+
+			a {
+				height: 100%;
+				display: block;
+				background-color: #FFF;
+				cursor: pointer;
+				position: relative;
+				box-shadow: 0 0 5px rgba(0,0,0,0.05);
+			}
+			i {
+				position: absolute;
+				right: 12px;
+				bottom: 10px;
+				color: $grey;
+				font-size: 15px;
+			}
+			.incident {
+				padding: 15px 12px 0 12px;
+				@include breakpoint(md){
+					padding: 15px 15px 0 15px;
+				}
+				border-top: none;
+			}
+
+			h1 {
+				line-height: 1.15;
+				letter-spacing: 0;
+				text-align: left;
+				padding: 15px 12px 0 12px;
+				@include breakpoint(md){
+					padding: 15px 15px 0 15px;
+				}
+			}
+			
+			a:link {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+body.us-forces-in-yemen {
+	section.gradings-breakdown:not(.presidency) {
+		.content {
+			padding: 0 20px;
+		}
+		.full {
+			border: 9px solid #ffc6c2;
+			border-radius: 20px;
+
+			padding: 0;
+			overflow: hidden;
+		}
+		.yemennote {
+			font-size: 14px;
+			text-align: center;
+			background-color: #ffc6c2;
+			padding: 15px 15px 5px 15px;
+			color: #680000;
+		}
+		.top {
+
+			
+		}
+	}
+}
+
+section.gradings-breakdown {
+	margin-bottom: 60px;
+	@include breakpoint(md){
+		margin-bottom: 140px;
+	}
+	background-color: #FFF;
+	.note {
+
+		color: $grey;
+		font-size: 13px;
+		
+	}
+	&.presidency {
+		margin-bottom: 4rem;
+		.top {
+			display: none;
+		}
+	} 
+	span.statistic {
+		padding: 4px 3px 2px 3px;
+		background-color: $bg-color;
+	}
+	.total span.statistic {
+		background-color: #d6d6d6;
+	}
+
+	.grading-value {
+		font-weight: bold;
+	}
+
+	span.grading {
+		font-weight: 500;
+	}
+
+	.gradings .grading {
+		font-weight: bold;
+	}
+
+	.full > p.note {
+		margin-top: 20px;
+		i {
+			font-size: 80%;
+			position: relative;
+			top: -1px;
+		}
+	}
+	
+
+	.tooltip-content {
+		
+		> span:not(.grade):nth-child(1) {
+			margin-bottom: 5px;
+			display: block;
+		}
+	}
+
+	.presidency-date {
+		opacity: 0.4;
+		//font-size: 0.7em;
+	}
+
+	span.value {
+		font-weight: bold;
+	}
+
+	.total {
+		.grading, .grading-value {
+			font-weight: 500;
+
+		}
+
+	}
+	.top {
+		padding: 0;
+		text-align: center;
+		display: block;
+		justify-content: space-between;
+
+		@include breakpoint(xsm){
+			display: flex;
+		}
+		h3 {
+			font-size: 25px;
+			font-weight: 500;
+			line-height: 1.2;
+			@include breakpoint(xsm){
+				font-size: 27px;				
+			}
+		}
+
+		.victim-breakdown {
+			text-align: left;
+			flex-flow: row wrap;
+			height: auto;
+			@include breakpoint(xsm){
+				height: 150px;
+			}
+
+			> div {
+				flex: 0 1 50%;
+				display: flex;
+				border-top: 1px solid $bg-color;
+				padding: 3px 0;
+				align-items: baseline;
+			}
+			span {
+				display: block;
+				flex: 0 1 50%;
+				&.victim-value {
+					margin-right: 5px;
+					font-size: 18px;
+					@include breakpoint(xsm){
+						font-size: 22px;
+					}
+					font-weight: 500;
+					text-align: right;
+				}
+				&.type {
+					margin-left: 5px;
+				}
+			}
+		}
+		> div {
+			flex: 0 1 calc(50% - 10px);
+			padding: 15px 0 10px 0;
+			border: 2px solid $bg-color;
+			border-right: none;
+			border-left: none;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: space-between;
+			@include breakpoint(xsm){
+				border: 2px solid $bg-color;
+				padding: 20px 20px 10px 20px;	
+			}
+			&.airwars {
+				border-top: none;
+				@include breakpoint(xsm){
+					border: 2px solid $bg-color;
+				}
+			}
+			&.belligerent {
+				position: relative;
+				border-top: none;
+				margin-top: 10px;
+				border-bottom: none;
+				@include breakpoint(xsm){
+					margin-top: 0;
+					border: 2px solid $bg-color;
+				}
+				p.note {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+				}
+				.victim-breakdown {
+
+					div {
+						justify-content: center;
+
+						span {
+							text-align: left;
+							flex: none;
+							
+						}
+					}
+				}
+			}
+		}
+
+		.value {
+			font-size: 40px;
+			@include breakpoint(xsm){
+				font-size: 50px;
+			}
+			font-weight: bold;
+			letter-spacing: -0.02em;
+		}
+		.note {
+			i {
+				font-size: 65%;
+				position: relative;
+				top: -2px;
+			}
+		}
+	}
+	.gradings {
+		display: block;
+		justify-content: space-between;
+		margin-top: 20px;
+		@include breakpoint(xsm){
+			display: flex;
+		}
+		i {
+			color: $grey;
+		}
+		.total {
+			background-color: $bg-color;
+		}
+
+		flex-flow: row wrap;
+		@include breakpoint(sm){
+			flex-flow: row nowrap;
+		}
+
+		h1 {
+			font-size: 22px;
+			@include breakpoint(sm){
+				font-size: 17px;	
+			}
+			
+			@include breakpoint(md){
+				font-size: 22px;
+			}
+			> span:nth-last-child(1) {
+				margin-top: 5px;
+				display: block;
+			}
+		}
+
+		border-bottom: 2px solid $bg-color;
+		@include breakpoint(sm){
+			border-bottom: none;
+		}
+		> div {
+			border: 2px solid $bg-color;
+			padding: 15px 8px 15px 15px;
+			border-right: none;
+			flex: 1 1 50%;
+			border-bottom: none;
+			border-right: 2px solid $bg-color;
+			@include breakpoint(xsm){
+				border-right: none;
+			}
+			@include breakpoint(sm){
+				border-bottom: 2px solid $bg-color;
+				flex: 0 1 20%;	
+			}
+
+			&.total {
+				flex: 1 0 100%;
+				@include breakpoint(sm){
+					flex: 0 1 20%;		
+				}
+			}
+			&.weak {
+				border-right: 2px solid $bg-color;
+				@include breakpoint(sm){
+					border-right: none;
+				}
+			}
+			&.discounted {
+				border-right: 2px solid $bg-color;
+			}
+		}
+
+		> div {
+			.tooltip {
+				color: #000;
+			}
+		}
+		h1 {
+			a:link, a:visited {
+				display: inline-block;
+				margin-bottom: 2px;
+				cursor: pointer;
+				text-decoration: none;
+				border-bottom: 2px solid #000;
+			}
+		}
+		.confirmed-fair {
+			h1 {
+				color: darken($confirmed-color, 10%);
+				span.grading {
+					display: inline-block;
+					padding-bottom: 2px;
+					.confirmed-label {
+						border-bottom: 2px solid darken($confirmed-color, 10%);	
+					}
+					.fair-label {
+						text-transform: capitalize;
+						border-bottom: 2px solid darken($fair-color, 15%);		
+					}
+					
+				}
+				a:link, a:visited {
+					color: darken($confirmed-color, 10%);					
+					border-bottom: none;
+				}
+				.fair-label {
+					color: darken($fair-color, 15%);
+				}
+			}
+		}
+
+		.weak {
+			h1 {
+				color: darken($weak-color, 5%);
+				a:link, a:visited {
+					color: darken($weak-color, 5%);					
+					border-bottom: 2px solid darken($weak-color, 5%);
+				}
+			}
+		}
+
+		.contested {
+			h1 {
+				color: darken($contested-color, 3%);
+				a:link, a:visited {
+					color: darken($contested-color, 3%);					
+					border-bottom: 2px solid darken($contested-color, 3%);
+				}
+			}
+		}
+
+		.discounted {
+			h1 {
+				color: $discounted-color;
+				a:link, a:visited {
+					color: $discounted-color;					
+					border-bottom: 2px solid $discounted-color;
+				}
+			}
+		}
+
+		h3 {
+			margin-bottom: 0.8rem;
+		}
+
+		h3.value {
+			span {
+				font-weight: bold;
+			}
+		}
+		h3.grading {
+			margin-bottom: 0.2em;
+			font-weight: 400;
+		}
+	}
+}
+
+
+
+
+
+
+
+section.test {
+	display: none;
+	.full {
+		display: flex;
+		justify-content: space-between;
+		> div {
+			flex: 0 1 50%;
+
+			border: 1px solid #000;
+		}
+	}
+}

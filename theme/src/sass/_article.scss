@@ -1,0 +1,257 @@
+$info-main-block-paddings: 20px 20px 0 10px, 20px 20px 0 0, 20px 20px 0 0, 20px 30px 0 0;
+@function infoMainBlockPadding($size){
+	@return nth($info-main-block-paddings, index($breakpoints, $size));
+}
+
+
+article {
+	width: 100%;
+	background-color: #FFF;
+	margin-bottom: 40px;
+	max-width: 100%;
+	//overflow: hidden;
+	.content {
+		display: flex;
+		flex-flow: row wrap;
+		@include breakpoint(xsm){
+			flex-flow: row nowrap;
+		}
+	}
+}
+
+div.closed {
+	div, ul {
+		display: none;
+	}
+}
+
+.meta-block {			
+	flex: 0 1 50%;		
+	padding-right: 5px;
+	@include secondary-text;
+	margin-bottom: 12px;
+	@include breakpoint(sm){
+		margin-bottom: 15px;	
+	}
+	h4 {
+		margin-bottom: 2px;
+		@include breakpoint(xsm){
+			margin-bottom: 0;
+		}
+	}
+	&.postcitations {
+		flex: 0 1 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 0 15px;
+		@include breakpoint(xsm){
+			display: block;
+			flex: 0 1 50%;
+		}
+		h4 {
+			margin-bottom: 5px;
+			grid-column: 1/-1;
+		}
+		.citation {
+			display: block;
+			@include breakpoint(xsm){
+				width: 96%;
+			}
+			margin-bottom: 12px;
+		}
+	}
+	&.permalink {
+		i {
+			color: $grey;
+			font-size: 12px;
+			position: relative;
+			left: 1px;
+
+		}
+		a:link, a:visited {
+			color: $grey;
+			
+			text-decoration: underline;
+			@include breakpoint(xsm){
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+		}
+
+	}
+	&.location {
+		font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web', sans-serif;
+	}
+	&.code {
+
+		a {
+			color: $blue;	
+		}
+		&.current h4 {
+			display: block;
+			@include breakpoint(xsm){
+				display: none;
+			}
+		}
+		//flex: 1 0 100%;
+		color: $blue;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 1.3;
+		@include breakpoint(xsm){
+			font-size: 22px;	
+		}
+		span {
+			letter-spacing: 0;
+			font-feature-settings: 'zero';
+			font-family: 'Atlas-Typewriter-Web';	
+		}
+		
+
+	}
+	&.previous {		
+		span {
+			letter-spacing: 0;
+			font-feature-settings: 'zero';
+			font-family: 'Atlas-Typewriter-Web';
+		}
+	}
+}
+
+article .info-left {
+	padding: 15px 15px 20px 15px;
+
+	@include breakpoint(xsm){
+		padding: 20px 20px 10px 20px;
+	}
+
+	display: flex;
+	flex-flow: row wrap;
+	@include breakpoint(xsm){
+		display: block;
+		position: sticky;
+		top: 60px;
+
+		align-self: flex-start;
+	}
+
+	
+}
+
+article .info-main {
+	.info-main-block {
+		padding: 0 15px;
+
+		margin-bottom: 1.6rem;
+
+		@each $breakpoint in $breakpoints {
+			@include breakpoint($breakpoint){
+				margin-bottom: 0;
+				padding: infoMainBlockPadding($breakpoint);
+			}
+		}
+	}
+}
+
+article .continue {
+	display: block !important;
+	@include body-text;
+	a {
+		text-decoration: none;
+	}
+	i {
+		font-size: 12px;
+		position: relative;
+		top: -1px;
+		padding-left: 2px;
+	}
+}
+
+
+article .info-right {
+	.meta-list {
+		margin-bottom: 40px;
+	}
+}
+
+article h2 {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0;
+
+	@include breakpoint(xsm){
+		margin-bottom: 0.8em;
+		justify-content: flex-start;
+	}
+	span {
+		cursor: pointer;
+		font-weight: 400;
+		@include secondary-text;
+		color: $grey;
+		display: block;
+		padding: 0 0 0 10px;
+		@include breakpoint(xsm){
+			padding: 3px 0 0 15px;			
+		}
+
+		i {
+			font-size: 12px;
+			padding-left: 1px;	
+		}
+		&:hover {
+			color: #777;
+		}
+		&::selection {
+			background-color: transparent;
+		}
+
+	}
+	&.underline-header {
+		border-bottom: 2px solid #000;
+		margin-bottom: 1em;
+	}
+}
+
+article.mil h2 span {
+	color: #000;
+	margin: 0;
+	padding: 0;
+	@include body-text;
+}
+
+
+
+@mixin research {
+	font-family: 'Atlas-Grotesk-Web';
+	letter-spacing: 0;
+	background-color: #f2f2f2;
+	p {
+		padding: 0 10px;
+	}
+}
+
+main div.research {
+	@include research;
+	margin: 0 -10px;
+	padding-top: 9px;
+	padding-bottom: 8px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;	
+	p:nth-last-child(1){
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

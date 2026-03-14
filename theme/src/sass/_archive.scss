@@ -1,0 +1,290 @@
+#archive-page-frame {
+	width: 100%;
+	min-height: 1000px;
+	overflow: hidden;
+
+
+}
+
+body.archive {
+	background: #f2f2f2;
+	.content.bij h1 {
+		color: #FFF;
+		text-shadow: 0 0 10px rgba(0,0,0,0.4);
+	}
+}
+
+
+
+section.archive {
+	.section-title {
+		margin: 1rem 0 0.5rem 0;
+
+	}
+
+	.notice {
+		position: absolute;
+		background: $warning-color;
+		color: #FFF;
+		top: 60px;
+		left: 0;
+		right: 0;
+		height: 60px;
+		text-align: center;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+	}
+	#filter-bar {
+		margin: 0rem 0 2rem 0;
+		justify-content: flex-start;
+		.search {
+			padding-left: 0;
+			margin-top: 0;
+		}
+
+		.filter {
+			width: auto;
+		}
+		.filter.country select, .filter.topics select {
+			width: 200px;
+		}
+		.filter.search input[type=text] {
+			width: 350px;
+		}
+	}
+	hr {
+		border: none;
+		border-top: 1px solid #000;
+		margin: 4rem 0;
+	}
+	.content {
+		display: block;
+	}
+	> .content, .archive-information {
+		
+		h2 {
+			margin-bottom: 0;
+		}
+	}
+	.search-filter {
+		border-bottom: 1px solid #000;
+
+	}
+	.section-description {
+		width: 100%;
+		@include breakpoint(md){
+			width: 66%;			
+		}
+	}
+	article.intro {
+		padding-bottom: 2rem;
+		padding: 2rem 0 4rem 0;
+		margin-bottom: 0;
+
+		h1 {
+			@include news-header;
+		}
+		.full {
+			display: block;
+			> div {
+				column-count: 1;
+				@include breakpoint(md){
+					column-count: 2;	
+				}
+				
+				p {
+					@include header;
+					font-weight: normal;
+					@include breakpoint(md){
+						font-size: 22px;
+
+					}
+
+				}
+			}
+		}
+	}
+
+	article:not(.intro) {
+		.naming-the-dead {
+			margin-top: 2rem;
+		}
+		h1:not(.naming-the-dead):not(.monitoring) {
+			@include news-header;
+		}
+		background: transparent;
+		margin: 1rem 0;
+		// .info-main-block {
+		// 	padding-left: 1rem;
+		// }
+	}
+
+	.full {
+		//display: flex;
+	}
+
+	.archive-information {
+		hr {
+			margin-top: 0;
+		}
+
+		.sections {
+			flex: 0 1 calc(33.3% - 15px);
+			ul {
+				margin-top: 2rem;
+			}
+
+		}
+	}
+
+
+	.sections {
+
+		> div {
+			&.case-studies-visible {
+				ul.case-studies {
+
+					display: flex;
+				}
+			}
+			
+			ul {
+
+				&.case-studies {
+					margin-top: 2rem;
+					display: none;
+					h2 {
+						font-weight: 500;
+					}
+				}
+				
+				@include breakpoint(xsm){
+					display: flex;	
+				}
+				&::after {
+					content: '';
+					flex: auto;
+				}
+				
+				flex-flow: row wrap;
+				justify-content: space-between;
+
+				li {
+					//border: 1px solid #000;
+					flex: 0 1 50%;
+					@include breakpoint(md){
+						flex: 0 1 33.3%;
+					}
+					padding-right: 20px;
+
+					.case-studies-toggle {
+						i.fa-caret-down, i.fa-caret-up {
+							display: inline;
+							top: 1px;
+							right: auto;
+							left: 6px;
+							position: relative;
+						}
+					}	
+				}
+			}
+
+		}
+
+		.title.files {
+			h2 {
+				display: block;
+			}
+			h2 a {
+				display: flex;
+				padding-bottom: 7px;
+			}
+			span {
+				font-size: 14px;
+				font-weight: 500;
+				display: inline;
+			}
+			span a {
+				display: inline;
+				background: #9bb8cc;
+				padding: 4px 4px 2px 4px;
+				color: #FFF;
+				border-radius: 3px;
+			}
+		}
+		li {
+			margin-bottom: 0.3rem;
+			> div {
+				border-bottom: 1px solid #ccc;
+				height: 100%;
+			}
+			position: relative;
+			.file-types {
+				display: flex;
+				padding-left: 30px;
+				padding-bottom: 10px;
+				span {
+					margin-right: 4px;
+				}
+			}
+			a {
+				padding: 10px 0;
+				display: block;
+			}
+			i.fa-long-arrow-right {
+				position: absolute;
+				top: 13px;
+				right: 26px;
+				display: none;
+				display: inline-block;
+			}
+			&:hover a > i {
+				display: block;
+				color: #000;
+			}
+
+			h2 i {
+
+			}
+			h2 {
+				padding-right: 25px;
+				display: flex;
+				justify-content: flex-start;
+				span {
+
+					display: block;
+				}
+				i {
+					text-align: center;
+					position: relative;
+					top: 1px;
+					margin-right: 7px;
+					flex: 0 0 22px;
+					display: block;
+				}
+			}
+		}
+		a {
+			text-decoration: none;
+		}
+
+		h1 {
+			margin-top: 2rem;
+		}
+		
+
+		.projects, .countries, .topics {
+			display: inline;
+		}
+		.projects span {
+			background: #ffefd7;
+		}
+		.countries span {
+			background: #f3dcdc;
+		}
+		.topics span {
+			background: #d3e7f5;
+		}
+	}
+}

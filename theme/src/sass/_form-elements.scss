@@ -1,0 +1,60 @@
+input[type="email"], input[type="text"] {
+	-webkit-appearance: none;
+	@include body-text; 
+	border: none;
+	border: 2px solid #FFF;
+	display: block;
+	border-radius: 0;
+	padding: 3px 0 0 10px;
+
+	@include breakpoint(xsm){
+		padding: 0 15px;
+	}
+}
+
+input[type="submit"], button {
+	-webkit-appearance: none;
+	border-radius: 0;
+	border: none;
+	@include body-text;
+	display: block;
+}
+
+.link-button, input[type="submit"], button {
+	padding: 6px 15px 4px 10px;
+	@include breakpoint(xsm){
+		padding: 5px 15px;		
+	}
+	background-color: $blue;
+	color: #FFF;
+
+}
+
+.button {
+	display: block;
+	text-decoration: none;
+}
+
+select {
+	border-radius: 0;
+	outline-offset: -1px;
+	
+}
+
+
+
+form.post-password-form {
+	max-width: 400px;
+	margin: 4rem auto;
+	input[type=password]{
+
+
+	}
+	input[type=submit] {
+		margin-top: 2rem;
+	}
+}
+
+button {
+	outline: none;
+}

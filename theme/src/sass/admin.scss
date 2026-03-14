@@ -1,0 +1,196 @@
+body {
+
+}
+
+body.post-type-source #belligerentdiv {
+	display: none;
+}
+
+.aw-hidden {
+	display: none;
+}
+
+#address-line-1-arabic input {
+	direction: rtl;
+}
+
+#acf-group_5b01705ed5186 {
+	background: #ffe4e4;
+	border: 1px solid #FF0000;
+}
+
+#acf-group_5b0c39216aef4 {
+	background: #ffe6c2;
+	border: 1px solid #de8500;
+}
+
+#acf-group_5b6c1c291e448 {
+	background: #ffffcb;
+	border: 1px solid #b1b100;
+}
+
+#acf-group_5ae8854a035a7 {
+	background: #c4ffc8;
+	border: 1px solid #00c00e;
+}
+
+#acf-group_5b6ac6d33923e {
+	background: #c4e5ff;
+	border: 1px solid #0000FF;
+}
+
+#acf-group_5b6c19c314bee, #acf-group_5b6c19e41025e {
+	background: #fbe7ff;
+	border: 1px solid #a800cc;
+}
+
+body.taxonomy-citation {
+	.term-description-wrap {
+		display: none !important;
+	}	
+}
+
+#taxonomy-citation {
+	#citationchecklist > li > label {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+	.children li {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}
+
+
+#geolocation-accuracy.acf-field {
+	.acf-radio-list {
+		li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(5), li:nth-child(9) {
+			// background: red;
+			padding-bottom: 5px;
+			margin-bottom: 5px;
+			border-bottom: 1px solid #EEE;
+
+		}
+	}
+}
+
+.acf-field.rtl input {
+	direction: rtl;
+}
+
+
+#acf-group_5d5152770fcb9 {
+	background: #b6c9d0;
+	border: 1px solid #677b82;
+}
+
+.killed-injured-civilian-non-combatants {
+	background: #b6c9d0;
+}
+
+.killed-injured-other-protected-persons {
+	background: #c4e2de;
+}
+
+.killed-injured-belligerents {
+	background: #d2e2c4;
+}
+
+
+
+.killed-injured-civilian-non-combatants ~ .killed-injured-civilian-non-combatants {
+	padding-left: 100px !important;
+}
+
+.killed-injured-other-protected-persons ~ .killed-injured-other-protected-persons {
+	padding-left: 100px !important;
+}
+
+.killed-injured-belligerents ~ .killed-injured-belligerents {
+	padding-left: 100px !important;
+}
+
+
+
+
+
+
+
+
+#acf-group_5e748835deb75 {
+	background: #ffe4e4;
+	border: 1px solid #FF0000;
+}
+
+#acf-group_5e748415ac7fd {
+	background: #ffe6c2;
+	border: 1px solid #de8500;
+}
+
+#acf-group_5e747d8c2f79d {
+	background: #ffffcb;
+	border: 1px solid #b1b100;
+}
+
+#acf-group_5e747c567713d {
+	background: #c4ffc8;
+	border: 1px solid #00c00e;
+}
+
+#acf-group_5e74745b50947 {
+	background: #c4e5ff;
+	border: 1px solid #0000FF;
+}
+
+#acf-acf-group_5e74745b50947 {
+	background: #c4e5ff;
+	border: 1px solid #0000FF;
+}
+
+#acf-group_5e739d5930e8a {
+	background: #fbe7ff;
+	border: 1px solid #a800cc;
+}
+
+#acf-group_5e739b0ce0660 {
+	background: #d7c4ff;
+	border: 1px solid #5400ff;
+}
+
+#acf-group_5e6765ce27efa {
+	background: #c195b1;
+	border: 1px solid #72104f;
+}
+
+
+
+// body.edit-tags-php .acf-field[data-name=taxonomy_term_countries] {
+// 	display: none;
+// }
+
+
+// .unilateral-or-multilateral {
+// 	display: none;
+// }
+
+// .multilateral-belligerent-group {
+// 	display: none;
+// }
+
+// body.country-libya {
+
+// 	.unilateral-or-multilateral {
+// 		display: block;
+// 	}
+
+// 	.multilateral-belligerent-group {
+// 		display: block;
+// 	}
+
+// }
+
+
+.categorydiv div.tabs-panel {
+	max-height: none;
+}

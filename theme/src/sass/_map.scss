@@ -1,0 +1,1796 @@
+
+$somalia: #de8462;
+
+$militant-color: #2980a5;
+$civilian-color: $somalia;
+// $strike-declared-color: #2980a5;
+// $strike-alleged-color: #cc5d88;
+// $isis: #2287d0;
+// $al-shabab: #8232b5;
+// $al-qaeda: #d85831;
+// $unknown: #ccc;
+
+
+
+$stat-widths: 13px 540px 670px 720px;
+@function statWidth($size){
+	@return nth($stat-widths, index($breakpoints, $size));
+}
+
+body.us-forces-in-somalia {
+	section {
+		position: relative;
+	}
+}
+
+.mapboxgl-canvas:focus {
+    outline: none;
+}
+
+.conflict-map-timeline {
+	
+
+	.svg-container {
+		position: absolute;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom:0;
+	}
+}	
+
+body.shahed-map.iframe {
+	background-color: #222;
+	article {
+		background-color: #222;
+	}
+	#selected-features, .incidents {
+		background-color: #222;
+		color: #FFF;
+	}
+
+	.map-container {
+		--line-color: #333;
+	}
+	#selected-features .sort .incident {
+		color: #999;
+	}
+	#area {
+		color: #FFF;
+		border-color: #FFF;
+	}
+	#selected-features .incident .statement {
+		h5 {
+			color: #999;
+		}
+		color: #999;
+		a {
+			color: #FFF;
+		}
+	}
+	.rc-slider-track {
+		background-color: #00423c;
+	}
+	.timeline-container {
+		color: #FFF;
+	}
+	.overflow {
+		border-color: #222;
+	}
+	.timeline-container .rc-slider .handle-date {
+		background-color: transparent;
+	}
+
+}
+
+body.british-ekia,
+body.shahed-map {
+	#donate {
+		display: none;
+	}
+	article {
+		//padding-top: 40px;
+	}
+	.chart-information {
+		display: none;
+	}
+	article .content {
+		display: block;
+	}
+	article > .content {
+		width: 100vw !important;
+	}
+	.chart-container {
+		padding: 0;
+	}
+	.timeline-bars {
+		z-index: 7;
+		pointer-events: none;
+	}
+	#selected-features {
+		height: 600px;
+	}
+	.incidents {
+		background-color: #FFF;
+	}
+	
+	.map-controls-sidebar {
+		width: 420px;
+	}
+	
+	.postdata__content {
+		display: block;
+		div div {
+			@include breakpoint(sm){
+				column-count: 2;
+				grid-gap: 30px;	
+			}
+			
+		}
+	}
+
+}
+
+// .shahednote {
+// 	--color: #029688;
+// 	position: absolute;
+// 	background-color: #FFF;
+// 	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+// 	z-index: 10;
+// 	font-size: 12px;
+// 	top: 10px;
+// 	left: 10px;
+// 	border-radius: 20px;
+// 	padding: 5px 10px;
+// 	display: flex;
+// 	align-items: baseline;
+// 	span {
+// 		color: var(--color);
+// 		font-weight: 500;
+// 		margin-right: 4px;
+// 	}
+// 	button {
+// 		font-weight: 500;
+// 		background-color: var(--color);
+// 		margin-left: 6px;
+// 		border-radius: 4px;
+// 		padding: 2px 5px 0 5px;
+// 		font-size: inherit;
+// 		height: auto;
+
+// 	}
+// }
+
+body.shahed-map {
+	rect {
+		fill: #009688;
+	}
+	.rc-slider-track {
+		background-color: #cbe8e5;
+		border-bottom: 1px solid #0b655b;
+	}
+}
+
+body.british-ekia {
+	rect {
+		fill: #485b6c;
+	}
+	.rc-slider-track {
+		background-color: #cff0ff;
+		border-bottom: 1px solid #485b6c;
+	}
+}
+
+body.israeli-military-in-syria-the-gaza-strip,
+body.israeli-military-in-syria-the-gaza-strip-hebrew {
+	.comparison-stats {
+		.full span {
+			padding-top: 5px;
+			padding-bottom: 3px;
+		}
+	}
+}
+body.israeli-military-in-syria-the-gaza-strip-arabic {
+	span {
+		display: inline-block;
+	}	
+}
+
+
+body.israeli-military-in-syria-the-gaza-strip,
+body.israeli-military-in-syria-the-gaza-strip-arabic,
+body.israeli-military-in-syria-the-gaza-strip-hebrew  {
+	.map-section {
+		@include breakpoint(sm){
+			display: grid;
+			grid-gap: 40px;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			max-width: 1520px;
+			margin-left: auto;
+			margin-right: auto;
+
+		}
+		.full {
+			padding: 0 10px !important;
+		}
+		.conflict-map-timeline .overflow {
+			left: 10px;
+			right: 10px;
+		}
+	}
+	.timeline-container.content {
+		width: auto !important;
+	}
+	.stats {
+		.stat {
+			flex: 0 1 calc(25% - 15px);
+		}
+	}
+	.map-section .annotation {
+		margin-top: 10px;
+		font-weight: 500;
+		font-size: 16px;
+		text-align: center;
+		color: $palestinian-militants;
+		background: #fff0e5;
+		padding: 5px 10px 3px 10px;
+		border-radius: 3px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		a {
+			color: currentColor;
+		}
+	}
+	.comparison-stats {
+		margin-bottom: 40px;
+		.content {
+			@include breakpoint(sm){
+				display: grid;
+				grid-gap: 20px;
+				grid-template-columns: repeat(2, minmax(0, 1fr));		
+			}
+			
+		}
+		.full {
+			margin-bottom: 2rem;
+			@include breakpoint(sm){
+				margin-bottom: 0;
+			}
+			text-align: center;
+			font-size: 20px;
+			font-weight: 500;
+			@include breakpoint(xsm){
+				font-size: 28px;
+			}
+			span {
+				padding-right: 7px;
+				padding-left: 7px;
+				background-color: #efdeea;
+				font-weight: 500;
+				color: $israeli-military;
+			}
+		}
+		
+	}
+	.gradings-breakdown {
+		.top {
+			display: block;
+			.belligerent {
+				display: none;
+			}
+		}
+		.content {
+			width: auto !important;
+		}
+		.gradings {
+			@include breakpoint(xsm){
+				display: grid;
+				width: 100%;
+				grid-template-columns: 1fr 1fr;
+			}
+			.total {
+				@include breakpoint(xsm){
+					grid-column: span 2;
+					> div {
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						grid-auto-flow: dense;
+						h1 {
+							grid-row: span 2;
+						}
+					}	
+				}
+				
+			}
+			.weak {
+				border-right: 2px solid #efefef;
+				border-bottom: none;
+			}
+		}
+	}
+
+	.gradings-stats-container {
+
+		@include breakpoint(sm){
+			max-width: 1420px;
+			margin: 40px auto;
+			display: grid;
+			grid-template-columns: 1fr 1fr;			
+		}
+		
+		.confirmed-fair {
+			border-bottom: none;
+		}
+	}
+	.map-section .map-container {
+		border: 1px solid #ddd;
+	}
+	.civilian-fatalities {
+		border-bottom: 1px solid #ddd;
+	}
+}
+
+
+
+.conflict-map-timeline[data-conflictslug="palestinian-militants-in-israel"],
+.conflict-map-timeline[data-conflictslug="palestinian-militants-in-israel-hebrew"],
+.conflict-map-timeline[data-conflictslug="palestinian-militants-in-israel-arabic"] {
+	.rc-slider-track {
+		background-color: transparentize($palestinian-militants, 0.6);
+	}
+	.bar {
+		fill: $palestinian-militants;
+	}
+	.svg-container {
+		border-bottom: 1px solid $palestinian-militants;
+	}
+
+	.timeline-block.monitored {
+		border-bottom: 1px solid #35495d;
+	}
+
+	.rc-slider-handle::before {
+		background-color: #35485d;
+	}
+}
+
+
+
+.conflict-map-timeline[data-conflictslug="israeli-military-in-the-gaza-strip"]{
+	.rc-slider-track {
+		background-color: transparentize($israeli-military, 0.6);
+	}
+	.bar {
+		fill: $israeli-military;
+	}
+	.svg-container {
+		border-bottom: 1px solid $israeli-military;
+	}
+
+	.timeline-block.monitored {
+		border-bottom: 1px solid #35495d;
+	}
+
+	.rc-slider-handle::before {
+		background-color: #35485d;
+	}
+}
+
+.conflict-map-timeline[data-slug*="israeli-military-in-iraq-syria"] {
+	.rc-slider-track {
+		background-color: transparentize($israeli-military, 0.6);
+	}
+	.bar {
+		fill: $israeli-military;
+	}
+	.svg-container {
+		border-bottom: 1px solid $israeli-military;
+	}
+
+	.timeline-block.monitored {
+		border-bottom: 1px solid #35495d;
+	}
+
+	.rc-slider-handle::before {
+		background-color: #35485d;
+	}
+}
+
+
+
+
+.conflict-map-timeline[data-slug*="coalition-in-iraq-and-syria"],
+body.us-led-coalition-in-iraq-and-syria-casualty-map {
+	.rc-slider-track {
+		background-color: transparentize($coalition, 0.6);
+	}
+	.bar {
+		fill: $coalition;
+	}
+	.svg-container {
+		border-bottom: 1px solid $coalition;
+	}
+
+	.timeline-block.monitored {
+		border-bottom: 1px solid #35495d;
+	}
+
+	.rc-slider-handle::before {
+		background-color: #35485d;
+	}
+}
+
+// .conflict-map-timeline[data-conflictslug="turkish-military-in-iraq-and-syria"],
+// .conflict-map-timeline[data-conflictslug="turkish-military-in-iraq-and-syria-arabic"]{
+// 	.timeline-block.monitored {
+// 		border-bottom: 1px solid #239e83;
+// 	}
+// 	.bar {
+// 		fill: #239e83;
+// 	}
+// 	.rc-slider-track {
+// 		background-color: transparentize($turkish-military, 0.7);
+// 	}
+// 	// .timeline-controls > div {
+// 	// 	background-color: transparentize($turkish-military, 0.6);
+// 	// }
+// 	.exception {
+// 		color: $turkish-military;
+// 		font-weight: 500;
+// 	}
+// 	.rc-slider-handle::before {
+// 		background-color: #156552;
+// 	}
+
+// }
+
+.conflict-map-timeline[data-conflictslug="us-forces-in-somalia"]{
+	.timeline-block.monitored {
+		border-bottom: 1px solid #b96749;
+	}
+	.bar {
+		fill: #b96749;
+	}
+	.rc-slider-track {
+		background-color: transparentize($us-forces-in-somalia, 0.7);
+	}
+	.timeline-container .rc-slider .rc-slider-handle::before {
+		background-color: #8a4d37;
+	}
+}
+
+.conflict-map-timeline[data-conflictslug="us-forces-in-yemen"],
+.conflict-map-timeline[data-conflictslug="us-forces-in-yemen-arabic"]{
+	.timeline-block.monitored {
+		border-bottom: 1px solid #3f5177;
+	}
+	.bar {
+		fill: #3f5177;
+	}
+	.rc-slider-track {
+		background-color: transparentize($us-forces-in-yemen, 0.7);
+	}
+	.timeline-container .rc-slider .rc-slider-handle::before {
+		background-color: #415275;
+	}
+}
+
+.conflict-map-timeline[data-conflictslug="all-belligerents-in-libya"],
+.conflict-map-timeline[data-conflictslug="all-belligerents-in-libya-arabic"]{
+	
+	// .timeline-block.monitored {
+	// 	border-bottom: 1px solid #b19458;
+	// }
+	// .bar {
+	// 	fill: #b19458;
+	// }
+	// .rc-slider-track {
+	// 	background-color: transparentize($all-belligerents-in-libya, 0.7);
+	// }
+}
+
+// .conflict-map-timeline[data-conflictslug="russian-military-in-syria"],
+// .conflict-map-timeline[data-conflictslug="russian-military-in-syria-arabic"]{
+// 	.timeline-block.monitored {
+// 		border-bottom: 1px solid #1a87a9;
+// 	}
+// 	.bar {
+// 		fill: #1a87a9;
+// 	}
+// 	.rc-slider-track {
+// 		background-color: transparentize(#2fb0d8, 0.7);
+// 	}
+	
+// 	.rc-slider-handle::before {
+// 		background-color: #16586d;
+// 	}
+	
+// }
+
+.conflict-map-timeline[data-conflictslug="us-forces-in-yemen"],
+.conflict-map-timeline[data-conflictslug="us-forces-in-yemen-arabic"]{
+	.timeline-bars {
+		.day {
+			background-color: $us-forces-in-yemen;
+		}
+	}
+	.rc-slider-track {
+		background-color: transparentize($us-forces-in-yemen, 0.6);
+	}
+
+}
+
+.timeline-controls-container {
+	@include breakpoint(xsm){
+		margin-bottom: 20px;	
+	}
+	
+}
+
+
+.rc-slider-handle:nth-child(5){
+	.handle-date {
+		text-align: right;		
+		margin-left: -100px;
+	}
+}
+
+.conflict_ar,
+.conflict_he,
+.conflict_data_new.ar {
+	.rc-slider-handle:nth-child(5){
+		.handle-date {
+			text-align: left;		
+			margin-left: 0;
+		}
+	}
+	.rc-slider-handle:nth-child(4){
+		.handle-date {
+			text-align: right;		
+			margin-left: -100px;
+		}
+	}
+}
+
+.timeline-container .rc-slider {
+	padding: 0;
+	height: 80px;
+	//background: transparentize(red, 0.8);
+	z-index: 2;
+	position: relative;
+	user-select: none;
+
+	.handle-date {
+		pointer-events: none;
+		font-size: 12px;
+		width: 100px;
+		position: relative;
+		top: -20px;
+		padding-left: 0px;
+		left: 8px;
+		font-weight: 500;
+		background-color: rgba(255,255,255,0.7)
+	}
+
+	
+	.rc-slider-rail {
+		height: 80px;
+		background-color: transparent;
+		//background-image: url('../images/timeline-bg.gif');
+	}
+	.rc-slider-track {
+		height: 79px;
+		border-radius: 3px;
+		
+	}
+	.rc-slider-step {
+		display: none;
+	}
+	.rc-slider-handle {
+		border-radius: 0;
+		margin: 0;
+		height: 79px;
+		border: none;
+		
+
+		background: transparent;
+		
+		//margin-left: -6px;
+		//background-color: rgba(0,0,0,0.3);
+		&:hover {
+			//background: #FFF;
+			&::before {
+				opacity: 0.8
+			}
+		}
+		&::before {
+			top: 28px;
+			left: -3px;
+			color: #FFF;
+			font-family: 'Font Awesome 5 Pro';
+			content: '\f101';
+			position: absolute;
+			font-weight: 300;
+			font-size: 20px;
+			pointer-events: none;
+			width: 20px;
+			height: 20px;
+			border-radius: 2px;
+			background: #000;
+			line-height: 0.8;
+			padding-left: 4px;
+			padding-top: 2px;
+		}
+		&:nth-child(4){
+			
+			&::before {
+				content: '\f100';
+
+			}
+
+		}
+		
+		&:active {
+			//background: #FFF;
+		}
+		&:focus {
+			//background: #FFF;
+			box-shadow: none;
+		}
+	}
+
+}
+
+article .timeline-container.content {
+	display: block;
+}
+
+.conflict-map-timeline,
+.british-ekia {
+
+	.timeline-container {
+		position: relative;
+	}
+	.conflict-monitored {
+		
+	}
+	.annotation {
+		color: #999;
+		font-size: 14px;
+		ul {
+			max-width: 1400px;
+			padding: 40px 0;
+			margin: 0 auto;
+			li {
+				max-width: 800px;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+	.overflow {
+		position: absolute;
+		top: 0;
+		left: 15px;
+		right: 15px;
+		@include breakpoint(sm){
+			left: 20px;
+			right: 20px;	
+		}
+		
+		height: 80px;
+		border-radius: 4px;
+		border: 1px solid #ddd;
+
+
+		overflow: hidden;
+		background-image: url('../images/timeline-bg-lighter.gif');
+			
+	}
+	.legend {
+		.bar {
+			border: 1px solid #ddd;
+			background-image: url('../images/timeline-bg-lighter.gif');
+		}
+	}
+	.timeline-block {
+
+		// position: absolute;
+		// z-index: 0;
+		height: 78px;
+		width: 100%;
+		position: absolute;
+		&.monitored {
+			z-index: 1;
+			background: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,.05);
+		
+		}
+	}
+	.timeline-bars {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 80px;
+		z-index: 1;
+		svg {
+			rect {
+				shape-rendering: crispEdges;
+			}
+		}
+		// display: flex;
+		// align-items: flex-end;
+		
+		
+		// border-radius: 3px;
+		// .day {
+		// 	//border-bottom: 1px solid red;
+		// 	background-color: $coalition;
+		// 	flex-grow: 1;
+		// 	&.today {
+		// 		background: red;
+		// 		height: 80px !important;
+		// 	}
+		// 	&.unassessed {
+		// 		background-color: #bbb !important;
+		// 	}
+		// 	position: relative;
+		// 	.exception {
+		// 		position: absolute;
+		// 		background: inherit;
+		// 		width: 100%;
+		// 		bottom: 0;
+		// 		display: flex;
+		// 		font-size: 11px;
+		// 		i {
+		// 			position: relative;
+		// 			top: 2px;
+		// 			padding-right: 3px;
+		// 			font-size: 10px;
+		// 		}
+		// 	}
+		// }
+	}
+	.start-end-labels {
+		font-size: 12px;
+		display: flex;
+		justify-content: space-between;
+		margin-top: 5px;
+		font-weight: 500;
+		
+	}
+	.timeline-controls {
+		display: flex;
+
+		position: relative;
+		top: auto;
+		left: auto;	
+
+		div {
+			text-align: center;
+			display: block;
+			margin: 12px 0 0 8px;
+			font-family: 'Atlas-Grotesk-Web';
+			padding: 3px 4px 3px 4px;
+			//text-transform: uppercase;
+			font-weight: 500;
+			border: 1px solid #c5c5c5;
+			border-radius: 5px;
+			background: #FFF;
+			font-size: 16px;
+			min-width: 0;
+			height: 22px;
+			cursor: pointer;
+			color: #000;
+			i {
+				position: relative;
+				top: -3px;
+			}
+			&:active {
+				background: #c5c5c5;
+			}
+			&.pause-play {
+				width: 110px;
+				font-size: 12px;
+				
+			}
+		}
+	}
+}
+
+
+$cm-size: 6px;
+
+
+section.map-section {
+	.get-the-data {
+		margin: 1rem auto 0 auto;
+		a {
+			display: inline-block;
+			color: #333;
+			background-color: #ededed;
+			border: 1px solid #d3d3d3;
+			padding: 7px 7px 5px 7px;
+			border-radius: 2px;
+			text-decoration: none;
+			i {
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+// --------------------- Switches ------------------- //
+
+.map-switches {
+	font-weight: 500;
+	display: flex;
+	flex-flow: row wrap;
+	margin-bottom: 0;
+	border-right: none;
+	font-size: 12px;
+	right: 0;
+	//border-bottom: 1px solid #DDD;
+
+	@include breakpoint(xsm){
+		margin-bottom: 20px;
+		// border-right: 1px solid #DDD;		
+	}	
+	.option.active {
+		background-color: #666;
+		color: #FFF;
+	}
+	> div {
+		padding: 7px 10px 5px 10px;
+	}
+	.option {
+		flex: 0 1 50%;
+		cursor: pointer;
+		display: flex;
+		align-items: baseline;
+		border-right: 1px solid #DDD;
+		border-top: 1px solid #DDD;	
+		background: #FFF;
+		&:nth-child(3),
+		&:nth-child(4){
+			border-bottom: 1px solid #DDD;
+		}
+		&:not(.active):hover {
+			background: #f2f2f2;
+		}
+		&:nth-child(-n+2){	
+			border-top: none;			
+			@include breakpoint(xsm){
+				border-top: 1px solid #DDD;	
+			}
+		}
+		&:nth-child(even){
+			border-right: none;			
+		}
+		&:nth-child(odd){
+			border-left: none;
+			@include breakpoint(xsm){
+				border-left: 1px solid #DDD;	
+			}
+			
+		}
+	}	
+	// .strike-locations {
+	// 	background: #383838;
+	// }
+	// .strike-target {
+	// 	background: #383838;
+	// }
+}
+
+
+
+
+.conflict-map-timeline[data-conflictslug='us-forces-in-somalia'],
+.conflict-map-timeline[data-conflictslug='us-forces-in-yemen'],
+.conflict-map-timeline[data-conflictslug='us-forces-in-yemen-arabic']{
+	.map-controls-sidebar {
+		position: absolute;
+		z-index: 4;
+		top: 0;
+		right: 0;
+		left: 0;
+		width: auto;
+		bottom: auto;
+		@include breakpoint(xsm){
+			
+			width: 300px;
+			top: 20px;
+			right: 20px;			
+			left: auto;
+		}
+		@include breakpoint(md){
+			left: auto;
+			top: 30px;
+			
+			right: 50px;	
+			width: 400px;	
+		}
+		p {
+			display: none;
+			@include breakpoint(xsm){
+				display: block;
+			}
+			font-size: 12px;
+		}
+	}
+	#selected-features {
+		@include breakpoint(xsm){
+			margin-bottom: 20px;
+			border-left: 1px solid #DDD;	
+			border-bottom: 1px solid #ddd;
+		}
+		.sort, .incidents {
+			background-color: #FFF;
+			@include breakpoint(xsm){
+				border-right: 1px solid #DDD;
+			}
+			
+		}
+		.sort {				
+			@include breakpoint(xsm){
+				border-top: 1px solid #DDD;	
+			}
+		}
+		.map-legend {
+			border-top: 1px solid #ddd;
+			border-bottom: none;
+			@include breakpoint(xsm){
+				border-bottom: 1px solid #DDD;
+			}
+		}
+		
+	}
+}
+
+
+
+.conflict-map-timeline[data-conflictslug="us-forces-in-yemen"],
+.conflict-map-timeline[data-conflictslug="us-forces-in-yemen-arabic"]{
+	#selected-features {
+		.incidents {
+			height: 290px;
+		}
+		.incident {
+			.casualties {
+				flex: 0 1 12%;
+				@include breakpoint(md){
+					flex: 0 1 20%;
+				}
+			}
+			.uniquid {
+				flex: 0 1 30%;				
+			}
+			.strike-target {
+				flex: 0 1 30%;
+			}
+		}
+	}
+	.map-controls-sidebar > div:nth-child(1) {
+		z-index: 1;
+		position: absolute;
+		@include breakpoint(xsm){
+			position: relative;
+		}
+	}
+	#selected-features {
+		z-index: 2;
+		position: relative;
+		.column-headers .date {
+			opacity: 0;
+			@include breakpoint(xsm){
+				opacity: 1;
+			}
+		}
+	}
+	.yemen-event {
+		position: absolute;
+		font-size: 12px;
+		top: -20px;
+		color: #888;
+		i {
+			font-size: 80%;
+			margin-right: 5px;
+			position: relative;
+			top: -1px;
+		}
+		a {
+			color: currentColor;
+		}
+	}
+}
+
+.conflict-map-timeline[data-conflictslug="us-forces-in-yemen-arabic"]{
+	.yemen-event {
+		right: 20px;
+		font-size: 11px;
+	}
+}
+
+.conflict-map-timeline[data-conflictslug='us-forces-in-somalia']{
+	.map-container {	
+		height: 100%;
+		overflow: auto;
+		#selected-features {
+			&.strike-target .incidents {
+				max-height: none;
+				@include breakpoint(xsm){
+					max-height: 470px;	
+				}				
+				@include breakpoint(md){
+					max-height: 480px;
+				}
+			}
+			&.strike-locations .incidents {
+				max-height: none;
+				@include breakpoint(xsm){
+					max-height: 500px;	
+				}
+				@include breakpoint(md){
+
+				}
+			}
+			position: relative;
+			margin-top: 0;
+			background: transparent;
+			border: none;
+			box-shadow: none;			
+			.incidents {				
+				height: auto;			
+			}
+		}
+	}
+}
+
+@supports (-ms-ime-align:auto) {
+	.conflict-map-timeline[data-conflictslug="all-belligerents-in-libya"],
+	.conflict-map-timeline[data-conflictslug="all-belligerents-in-libya-arabic"] {
+		.map-controls-sidebar {
+			z-index: 5;
+			left: auto;
+			top: 20px;
+			right: 50px;
+			width: 415px;
+		}
+		.map-container {
+			overflow: hidden;
+		}
+	}
+}
+
+.conflict-map-timeline[data-conflictslug="all-belligerents-in-libya"],
+.conflict-map-timeline[data-conflictslug="all-belligerents-in-libya-arabic"],
+.conflict-map-timeline[data-conflictslug="all-belligerents-in-libya-2011"],
+.conflict-map-timeline[data-conflictslug="all-belligerents-in-libya-2011-arabic"], 
+.all-belligerents-in-libya-2011-casualty-and-strikes-map {
+	// #selected-features {
+	// 	.incidents {
+	// 		height: 510px;
+	// 	}
+	// }
+	.rc-slider-step {
+		display: none;
+	}
+	.map-legend {
+		display: none;
+	}
+	#selected-features {
+		position: relative;
+		&.hidden.strikes {
+			+ .map-legend {
+				@include breakpoint(xsm){
+					display: block;	
+				}
+				
+				.legend-items {
+					display: block;
+					column-count: 2;
+					div {
+						 break-inside: avoid-column;	
+					}
+				}
+				
+
+			}
+		}
+		// &.civilian-fatalities {
+		// 	.uniquid {
+		// 		flex: 0 0 60px;
+		// 	}
+		// 	.belligerent {
+		// 		flex: 0 0 110px;
+		// 	}
+		// }
+
+		// &.strikes,
+		// &.militant-fatalities {
+		// 	.incident {
+		// 		flex-flow: row wrap;	
+		// 		justify-content: flex-start;
+
+		// 	}
+		// 	.incident:not(.civcas){
+		// 		cursor: pointer;
+		// 	}
+		// 	.incident:not(.civcas):not(.open):not(.column-headers):not(.result):hover {
+		// 		background-color: #f2f2f2;			
+		// 	}
+
+		// 	.incident.civcas {
+		// 		.expand {
+		// 			opacity: 0;
+		// 		}
+		// 	}
+		// 	.belligerent {
+		// 		flex: 0 0 29%;
+		// 		@include breakpoint(xsm){
+		// 			flex: 0 0 100px;	
+		// 		}
+				
+		// 	}
+		// 	.date {
+		// 		flex: 0 1 80px;
+		// 	}
+		// 	.uniquid {
+		// 		flex: 0 0 60px;
+		// 	}
+		// 	.num_strikes {
+		// 		//text-align: center;
+		// 		display: none;
+		// 		@include breakpoint(xsm){
+		// 			display: block;
+		// 		}
+		// 		flex: 0 0 60px;			
+		// 	}
+		// 	.expand {
+		// 		flex: 0 0 15px;
+		// 	}
+		// 	.casualties {
+		// 		flex: 0 0 55px;	
+		// 	}
+			
+			
+		// }
+		border: 1px solid #ddd;
+		
+		
+	}
+	
+
+
+	#selected-features .incident .belligerent {
+		display: block;
+		span {
+			font-weight: bold;
+		}
+	}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.circle-marker {
+	display: flex;
+	.left, .right {
+		width: $cm-size;
+		height: $cm-size * 2;
+	}
+	.right {
+		background-color: tan;
+		border-bottom-right-radius: $cm-size * 2;
+  		border-top-right-radius: $cm-size * 2;
+	}
+	.left {
+		background-color: green;
+		border-bottom-left-radius: $cm-size * 2;
+		border-top-left-radius: $cm-size * 2;
+	}
+}
+
+
+
+
+.conflict-map-timeline {
+	min-height: 350px;
+	display: flex;
+	flex-flow: column nowrap;
+
+
+	.end-marker-overlap {
+		.total-date-range {
+			div:nth-child(2){
+				display: none;
+				padding-right: 15px;
+			}
+		}
+		.rc-slider-handle-2 .handle-date {
+			left: -100px;
+			text-align: right;
+			background: linear-gradient(to left, rgba(255,255,255,1) 75%, rgba(255,255,255,0) 100%);
+		}
+	}
+}
+
+
+#timeline {
+	::selection {
+		background: transparent;
+	}
+	margin-bottom: 30px;
+}
+
+
+.map-container {
+	--line-color: #efefef;
+	position: relative;
+	border-bottom: 1px solid var(--line-color);
+	border-top: 1px solid var(--line-color);
+	background: #eeeeee;
+	min-height: 350px;
+	overflow: hidden;
+	@include breakpoint(xsm){
+		overflow: auto;
+	}
+}
+
+.map-controls-sidebar .map-legend {
+	display: none;
+	@include breakpoint(xsm){
+		display: flex;		
+	}
+}
+
+.map-container > .map-legend {
+	display: flex;
+	@include breakpoint(xsm){
+		display: none;
+	}
+	&.hidden {
+		display: none;
+		
+	}
+}
+
+
+
+.map-legend {
+	background: #FFF;
+	padding: 9px 10px 2px 10px;
+	display: flex;
+	font-size: 12px;
+	font-weight: 500;
+	border-bottom: 1px solid #DDD;
+	margin-bottom: 12px;
+	@include breakpoint(xsm){		
+		border: 1px solid #DDD;	
+	}
+	&.hidden {
+		display: none;
+	}	
+	.legend-items {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.legend-label {
+		padding-right: 10px;
+	}
+	.legend-items div {
+		display: flex;
+		padding-right: 8px;
+		margin-bottom: 3px;
+		.icon {
+			width: 16px;
+			height: 16px;
+			min-width: 16px;
+			min-height: 16px;
+
+			border-radius: 50%;
+		}
+		.label {
+			padding-left: 5px;
+			
+		}
+	}
+}
+
+
+
+.bars-legend {
+	margin-bottom: 0;
+	justify-content: flex-end;
+	display: flex;
+	margin-bottom: 20px;
+	.full {
+		display: flex;	
+	}
+	.legend {
+		font-size: 10px;
+		padding-top: 10px;
+		width: 100%;
+		@include breakpoint(xsm){
+			padding-top: 4px;
+			width: 370px;			
+		}
+
+		> div {
+			flex-flow: row-reverse nowrap;
+			display: flex;
+			color: #666;
+			.bar {
+				width: 13px;
+				height: 13px;				
+				margin-left: 10px;
+			}
+			&.published .bar {
+				background-size: cover;
+				background-image: url('../images/legend.svg');
+				body.coalition-in-iraq-and-syria & {
+					background: $coalition;
+				}
+				body.russian-military-in-syria & {
+					background: #3b99d8;
+				}
+
+				body.turkish-military-in-iraq-and-syria & {
+					background: #2abb9b;
+				}
+
+				body.all-belligerents-in-libya & {
+					background: #f1c561;
+				}
+			}
+			&.monitoring .bar {
+				background-image: url('../images/timeline-bg.gif');
+			}
+			&.conflict .bar {
+				border: 1px solid #aaa;
+			}
+		}
+	}
+}
+
+
+.map-controls-sidebar {
+	position: absolute;
+	z-index: 3;
+	width: 300px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	&.hidden {
+		bottom: auto;
+	}
+	overflow: auto;
+	@include breakpoint(md){		
+		width: 380px;	
+	}
+	p {
+		font-size: 12px;
+	}
+}
+
+
+
+
+#area {
+	width: 60px;
+	height: 60px;
+	background-color: rgba(0,0,0,0.05);
+	z-index: 2;
+	position: absolute;
+	pointer-events: none;
+	margin-left: -30px;
+	margin-top: -30px;
+	border: 1px dashed #000;
+
+	&.note {
+		background-color: transparent;
+		border: none;
+	}
+	.label {
+		text-align: center;
+		position: absolute;
+		top: -15px;
+		left: 0;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 1;
+		width: 100px;
+		left: -20px;
+	}
+}
+
+
+
+#timeline .conflict {
+
+	height: 20px;
+	margin-bottom: 6px;
+	position: relative;
+	font-size: 12px;
+	&[data-conflict-id="87295"]{
+		a span {
+			left: -185px;
+			color: #000;
+			&::after {
+				content: ' →';
+			}
+		}
+		.monitoring {
+			right: 0;
+			width: auto !important;
+		}
+	}
+
+
+	&[data-conflict-slug="israeli-military-in-syria-the-gaza-strip-syria"]{
+		div.published {
+			left: 40.5% !important;
+			width: 59.5% !important;
+		}
+		.conflict,
+		.monitoring {
+			//display: none;
+		}
+		a span {
+			color: transparent;
+			&::before {
+				color: #FFF;
+				content: 'Israeli Military in Syria';
+
+			}
+		}
+	}
+	&[data-conflict-slug="israeli-military-in-syria-the-gaza-strip-the-gaza-strip"]{
+		top: -26px;
+		.conflict,
+		.monitoring {
+			display: none;
+		}
+		pointer-events: none;
+		.published {
+			background-color: #ff7add !important;
+			border-color: #ff7add !important;
+		}
+		a span {
+			color: transparent;
+			&::before {
+				color: #FFF;
+				display: none;
+				@include breakpoint(xsm){
+					display: inline;
+				}
+				content: 'Israeli Military in the Gaza Strip →';
+
+			}
+			left: -210px;
+		}
+	}
+	&[data-conflict-id="73867"],
+	&[data-conflict-id="74283"],
+	&[data-conflict-id="41472"]{
+		height: 0px !important;
+		top: -26px;
+		> div {
+			height: 20px;
+		}
+		span {
+			display: none;
+			@include breakpoint(xsm){
+				display: block;
+			}
+		}
+	}
+	
+	// &.gradient {
+	// 	.belligerent-toggle {
+	// 		position: absolute;
+	// 		width: 20px;
+	// 		background: #FFF;
+	// 		right: -20px;
+	// 		top: 0;
+			
+	// 	}
+	// 	.monitoring, .conflict {
+	// 		display: none;
+	// 	}
+
+	// 	margin-bottom: 3px;
+	// 	height: 10px;
+	// 	> div {
+	// 		border: none;
+	// 	}
+	// 	a {
+	// 		pointer-events: none;
+	// 	}
+	// 	span {
+	// 		font-size: 10px !important;	
+	// 		color: #000 !important;
+	// 	}
+	// 	.label {
+	// 		position: absolute;
+	// 		right: 0;
+
+	// 		color: #FFF!important;
+	// 		text-align: center;
+	// 		width: 100%;
+
+	// 		font-size: 10px;
+	// 		font-family: 'Atlas-Typewriter-Web';
+	// 		font-weight: bold;
+	// 		z-index: 1;
+
+	// 	}
+
+
+	// 	.selected {
+	// 		background: rgba(0,0,0,0.1) !important;
+	// 		position: relative;
+	// 		// background: #000 !important;
+	// 		height: 100% !important;
+	// 		.inner-piece {
+	// 			position: absolute;
+	// 			bottom: 0;
+	// 			left: 0;
+	// 			height: 20px;
+	// 			background: red;
+	// 			right: 0;
+
+	// 		}			
+
+	// 	}
+	// 	.published {
+
+	// 		position: relative;
+	// 		.piece-container {
+	// 			position: absolute;
+	// 			top: 0;
+	// 			left: 0;
+	// 			right: 0;
+	// 			bottom: 0;
+	// 			display: flex;
+	// 			align-items: flex-end;
+	// 			flex-flow: row nowrap;
+	// 			pointer-events: none;
+
+	// 		}
+
+	// 	}
+	// }
+
+	&[data-conflict-id="41465"] {
+		a:link, a:visited {
+			span {
+				width: 120px;
+				color: #103f4e;
+				@include breakpoint(xsm){
+					color: #FFF;
+				}
+
+			}
+		}
+
+	}
+	&[data-conflict-id="41467"]{
+		a:link, a:visited {
+			span {
+				color: #35290d;
+				@include breakpoint(xsm){
+					color: #FFF;
+				}
+
+			}
+		}		
+	}
+	> div {
+		a:link, a:visited {
+			color: #FFF;
+		}
+
+		&.active {
+			background-color: #000;
+			pointer-events: none;
+			border: none;
+			mix-blend-mode: overlay;
+			opacity: 0.4;
+		}
+		&.off {
+			border: none;
+			background-color: #FFF;
+			opacity: 1;
+			mix-blend-mode: color;
+			padding: 0;
+			pointer-events: none;
+			top: 0;
+		}
+
+		&.conflict, &.monitoring {
+			color: $grey;		
+			span {
+				display: none;
+
+			}
+		}
+		&.monitoring {
+			border: none;
+			background-size: 4px;
+			background-image: url('../images/timeline-bg.gif');
+		}
+		&.conflict {
+
+			border: none;
+			background-size: 4px;
+			background-color: #ddd;
+			border: 1px solid #ddd;
+			background-color: #FFF;
+		}
+
+		padding-left: 6px;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		background-color: #999;
+		color: #FFF;
+		font-weight: 500;
+		position: absolute;
+		height: 100%;
+
+
+		a:link, a:visited {
+			color: #FFF;
+			text-decoration: none;
+			span {
+				font-size: 10px;
+				position: absolute;
+				top: 3px;
+				width: auto;
+				white-space: nowrap;
+				@include breakpoint(xsm){
+					position: relative;
+					font-size: 12px;
+					width: auto;
+					top: auto;
+
+				}
+			}
+		}
+
+
+		&.published {
+			padding-top: 2px;
+		}
+	}
+}
+
+
+
+@for $i from 1 through 10 {
+	.conflict-number-#{$i} {
+		.slider-container .rc-slider-handle { 
+			height: (26px * $i) + 30px;
+		}
+	}
+}
+
+
+.slider-container {
+	margin: 10px 0 0px 0;
+	position: relative;
+	.total-date-range {
+		display: flex;
+		justify-content: space-between;
+		font-size: 12px;
+		font-weight: 500;
+	}
+	.rc-slider {
+		padding: 0;
+		z-index: 1;
+	}
+	.rc-slider-rail {
+		background-color: #000;
+		height: 1px;
+	}
+	.rc-slider-track {
+		background-color: #000;
+		height: 1px;
+	}
+	.rc-slider-handle-click-focused:focus {
+		border-color: #000;
+		outline: none;
+	}
+	.rc-slider-handle {
+		display: block;
+		background: rgba(255,0,0,0);
+		width: 20px;
+		margin: 0;
+		//margin-left: -10px;
+		@include breakpoint(xsm){
+			width: 1px;
+			background: transparent;
+			border-right: 1px solid #000;
+			display: block;
+			margin-left: 0;
+		}
+		border-radius: 0;
+		border: none;
+
+		&:hover, &:active {
+			box-shadow: none;
+			border-color: #000;
+			//border-color: red;
+		}
+	}
+	.line {
+		height: 100%;
+		border-right: 1px solid #000;
+		left: -10px;
+		position: relative;
+		@include breakpoint(xsm){
+			display: none;
+		}
+	}
+	.handle-date {
+		background: linear-gradient(to right, rgba(255,255,255,1) 75%, rgba(255,255,255,0) 100%);
+		left: 1px;
+		padding: 0 15px;
+		position: absolute;
+		bottom: 0;
+		font-size: 10px;
+		width: 100px;
+		font-weight: 500;
+		@include breakpoint(xsm){
+			font-size: 12px;
+			padding: 0 5px;
+		}
+	}
+
+
+	.triangle {
+		display: block;
+		right: 0;
+		@include breakpoint(xsm){
+			display: block;
+			right: -10px;
+		}
+		top: -10px;
+
+		bottom: auto;
+		left: auto;
+		border-width: 10px 10px 0;
+		border-color: #000 transparent;
+		width: 0;
+		content: "";
+		position: absolute;
+		border-style: solid;
+	}
+}

@@ -1,0 +1,570 @@
+$debug-border: 1px solid red;
+$slider-timeline-height: 60px;
+$red: #fe3933;
+$yellow: #ffe400;
+body.coalition-confirmed-strikes-timeline,
+body.coalition-declared-strikes-timeline,
+body.the-credibles,
+body.the-credibles-new,
+body.us-led-coalition-air-strikes-on-isis-in-iraq-syria-2014-2018 {
+	article {
+
+		background-image: url('../images/rings.svg');
+		background-size: 80px;
+		background-repeat: no-repeat;
+		background-position: center;
+		min-height: 600px;
+		.content {
+			width: 100% !important;
+		}
+		.chart-container {
+			margin: 0;
+			padding: 0;
+		}
+		.timeline-controls-container, .full-intro, .all-victim-container, .named-victims, .map-strikes-information-container > .controls {
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 15px;
+			@include breakpoint(sm){
+				padding: 0 20px;
+			}
+			@each $breakpoint in $breakpoints {
+				@include breakpoint($breakpoint){
+					width: contentMaxWidth($breakpoint);
+				}
+			}
+		}
+	}
+	.code {
+		letter-spacing: 0;
+		font-feature-settings: 'zero';
+		font-family: 'Atlas-Typewriter-Web';
+	}
+}
+
+
+
+.mapboxgl-marker {
+	pointer-events: none;
+	svg text {
+		font-weight: 600;
+	}
+}
+
+article.coalition-declared-strikes-timeline,
+article[data-postname="us-led-coalition-air-strikes-on-isis-in-iraq-syria-2014-2018"] {
+	background-image: url('../images/rings.svg');
+	background-size: 80px;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 600px;
+	.content {
+		width: 100% !important;
+	}
+	.chart-container {
+		margin: 0;
+		padding: 0;
+	}
+	.timeline-controls-container {
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 15px;
+		@include breakpoint(sm){
+			padding: 0 20px;
+		}
+		@each $breakpoint in $breakpoints {
+			@include breakpoint($breakpoint){
+				width: contentMaxWidth($breakpoint);
+			}
+		}
+	}	
+}
+
+.chart-container[data-chart-id='coalition-declared-strikes-timeline'],
+.chart-container[data-chart-id='the-credibles'] {
+	display: flex;
+}
+
+.chart-container[data-chart-id='coalition-declared-strikes-timeline'],
+.chart-container[data-chart-id='the-credibles'],
+article[data-postname="us-led-coalition-air-strikes-on-isis-in-iraq-syria-2014-2018"] .conflict-data-container,
+article[data-postname="the-credibles-new"] .conflict-data-container {
+	
+	font-feature-settings: 'tnum';
+	
+	.map-strikes-information-container {
+		position: relative;
+		//overflow: hidden;
+	}
+
+	.strikes-information, .incidents-container {
+		width: 100%;
+		z-index: 1;
+		position: relative;
+		padding: 0 15px;
+		@include breakpoint(sm){
+			padding: 0 20px;
+		}
+		@include breakpoint(sm){
+			@each $breakpoint in $breakpoints {
+				@include breakpoint($breakpoint){
+					width: contentMaxWidth($breakpoint);
+					margin-left: - contentMaxWidth($breakpoint) / 2;
+				}
+			}
+		}	
+		position: relative;
+		@include breakpoint(sm){
+			position: absolute;
+			top: 0;
+			left: 50%;
+		}
+	}
+
+	.chart-information {
+		display: none;
+	}
+	.rc-slider {
+		padding: 0;
+		height: $slider-timeline-height;
+		z-index: 8;
+		.rc-slider-track {
+			height: $slider-timeline-height;
+			border-radius: 0;
+			background-color: #f2f2f2;
+			
+		}
+		.rc-slider-handle {
+			border-radius: 0;
+			margin: 0;
+			width: 1px;
+			border: none;
+			background-color: $dark-blue;
+			height: $slider-timeline-height;
+			pointer-events: none;
+			touch-action: none;
+			&:active {
+				box-shadow: none;
+			}
+			display: none;
+		}
+		.rc-slider-rail {
+			background-color: transparent;
+			height: $slider-timeline-height;
+			border-radius: 0;
+		}
+	}
+
+	.start-end-labels .timeline-controls {
+		div {
+			margin-top: 2px;
+		}
+	}
+	.timeline-controls {
+		display: flex;
+	
+		position: relative;
+		top: auto;
+		left: auto;	
+	
+		div {
+
+			text-align: center;
+			display: block;
+			margin: 12px 0 0 8px;
+			font-family: 'Atlas-Grotesk-Web';
+			padding: 3px 4px 3px 4px;
+			text-transform: uppercase;
+			font-weight: 500;
+			border: 1px solid #c5c5c5;
+			border-radius: 5px;
+			background: #FFF;
+			font-size: 16px;
+			min-width: 0;
+			height: 22px;
+			cursor: pointer;
+			color: #000;
+			i {
+				position: relative;
+				top: -3px;
+			}
+			&:active {
+				background: #c5c5c5;
+			}
+			&.pause-play {
+				width: 60px;
+				font-size: 12px;
+				
+			}
+		}
+	}
+	.mapboxgl-map .timeline-controls {
+		display: flex;
+		@include breakpoint(sm){
+			display: none;
+		}
+		div {
+			height: 27px;
+			padding: 3px 8px 3px 8px;
+			i {
+				position: static;
+			}
+		}
+	}
+	.timeline-controls-container {
+		margin: 30px auto 10px auto;
+		@include breakpoint(md){
+			margin: 60px auto 15px auto;			
+		}
+		position: relative;
+		> h1 {
+			display: block;
+			@include breakpoint(xsm){
+				display: none;
+			}
+		}
+		.timeline-container {
+			position: relative;
+			flex: 0 1 100%;
+			.grid-lines {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: space-between;
+				z-index: 1;
+				.bar {
+					border-bottom: 1px solid #dcdcdc;
+				}
+			}
+		}
+		
+		.start-end-labels {
+			font-size: 12px;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 5px;
+			font-weight: 500;
+			
+		}
+	}
+	.timeline-bars {
+		height: $slider-timeline-height;
+		display: flex;
+		//overflow: hidden;
+		position: absolute;
+		pointer-events: none;
+		left: 0;
+		top: 0;
+		right: 0;
+		z-index: 9;
+		align-items: flex-end;
+		.overflow {
+			width: 100%;
+			height: 14px;
+			background: tan;
+			position: absolute;
+			top: -14px;
+			left: 0;
+			display: none;
+			background: linear-gradient(to top, rgba(197,197,197,1), rgba(197,197,197,0));
+		}
+		.high {
+			//height: 100% !important;
+		}
+		> div.day {
+			background: #c5c5c5;
+			&.shown {
+				background: #000;
+				.overflow {
+					
+					background: linear-gradient(to top, rgba(226,66,66,1), rgba(226,66,66,0));			
+				}
+			}
+			flex: 1 1 1px;
+			position: relative;
+			z-index: 2;
+
+		}
+	}
+}
+
+.chart-container[data-chart-id='coalition-declared-strikes-timeline'],
+article[data-postname="us-led-coalition-air-strikes-on-isis-in-iraq-syria-2014-2018"] .conflict-data-container {
+	.timeline-controls {
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		@include breakpoint(sm){
+			position: relative;
+			top: auto;
+			left: auto;	
+		}
+
+		display: none;
+		@include breakpoint(sm){
+			display: flex;
+		}
+	}
+	.map > .description {
+		h2 {
+			margin-bottom: 1rem;
+			font-size: 16px;
+			@include breakpoint(xsm){
+				font-size: 17px;
+			}
+		}
+		column-count: 1;
+		@include breakpoint(xsm){
+			column-count: 2;
+		}
+		@include breakpoint(md){
+			column-count: 1;
+		}
+		padding: 20px 15px;
+
+		display: block;
+		@include breakpoint(md){
+			display: none;
+		}
+		h1 {
+			display: none;
+		}
+		// p.credit {
+		// 	display: block;
+		// 	margin: 20px 0 0 0;
+		// }
+	}
+
+	.value {
+		font-size: 20px;
+		@include breakpoint(xsm){
+			font-size: 50px;
+		}
+		margin: 0;
+		font-weight: bold;
+		line-height: 1;
+	}
+	h2 {
+		margin: 0;
+		font-weight: 500;
+		//display: none;
+		font-size: 12px;
+		@include breakpoint(xsm){
+			font-size: 17px;
+		}
+	}
+	p.credit {
+		font-size: 12px;
+		margin: 8px 0 0 0;
+		flex: 1 0 100%;
+		text-align: right;
+		// display: none;
+		// @include breakpoint(sm){
+		// 	display: block;
+		// }
+	}
+	.share-buttons {
+		iframe:nth-child(1) {
+			margin-right: 10px;
+		}
+		flex-flow: row wrap;
+		justify-content: flex-end;
+	}
+	.map-strikes-information-container {
+		> .share-buttons {
+			display: flex;
+			position: absolute;
+			right: 15px;
+			bottom: 13px;
+			z-index: 1;
+			@include breakpoint(sm){
+				display: none;
+			}
+
+		}
+	}
+
+	.strikes-information .share-buttons {
+		display: none;
+		
+		p {
+			
+		}
+		@include breakpoint(sm){
+			display: flex;
+		}
+		position: absolute;
+		bottom: 30px;
+		right: 20px;
+		
+
+		
+	}
+
+	.strikes-information {
+		//display: none;
+		
+		
+		justify-content: space-between;
+		height: 100%;
+		display: flex;
+		flex-flow: column nowrap;
+		> div {
+
+			width: 100%;
+			@include breakpoint(sm){
+				width: 370px;
+			}
+			@include breakpoint(md){
+				width: 370px;
+			}
+			@include breakpoint(lg){
+				width: 420px;
+			}
+		}
+		.description {
+			h2 {
+				margin-bottom: 1rem;
+			}
+			@include breakpoint(md){
+				font-size: 15px;
+				display: block;
+				position: absolute;
+				right: 0;
+				width: 340px;
+				top: 20px;
+				padding-right: 20px;
+			}
+			@include breakpoint(lg){
+				width: 380px;
+				font-size: 17px;
+			}
+
+			strong, a {
+				font-weight: 500;
+			}
+			display: none;
+			@include breakpoint(md){
+
+			}
+			
+		}
+		
+		.strike-totals {
+
+			display: flex;
+			.total {
+				flex: 0 1 50%;
+			}
+			.value {
+				color: $red;
+			}
+			margin-bottom: 1rem;
+			@include breakpoint(sm){
+				margin-bottom: 2rem;
+			}
+		}
+
+		.inner {
+			display: flex;
+			border-bottom: 1px solid #dcdcdc;
+			padding: 0 0 7px 0;
+			margin-bottom: 11px;
+			@include breakpoint(sm){
+				border-bottom: none;
+				padding: 0;
+				// display: block;
+				margin-bottom: 0;
+			}
+			flex-flow: row wrap;
+			@include breakpoint(md){
+				display: flex;
+			}
+			.date {
+				flex: 1 0 100%;
+				font-size: 19px;
+				margin: 0 0 7px 0;
+				@include breakpoint(sm){
+					margin: 1rem 0;					
+				}
+				@include breakpoint(xsm){
+					font-size: 35px;
+			
+				}
+				font-weight: 500;
+				
+			}
+			.column {
+				flex: 0 1 50%;
+				.value {
+					color: $red;
+				}
+				.value, h2, .locations {
+					//color: $blue;
+				}
+				&:nth-child(3){
+					margin-top: 0;
+					@include breakpoint(sm){
+						margin-top: 20px;
+					}
+					@include breakpoint(md){
+						margin-top: 0;
+					}
+					hr {
+						width: 90%;
+					}
+				}
+			}
+			hr {
+				margin: 0.8rem 0 0 0;
+				padding: 0;
+				border: none;
+				border-top: 1px solid #000;
+				display: none;
+				@include breakpoint(md){
+					display: none;
+				}
+			}
+			.locations {
+				display: none;
+				margin-top: 1rem;
+				font-size: 12px;
+				font-weight: 500;
+				@include breakpoint(md){
+					font-size: 14px;
+				}
+				@include breakpoint(sm){
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.chart-container[data-chart-id='coalition-declared-strikes-timeline'] .mobile-version.map {
+	.rc-slider {
+		height: 40px;
+		.rc-slider-track, .rc-slider-handle, .rc-slider-rail {
+			height: 40px;
+		}
+	}
+	.timeline-bars {
+		height: 40px;
+	}
+	@include breakpoint(xsm){
+		.rc-slider {
+			height: 60px;
+			.rc-slider-track, .rc-slider-handle, .rc-slider-rail {
+				height: 60px;
+			}
+		}
+		.timeline-bars {
+			height: 60px;
+		}
+	}
+}

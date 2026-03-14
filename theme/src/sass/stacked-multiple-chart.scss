@@ -1,0 +1,12 @@
+
+.legend-item {
+	margin-bottom: 2px;
+	i.far.fa-info-circle {
+		margin-left: 4px;
+		position: relative;
+		top: 3px;
+	}
+	.fa-info-circle:hover + .tooltip {
+		display: block;
+	}	
+}

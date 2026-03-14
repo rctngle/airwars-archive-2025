@@ -1,0 +1,135 @@
+// body.team.single {
+// 	article:nth-child(1){
+// 		background-color: transparent;
+// 		margin-bottom: 10px;
+// 	}
+// }
+
+@mixin about-header {
+	font-size: 20px;
+	font-weight: 500;
+	@include breakpoint(sm){
+		font-size: 24px;
+	}
+	margin: 1.3em 0 0.3em 0;
+}
+
+
+article.board {
+	background-color: transparent;
+	margin-bottom: 0;
+	.info-main-block {
+		margin-bottom: 0;
+	}
+}
+
+body.volunteer {
+	article {
+		.wp-caption {
+			img {
+				width: auto;
+			}
+			.wp-caption-text {
+				margin-top: 5px;
+				position: static;
+			}
+		}
+	}
+}
+
+article.type-about, article.type-event, article.type-about_ar {
+
+	.content .info-main .info-main-block > p:not([dir="rtl"]),
+	.content .info-main .info-main-block > ul {
+		@include serif-text;	
+	}
+
+
+
+
+
+	.content .info-main .info-main-block p[dir="rtl"]{
+		@include arabic-reading;
+	}
+	h2 {
+		@include about-header;
+		letter-spacing: 0;
+	}
+
+	h3 {
+		font-weight: 500;
+		letter-spacing: 0.03em;
+		font-size: 120%;
+		margin: 1.6rem 0 0.8rem 0;
+	}
+	h1 {
+		line-height: 1.2;
+		a {
+			text-decoration: none;
+		}
+	}
+	.team-member-image {
+		
+		overflow: hidden;
+		position: relative;
+		.portrait {
+			border-radius: 50%;
+			width: 150px;
+			height: 150px;
+			@include breakpoint(sm){
+				width: 180px;
+				height: 180px;				
+			}
+
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			filter: grayscale(100%) brightness(92%);
+		}
+
+		.overlay {
+			body.volunteer & {
+				background-color: transparent;
+			}
+			border-radius: 50%;
+			background-color: $blue;
+
+			width: 150px;
+			height: 150px;
+			@include breakpoint(sm){
+				width: 180px;
+				height: 180px;				
+			}
+
+			position: absolute;
+			z-index: 1;
+			mix-blend-mode: overlay;
+			opacity: 0.8;
+
+		}
+
+	}
+}
+
+.team-member {
+	margin-bottom: 2.4rem;
+
+}
+
+article.board-title {
+	background-color: transparent;
+	//margin-bottom: 20px;
+}
+
+
+article.type-event {
+	.header-image {
+		display: none;
+	}
+	.info-main-block {
+		padding-bottom: 0;
+		@include breakpoint(xsm){
+			padding-bottom: 20px;
+		}
+	}
+}

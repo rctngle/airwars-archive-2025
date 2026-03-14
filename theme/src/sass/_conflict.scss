@@ -1,0 +1,20 @@
+section.stats {
+
+
+	.stats {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+
+		.stat {
+		
+		}
+	}
+}
+
+#estimate-note {
+	color: #888;
+	font-size: 10px;
+	position: relative;
+	top: -15px;
+}

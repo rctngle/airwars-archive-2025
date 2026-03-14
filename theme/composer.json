@@ -1,0 +1,10 @@
+{
+    "require": {
+        "abraham/twitteroauth": "^4.0",
+        "vanderlee/php-sentence": "^1.0",
+        "google/apiclient": "^2.12",
+        "google/cloud-translate": "^1.14",
+        "google/cloud-core": "^1.52",
+        "google/auth": "^1.26"
+    }
+}

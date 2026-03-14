@@ -1,0 +1,1486 @@
+.chart {
+
+}
+body.ukraine-population-density.full-visualisation {
+	header.short + main {
+		margin-top: 60px;
+	}
+}
+
+body.mapping-urban-warfare-density,
+body.mapping-urban-warfare-heatmap {
+	header {
+		display: none !important;
+	}
+	main {
+		margin-top: 0 !important;
+	}
+	body {
+		overflow: hidden;
+	}
+	iframe {
+		height: 100vh !important;
+		width: 100vw !important;
+	}
+}
+
+body.full-visualisation article#post-82349,
+body.full-visualisation article#post-80514,
+
+body.full-visualisation article#post-85382,
+body.full-visualisation article#post-85396,
+body.full-visualisation article#post-85397,
+body.full-visualisation article#post-85383 {
+	.chart-information {
+		display: block;
+	}
+	.chart-container,
+	.content,
+	.title {
+		display: block;
+
+	}	
+	.title {
+		padding: 0;
+		h1 {
+			display: none;
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
+	.chart, 
+	.legend-controls {
+		display: none;
+
+	}
+	
+	p > iframe {
+
+		height: calc(100vh - 60px);
+	}
+}
+
+#strikes-charts {
+	justify-content: space-between;
+	.chart-container {
+		flex: 0 1 calc(50% - 20px);
+	}
+}
+
+article.static-chart {
+	.legend-controls {
+		display: none;
+	}
+	.chart img {
+		@include breakpoint(xsm){
+			margin: 20px;
+		}
+		
+	}
+}
+
+.events-container {
+	position: relative;
+	padding-top: 10px;
+	display: none;
+	@include breakpoint(xsm){
+		display: block;
+	}
+	.event-bar {
+		height: 28px;		
+		position: relative;	
+		&.right {
+			> div div {
+				text-align: right;
+				right: 0;
+				left: auto;
+				span {
+					display: block;
+				}
+			}
+		}
+		&.hidden {
+			display: none;
+		}
+		> div {
+			height: 13px;
+			border-bottom: 1px solid #000;
+			position: absolute;	
+			&::before {
+				position: absolute;
+				left: 0;
+				height: 5px;
+				border-left: 1px solid #000;
+				content: '';
+				top: 50%;
+				margin-top: 4px;
+			}
+
+			&::after {
+				position: absolute;
+				right: 0;
+				height: 5px;
+				border-left: 1px solid #000;
+				content: '';
+				top: 50%;
+				margin-top: 4px;
+			}
+			div {
+				
+				padding: 0 3px 0px 3px;
+				position: absolute;
+				width: 260px;
+				//top: -3px;
+				font-size: 9.5px;
+	
+				letter-spacing: 0.02em;
+				span {
+					display: block;
+				}
+				.title {
+					font-weight: 500;
+					padding-bottom: 1px;
+					margin-bottom: 0;
+				}
+			}
+		}	
+	}
+}
+
+.hebrew-chart {
+	svg {
+		.axis.x text {
+			text-anchor: end;
+			direction: rtl;
+		}
+	}
+}
+
+.arabic-chart {
+	svg {
+		.axis.x text {
+			text-anchor: end;
+			direction: rtl;
+			font-size: 9;
+			font-family: 'Noto Kufi Arabic';
+		}
+	}
+}
+
+.chart-container[data-chart-id="strikes-per-president"],
+.chart-container[data-chart-id="civcas-per-president"],
+.chart-container[data-chart-id="declared-strikes-per-president-coalition-iraq-syria"]{
+	svg .axis.x text {
+
+		font-size: 9px;
+		@include breakpoint(xsm){
+			font-size: 10px;
+		}
+		@include breakpoint(md){
+			font-size: 14px;
+		}
+		text-anchor: middle;
+
+	}
+}
+
+.chart-container[data-chart-id="civcas-per-president"][data-query="lang=0&belligerent=us-forces&country=somalia"],
+.chart-container[data-chart-id="strikes-per-president"][data-query="lang=0&belligerent=us-forces&country=somalia"]{
+	svg .axis.x {
+		.tick:nth-child(odd){
+
+			text {
+				transform: translate(10px, 22px);
+				@include breakpoint(xsm){
+					transform: none;	
+				}
+
+			}
+		}
+		.tick text {
+			font-size: 12px;
+		}
+	}	
+}
+
+svg {
+	text.label {
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 0.03em;
+
+	}
+
+	rect {
+		shape-rendering: crispEdges;
+		pointer-events: none;
+	}
+	rect.highlighted {
+		// fill: orange !important;
+		//stroke: #000 !important;
+
+
+
+	}
+	.axis.x text {
+		text-anchor: start;
+	}
+	.axis {
+		pointer-events: none;
+	}
+
+	.axis path {
+		display: none;
+	}
+
+	.axis line {
+		fill: none;
+		stroke: #000;
+		shape-rendering: crispEdges;
+
+	}
+
+
+	.axis .tick:not(:first-of-type) line {
+		stroke-dasharray: 1,2;
+	}
+	.axis.x .tick line {
+		stroke-dasharray: none;
+	}
+	text {
+		font-size: 9px;
+		font-family: 'Atlas-Grotesk-Web';
+
+		font-feature-settings: 'tnum';
+	}
+
+	.axis.x {
+		g.tick:nth-child(odd) {
+			display: none;
+			@include breakpoint(xsm){
+				display: block;
+			}
+			@include breakpoint(sm){
+				display: none;
+			}	
+			@include breakpoint(md){
+				display: block;
+			}
+		}
+	}
+}	
+
+
+.color {
+	&.confirmed {
+		background-color: $confirmed-color;
+	}
+	&.fair {
+		background-color: $fair-color;
+	}
+	&.weak {
+		background-color: $weak-color;
+	}
+	&.contested {
+		background-color: $contested-color;
+	}
+	&.discounted {
+		background-color: $discounted-color;
+	}
+}
+
+// .chart-container[data-chart-id='militant-deaths-timeline']{
+// 	.controls {
+// 		display: none;
+// 	}
+// }
+
+
+
+body.all-belligerents-in-libya .chart-container[data-chart-id="civcas-grading-timeline"],
+article[data-postname="reported-civilian-deaths-from-russian-military-strikes-in-ukraine"] {
+	.x.axis .tick:nth-child(odd){
+		text {
+			display: none;
+		}
+	}
+}
+
+.siege-of-tripoli.in-archive {
+	margin-bottom: 40px;
+	button {
+		background-color: #0e3856;
+		font-weight: 500;
+		display: block;
+		max-width: 300px;
+		@include breakpoint(md){
+			display: none;
+		}
+
+	}
+}
+
+
+// body.conflict.all-belligerents-in-libya {
+// 	article.siege-of-tripoli {
+// 		margin-bottom: 80px;
+// 	}
+// }
+
+body.full-visualisation {
+	footer {
+		display: none;
+		
+	}
+	.content.mobile-page-title {
+		display: none !important;
+	}
+
+	header.short + main {
+		margin-top: 53px;
+		position: relative;
+	}
+	
+	.legend-button {
+		display: grid;
+		grid-template-columns: 60px 1fr;
+		align-items: center;
+		grid-gap: 30px;
+	}
+	#posts {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		article, article > .content, .chart, .map-container {
+			height: 100%;
+		}
+		
+		.map-container {
+			background-color: #081425;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: space-between;
+		}
+
+	}
+}
+
+body.full-visualisation article.type-conflict_data,
+article.civilian-casualties-gaza-may-2021-map {
+	margin-bottom: 0;
+	> .content {
+		width: 100%;
+	}
+}
+
+body.civilian-casualties-gaza-may-2021-map {
+	footer {
+		display: none !important;
+	}
+	.chart-container {
+		display: block !important;
+	}
+}
+
+body.single article.civilian-casualties-gaza-may-2021-map {
+	.map-container {
+		height: 500px;		
+	}
+}
+
+body.full-visualisation .chart-container,
+article.civilian-casualties-gaza-may-2021-map .chart-container {
+	display: block;
+	margin: 0;
+	padding: 0;
+	.chart-information {
+		display: none;
+	}
+	.content {
+		position: relative;
+		display: block;
+
+		@media screen and (max-width: 768px){
+			width: 100%;			
+		}
+		@include breakpoint(xsm){
+//			width: auto;
+			display: flex;
+		}
+		&.intro-mode {
+
+			.introduction {
+				display: block;				
+			}
+			.title {
+				background-color: #081425;
+				display: block;
+				@include breakpoint(md){
+					background-color: transparent;
+					display: grid;
+				}
+			}
+			.right {
+				display: none;
+				@include breakpoint(md){
+					display: block;
+				}
+			}
+		}
+
+		.introduction {
+			display: none;
+			@include breakpoint(md){
+				display: block;
+			}
+		}
+	}
+	.hex-legend {
+		
+		z-index: 10;
+		width: 50px;
+		height: 50px;
+		background-image: url('../images/hex-legend.svg');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		
+		display: block;
+		
+		// position: absolute;
+		// right: 0;
+		// bottom: 0;
+	}
+	.title {
+		
+
+		z-index: 1;
+		
+		grid-gap: 40px;
+		display: block;
+		grid-template-columns: 1fr 1fr;
+		color: #FFF;
+		position: absolute;
+		margin-bottom: 0;
+		padding: 15px;
+		width: 100%;
+		@include breakpoint(xsm){
+			padding: 20px;
+			display: grid;
+		}
+		h1 {
+			
+			margin: 0;
+			line-height: 1.2;
+			&.date {
+				font-weight: normal;
+				margin-bottom: 1rem;
+			}
+
+		}
+		p {
+			font-size: 12px;
+			@include breakpoint(xsm){
+				font-size: 14px;
+			}
+		}
+
+		.right {
+			position: relative;
+			
+			.dates {
+				display: flex;
+				justify-content: space-between;
+				font-size: 12px;
+				font-weight: 500;
+				padding-bottom: 3px;
+			}
+			.dates div {
+				width: 80px;
+				text-align: center;
+			}
+			.dates div:nth-child(1){
+				margin-left: -15px;
+				@include breakpoint(sm){
+					margin-left: -35px;
+				}
+			}
+			.dates div:nth-child(2){
+				margin-right: -10px;
+				@include breakpoint(sm){
+					margin-left: -35px;
+				}
+			}
+		
+		}
+		input[type=range]{
+			width: 100%;
+			outline: none;
+		}
+		
+	}
+
+
+	.horizontal-slider {
+       
+        height: 20px;
+        left: 20px;
+        right: 20px;
+		width: calc(100% - 40px);
+        @include breakpoint(sm){
+        	left: 0;
+        	right: 0;
+        	width: 100%;
+        	padding: 0;
+        }
+    }
+
+
+    .example-thumb {
+        cursor: pointer;
+        box-sizing: border-box;
+        outline: none;
+       
+    }
+
+    .example-thumb.active {
+        background-color: red;
+    }
+
+    .example-track {
+        position: relative;
+        background: #2c3035;
+    }
+
+    .example-track.example-track-1 {
+        background: #006fd2;
+    }
+
+    .example-track.example-track-2 {
+        background: #2c3035;
+    }
+
+    .horizontal-slider .example-track {
+        top: 4px;
+        height: 8px;
+    }
+
+    .horizontal-slider .example-thumb {
+        width: 16px;
+        height: 16px;
+        //color: transparent;
+        border-radius: 50%;
+        background-color: #006fd2;
+        &:hover {
+        	background-color: #759ec1;
+        }
+    }
+    .horizontal-slider .example-thumb-0 {
+    	margin-left: -1px;
+    	.label {
+    		margin-left: -34px;
+    	}
+    }
+    .horizontal-slider .example-thumb-1 {
+    	margin-left: -1px;
+    	.label {
+    		margin-left: -33px;
+
+    	}
+    }
+
+
+    .example-thumb .label {
+    	background-color: #081425;
+    	font-size: 12px;
+    	position: absolute;
+    	top: 20px;
+		text-align: center;
+		
+		width: 80px;
+		position: relative;
+		color: #5aadff;
+		font-weight: 500;
+	
+    }
+
+	#selected-features {
+		pointer-events: none;
+		&.frozen {
+			pointer-events: auto;
+		}
+		position: absolute;
+		background-color: rgba(255,255,255,0.8);
+		box-shadow: 0 0 10px rgba(0,0,0,0.3);
+		z-index: 10;
+		height: auto;
+		width: 270px;
+		margin-top: 40px;
+
+		@media screen and (max-width: 768px){
+			left: 15px !important;
+		}
+
+		.uniquid {
+			flex: 0 1 20%;
+			a:link {
+				color: #000;
+			}
+		}
+		.reporting {
+			flex: 0 1 26%;
+		}
+		.date {
+			flex: 1 0 80px;
+		}
+		.incident {
+			
+		}
+		.incidents {
+			height: auto;
+			
+			
+		}
+	}
+}
+
+
+.chart-container[data-chart-id='libya-2011-civcas-timeline'],
+.chart-container[data-chart-id='libya-2011-strikes-timeline']{
+	rect.unknown {
+		fill: url(#pattern_unknown) !important;
+	}
+	.chart-tooltip .inner-tooltip div.grade {
+		flex: 0 1 70%;
+	}
+	.chart-tooltip .inner-tooltip div.number {
+		padding-left: 10px;
+	}
+}
+
+
+
+.chart-container[data-chart-id='libya-strikes-timeline'],
+.chart-container[data-chart-id='libya-civcas-belligerents-timeline'] {
+	.chart-tooltip {
+		.inner-tooltip > div .grade {
+			flex-grow: 1;
+		}
+	}
+	.legend-controls {
+		//display: block;
+	}
+	.controls {
+		//display: none;
+	}
+
+	rect.lna_uae_egypt {
+		fill: url(#lna_uae_egypt) !important;
+	}
+
+
+	rect.gna_turkey {
+		fill: url(#pattern_turkey) !important;
+	}		
+
+	rect.contested {
+		fill: url(#pattern_contested) !important;
+	}
+
+	rect.unknown {
+		fill: url(#pattern_unknown) !important;
+	}
+	// .legend {
+	// 	display: flex;
+	// 	flex-flow: column wrap;
+	// 	h4 {
+	// 		flex: 1 0 100%;
+	// 	}
+	// 	> div {
+	// 		flex: 0 1 40%;
+	// 		&:nth-child(even){
+	// 			flex: 0 1 60%;
+	// 		}
+	// 	}
+	// }
+	.multilateral-label {
+		//display: block;
+		color: $grey;
+		font-size: 10px;
+		font-weight: 500;
+	}
+
+}
+
+[data-postname="reported-civilian-deaths-from-us-led-coalition-strikes-in-syria"],
+[data-postname="reported-civilian-deaths-from-us-led-coalition-strikes-in-iraq"] {
+	.x.axis {
+		g.tick:nth-child(odd){
+			display: none;
+		}
+	}
+}
+
+.chart-container[data-chart-id="strikes-per-president"],
+.chart-container[data-chart-id="civcas-per-president"],
+.chart-container[data-chart-id="declared-strikes-per-president-coalition-iraq-syria"] {
+	svg .axis.x {
+		g.tick:nth-child(odd){
+			display: block !important;
+		}
+	}
+}
+
+
+
+// .chart-container[data-chart-id="civcas-strikes-per-president"]{
+// 	.legend-controls {
+// 		display: none;
+// 	}
+// 	.presidencies {
+// 		display: grid;
+// 		grid-template-columns: 1fr 1fr;
+// 		grid-gap: 20px;
+
+// 		h1 {
+// 			margin-bottom: 0;
+// 			text-align: center;
+// 		}
+// 		p {
+// 			text-align: center;
+// 		}
+
+// 		.values {
+// 			h1 {
+// 				font-size: 50px;
+// 			}
+// 			display: grid;
+// 			grid-template-columns: 1fr 1fr;
+// 			text-align: center;
+// 			grid-gap: 20px;
+// 			div:nth-child(1){
+// 				border-right: 1px solid #efefef;
+// 			}
+// 		}
+// 		> div {
+
+// 			padding: 20px;
+// 			border: 2px solid #efefef;
+			
+// 		}
+// 	}
+//}
+
+.chart-container[data-chart-id='coalition-russia-alleged-incidents']{
+
+	.chart-tooltip .inner-tooltip > div {
+		.grade {
+
+			flex: 0 1 80%;
+			padding-right: 10px;
+		}
+	}
+}
+
+.chart-container[data-chart-id='libya-civcas-belligerents-timeline'],
+.chart-container[data-chart-id='libya-strikes-timeline'] {
+
+	.x.axis {
+		g.tick {
+			display: block;
+		}
+	}
+	.y.axis.multiple {
+		.tick line {
+			stroke-dasharray: 1,2;
+		}
+		text {
+			display: none;
+		}
+		g.tick:nth-child(odd) {
+			display: none;
+		}
+	}
+}
+
+.chart-container[data-chart-id='coalition-strikes-by-ally'],
+.chart-container[data-chart-id='libya-percentage-civcas-per-belligerent'],
+.chart-container[data-chart-id='libya-percentage-strikes-per-belligerent'] {
+	.legend-controls {
+		display: none;
+	}
+}
+
+.chart-container[data-chart-id='libya-percentage-strikes-per-belligerent'],
+.chart-container[data-chart-id='libya-percentage-civcas-per-belligerent'] {
+
+	display: block;
+	@include breakpoint(md){
+		margin-top: 60px;
+		display: flex;
+	}
+	
+	.chart-information {
+		flex: 0 1 30%;
+		display: block;
+	}
+	.chart {
+		flex: 0 1 70%;
+		margin-top: 30px;
+		@include breakpoint(md){
+			margin-top: 0;
+		}
+	}
+
+}
+
+.chart-container[data-chart-id='libya-percentage-strikes-per-belligerent'] {
+	.group .label.percentage {
+		bottom: -35px !important;
+	}
+}
+
+.chart-container[data-chart-id='coalition-strikes-by-ally']{
+	.chart-element:nth-child(1) .piece {		
+
+		&:nth-child(1){
+			color: #000;
+			font-weight: 500;
+			background-color: #999 !important;
+		}
+		&:nth-child(2){
+			color: #000;
+			background-color: #ddd !important;
+		}
+	}	
+}
+
+
+
+
+.waterfall-chart {
+
+	.strip-container {
+		border-top: 1px solid #eaeaea;
+		border-bottom: 1px solid #eaeaea;
+		.group-box-container {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 0;
+			pointer-events: none;
+
+			.box.group_lna_uae_egypt {
+				position: absolute;
+				top: 0px;
+				left: 7.6%;
+				width: 23%;
+				height: 54.3%;
+				background-color: #eaeaea;
+			}
+
+			.box.group_gna_turkey {
+				position: absolute;
+				top: 54.3%;
+				left: 30.6%;
+				width: 15.4%;
+				height: 10.8%;
+				background-color: #eaeaea;				
+			}
+		}
+
+		display: block;
+		@include breakpoint(xsm){
+			display: flex;
+		}
+		.group .label.percentage {
+			bottom: -20px;
+		}
+		.label {
+			font-size: 10px;
+			position: absolute;
+			top: -3px;
+			height: 0;
+			width: 100%;
+			line-height: 1.3;
+
+			// transform: rotate(-90deg);
+			// transform-origin: 0 0;
+			// width: 380px;
+			// left: 20px;
+			
+			// @include breakpoint(xsm){
+			// 	transform: none;
+			// 	left: auto;
+			// 	width: auto;
+				
+			// }
+			span {
+				font-weight: 500;
+
+				&.mono {
+					font-weight: 400;
+					// font-size: 10px;
+					// font-family: 'Atlas-Typewriter-Web';
+				}
+			}
+			div {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				padding-left: 3px;
+				right: 0;
+			}
+			&.multilateral, &.percentage {
+				top: auto;
+				bottom: -6px;
+				div {
+					color: $grey;
+					bottom: auto;
+					top: 0;
+				}
+			}
+			&.percentage {
+				font-weight: 500;
+				bottom: -6px;
+				padding: 0 3px;
+			}
+		}
+		.piece {
+			background-size: 8px;
+			position: absolute;
+			width: 100%;
+			background-color: #666;
+
+		}
+		.strip {
+			position: relative;
+			border-right: 1px solid #eaeaea;
+			flex-grow: 1;
+			margin-left: 80px;
+			@include breakpoint(xsm){
+				margin-left: 0;
+			}
+			&:hover {
+				background: #f1f1f1;
+			}
+			&.full-strip {
+				border-right: 0;
+				background-color: #383838;
+				.breakdown-label {
+					padding: 5px;
+					color: #FFF;
+					font-weight: 500;
+					font-size: 10px;
+				}
+			}
+			// &.breakdown-strip {
+			// 	//width: 10%;
+			// 	border-top: 1px dashed #ddd;
+			// 	border-bottom: 1px dashed #ddd;
+
+			// }
+			&:hover {
+				.percentage {
+					display: block;
+				}
+			}
+			.arrow {
+				display: none;
+				color: #464646;
+			}
+			.piece:nth-child(2){
+				.arrow {
+					display: inline;
+				}
+				.label {
+					bottom: 0;
+					top: auto;
+					div {
+						padding-top: 5px;
+						bottom: auto;
+					}
+				}
+			}
+		}
+
+		.strip .percentage {
+			display: none;			
+			// font-size: 10px;
+			// font-weight: 500;
+			// padding: 0 3px;
+		}
+
+		
+	}
+}
+
+
+
+.strip.group_lna_uae_egypt.group .piece,
+.grade.lna_uae_egypt .color,
+.legend .lna_uae_egypt .color,
+.strip .piece.lna_uae_egypt {
+	background-image: url('../images/diagonal-noise-2.png') !important;
+}
+
+.grade.unknown .color,
+div[data-chart-id="libya-strikes-timeline"] .grade.contested .color,
+div[data-chart-id="libya-civcas-belligerents-timeline"] .grade.contested .color,
+.grade.gna_turkey .color,
+.strip .piece.gna_turkey,
+.strip .contested.piece,
+.strip .unknown.piece,
+.legend .gna_turkey .color,
+div[data-chart-id="libya-strikes-timeline"] .legend .contested .color,
+div[data-chart-id="libya-civcas-belligerents-timeline"] .legend .contested .color,
+.legend .unknown .color {
+	background-size: 8px;
+	background-image: url('../images/diagonal-noise.png') !important;
+}
+
+.percentage-chart {
+	font-weight: 500;
+	.chart-element {
+		margin-bottom: 40px;
+		p {
+			margin-top: 10px;
+		}
+	}
+
+	.diagonal-stripe-4 {
+		background-size: 4px;
+		background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1IDUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUgNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQoJLnN0MXtmaWxsOiMyNjUxN0Y7fQoJLnN0MntzdHJva2U6IzYwODlCRjt9Cjwvc3R5bGU+CjxyZWN0IGNsYXNzPSJzdDAiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz4KPHJlY3QgeD0iMCIgY2xhc3M9InN0MSIgd2lkdGg9IjUiIGhlaWdodD0iNSIvPgo8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMCw1bDUtNUwwLDV6Ii8+CjxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik02LDRMNCw2TDYsNHoiLz4KPHBhdGggY2xhc3M9InN0MiIgZD0iTS0xLDFsMi0yTC0xLDF6Ii8+Cjwvc3ZnPgo=");
+		background-repeat: repeat;
+		background-color: #6089bf;
+	}
+
+	.lightstripe {
+		background-size: 4px;
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1JyBoZWlnaHQ9JzUnPgogIDxyZWN0IHdpZHRoPSc1JyBoZWlnaHQ9JzUnIGZpbGw9J3doaXRlJy8+CiAgPHBhdGggZD0nTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVonIHN0cm9rZT0nIzg4OCcgc3Ryb2tlLXdpZHRoPScxJy8+Cjwvc3ZnPg==");
+		background-repeat: repeat;
+	}
+
+	.piece {		
+
+		&:nth-child(1){
+			color: #FFF;
+			font-weight: 500;
+		}
+		&:nth-child(2){
+			color: #FFF;
+	
+		}
+	}
+	
+
+	.overflow-list {
+		font-size: 9.5px;
+		position: absolute;
+		right: 80px;
+		border-left: 30px solid #FFF;
+
+		
+		//padding-top: 4px;
+		line-height: 14px;
+		padding-top: 7px;
+		div {
+			background-color: #FFF;
+			padding-right: 5px;
+			float: left;
+			clear: both;
+
+		}
+	}
+
+	
+	.percentage-bar {
+		font-size: 9.5px;
+	
+		display: block;
+		//overflow: hidden;
+		@include breakpoint(xsm){
+			display: flex;	
+		}
+		.overflow {
+			position: relative;
+			border-bottom: 1px solid #000;
+			z-index: 0;
+			.line-up {
+
+				height: 60px;
+				width: 1px;
+				background-color: #000;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+		}
+		.piece.narrow {
+			padding: 0;
+			position: relative;
+			.overflow {
+				position: absolute;
+				top: 100%;
+				width: 90px;
+				right: 50%;
+			}
+		}
+		&:nth-child(2){
+			
+		}
+		
+
+
+
+		.piece {
+			background-color: #f2f2f2;
+			height: 50px;
+			flex-shrink: 1;
+			padding: 5px 0 3px 6px;
+			margin-bottom: 0;
+			&.narrow {
+				.info {
+					span, br {
+						opacity: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.percentage-axis {
+		height: 5px;
+		margin-bottom: 8px;
+		flex: 1 0 100%;
+		display: flex;
+
+		justify-content: space-between;
+		border-bottom: 1px solid #bbb;
+		.tick {
+			border-right: 1px solid #bbb;
+			height: 5px;
+			position: relative;
+			span {
+				color: #888;
+
+				font-size: 9.5px;
+				top: -12px;
+				position: absolute;
+				width: 30px;
+
+				text-align: center;
+				left: -14px;
+			}
+		}
+	}
+}	
+
+.chart-container .chart-tooltip {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	
+	width: 160px;
+	margin-left: -79px;
+	pointer-events: none;
+	font-size: 10px;
+	bottom: 0;
+	> div {
+		border: 1px solid #000;
+	}
+	&.bar-chart {
+		.total {
+			display: none;
+		}
+	}
+	.inner-tooltip {
+		background-color: #FFF;
+		padding: 6px;
+		z-index: 1;
+		font-feature-settings: 'tnum';
+		> div {
+			
+			.color {
+				min-width: 12px;
+				height: 12px;
+				margin-right: 5px;
+
+			}
+			.value {	
+
+			}
+			.grade {
+				display: flex;
+				flex: 0 1 55%;
+				&.us {
+					text-transform: uppercase;
+				}
+			}
+		}
+	}	
+	.breakdown {
+		margin-top: 8px;
+		> div {
+			display: flex;
+		}
+	}
+	.total {
+		display: flex;
+		font-weight: 500;
+
+	}
+	.line {
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: calc(50% - 1px);
+		bottom: 50px;
+		width: 1px;
+		background-color: #000;
+	}
+	.date {
+		font-weight: 500;
+	}
+	
+}
+
+@mixin typebutton {
+	padding: 4px 6px 1px 6px;
+	display: block;
+	margin-right: 10px;
+	cursor: pointer;
+	@include breakpoint(md){
+		padding: 4px 8px 2px 8px;	
+	}
+	height: auto;
+	border: 1px solid #000;
+}
+
+.chart-container {
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+	padding: 0;
+	margin: 20px 0;
+	width: 100%;
+	display: block;
+	@include breakpoint(xsm){
+		padding: 0 20px;
+		margin: 40px 0;	
+	}
+	@include breakpoint(sm){
+		display: flex;
+	}
+
+	h1 {
+		line-height: 1.2;
+		a {
+			text-decoration: none;
+		}
+		word-break: break-word;
+	}
+
+
+	
+	.annotation {
+		display: flex;
+		//display: none;
+		flex: 0 1 100%;
+		font-size: 12px;
+		color: #999;
+		margin-top: 10px;
+		.far.fa-info-circle {
+			margin-right: 4px;
+			top: 2px;
+			color: #999;
+		}
+		
+
+	}
+	.date-link {
+		display: flex;
+		@include secondary-text;
+		> div {
+			flex: 0 1 50%;
+		}
+	}
+	.legend-controls {
+		display: flex;
+		flex-grow: 1;
+		margin-top: 1rem;
+		.legend {
+			flex: 0 1 42%;
+			@include breakpoint(md){
+				flex: 0 1 50%;
+			}
+
+		}
+		.controls {
+			flex: 0 1 58%;
+			@include breakpoint(md){
+				flex: 0 1 50%;
+			}
+
+		}
+
+
+		h4 {
+			margin: 0 0 8px 0;
+		}
+	}
+
+	.chart {
+		flex: 1 1 65%;
+		position: relative;
+
+	}
+	.chart-information {
+		padding: 0;
+		flex: 0 1 35%;
+		display: block;
+		@include breakpoint(xsm){
+			padding: 0 0 20px 0;
+			display: flex;
+		}
+
+		
+		flex-flow: row wrap;
+		@include breakpoint(sm){
+			padding: 0 25px 20px 0;
+			flex-flow: column nowrap;	
+		}
+
+	}
+
+	.title {
+		padding-right: 0;
+		@include breakpoint(xsm){
+			padding-right: 15px;	
+		}
+		@include breakpoint(sm){
+			padding-right: 0;
+		}
+	}
+	h2 {
+		margin-bottom: 0.8rem;
+	}
+
+	.title, .legend-controls {
+		flex: 0 1 50%;
+		@include breakpoint(md){
+			flex: none;
+		}
+	}
+
+	.footnote {
+		@include secondary-text;
+	}
+	.title, .controls, .legend {
+		margin-bottom: 0.8rem;
+	}
+	.controls {
+		margin-bottom: 1.6rem;
+	}
+	.legend {
+		
+		> div {
+			display: flex;
+			//align-items: center;
+			@include secondary-text;
+		}
+		.label {
+			padding-bottom: 1px;
+		}
+		.color {
+			background-color: #999;
+			margin-right: 10px;
+			width: 15px;
+			height: 15px;
+			flex: 0 0 15px;
+		}
+		
+	}
+	.credit {
+		margin-top: auto;
+
+		flex: 1 0 100%;
+		display: block;
+
+		div:nth-child(1)::after {
+			content: ', ';
+		}
+		@include breakpoint(xsm){
+			display: flex;
+		}
+		@include breakpoint(sm){
+
+			flex: none;
+			display: block;
+			div:nth-child(1)::after {
+				content: '';
+			}
+
+		}
+		color: $grey;
+		@include secondary-text;
+		a:link, a:visited {
+			color: $grey;
+		}
+	}
+	.buttons {
+		display: flex;
+	}
+	.controls {
+		button {
+			@include typebutton;
+			font-size: inherit;
+		}
+	}
+	
+	form {
+		display: flex;
+		flex-flow: row wrap;
+		span.multiples {
+			display: none;
+		}
+		&.multiples {
+			span.multiples {
+				display: inline-block;
+			}
+			span.stacked {
+				display: none;
+			}
+		}
+	}
+	input[type=radio]{
+		display: none;
+	}
+
+	input[type=radio] + label {
+		@include typebutton;
+	}
+
+	input[type=radio]{
+		& + label {
+			
+		}
+	}
+	button.active {
+		background-color: #333;
+		color: #FFF;
+	}
+	input[type=radio]:checked {
+		& + label {
+			background-color: #333;
+			color: #FFF;
+		}
+	}
+
+}

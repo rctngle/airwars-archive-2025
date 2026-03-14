@@ -1,0 +1,422 @@
+
+body.israeli-military-in-syria-the-gaza-strip-arabic {
+	.gradings-stats-container {
+		.contested {
+			border-right: 2px solid #efefef;
+		}
+	}
+}
+body.conflict_ar:not(.israeli-military-in-syria-the-gaza-strip-arabic) {
+	section.gradings-breakdown {		
+		.contested {
+			border-right: 2px solid $bg-color;
+			@include breakpoint(sm){
+				border-right: none;
+			}
+		}
+	}
+}
+
+
+header nav>ul>li.arabic ul {
+	width: 330px;
+}
+.lang-arabic h1 {
+	font-weight: bold;
+	font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+	direction: rtl;
+}
+body.about_ar,
+body.conflict_ar,
+body.ar {
+	.sidebar__close {
+		left: 17px;
+		top: 0;
+		right: auto;
+	}
+	#timeline .conflict {
+		&[data-conflict-id="76647"]{
+			div.published {
+				left: 0% !important;
+			}
+			a span::before {
+				text-align: right;
+				width: 100%;
+				display: inline-block;
+				content: 'الجيش الإسرائيلي في سوريا';
+			}
+		}
+		&[data-conflict-id="77037"]{
+			
+			a span {
+				&::before {
+					position: absolute;
+					left: 0;
+					content: '← الضربات العسكرية الإسرائيلية على قطاع غزة';
+					
+				}
+				left: 5px;
+			}
+		}
+	}
+
+
+
+	#timeline .conflict > div a:link {
+		text-align: right;
+		padding-right: 5px;
+	}
+	#gaza-sidebar div.langswitcher {
+		justify-content: flex-end;
+	}
+	section.intro .full {
+		direction: rtl;
+	}
+	.legend__description {
+		direction: rtl;
+	}
+	.annotation {
+		direction: rtl;
+		i {
+			transform: rotate(180deg);
+		}
+	}
+
+	font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+	header {
+		font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+		h1 {
+			line-height: 1.2;
+		}	
+	}
+
+	p, h1 {
+		direction: rtl;
+	}
+
+	h1 {
+		@include arabic-header;
+		margin-bottom: 0.8rem;
+		line-height: 1;
+	}
+
+	section.intro {
+	
+		p {
+			@include arabic-header;
+			font-weight: normal;
+		}
+
+	}
+
+	article.about_ar {
+		direction: rtl;
+		.info-main-block {
+			padding-right: 15px;
+			@include breakpoint(xsm){
+				padding-right: 0;
+			}
+		}
+	}
+
+	section.news {
+		h1 {
+			direction: ltr;
+		}
+	}
+
+	footer {
+		direction: rtl;
+	}
+	header {
+		direction: rtl;
+		.caption {
+			font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+			left: 20px;
+			right: auto;
+		}
+	}
+	.logo.info-left {
+		padding-left: 0;
+		padding-right: 16px;
+		@include breakpoint(sm){
+			padding-right: 22px;
+		}
+	}
+	#civcas-map-timeline .yemen-event {
+		left: auto;
+		right: 0;
+		i {
+			margin: 0 0 0 5px;
+		}
+	}
+	.legend-controls {
+
+		label {
+			margin-right: 0;
+			margin-left: 10px;
+
+		}
+	}
+
+	.mobile-nav-toggle {
+		margin-left: 15px;
+		margin-right: 0;
+	}
+	.stats, .civcas .conflicts {
+		flex-direction: row-reverse;
+	}
+	.logo-navigation {
+		nav {
+
+			a {
+				display: inline-block;
+				//border-bottom: 2px solid transparent;
+				line-height: 1.2;
+
+				&:hover {
+					//border-bottom: 2px solid #FFF;
+				}
+			}
+
+			li {
+				@include breakpoint(xsm){
+					order: 3;					
+				}
+
+			}
+			li.en-about {
+				@include breakpoint(xsm){
+					order: 1;					
+				}
+
+				span {
+					display: none;					
+				}
+				a {
+					display: inline-block;
+
+				}
+
+			}
+			li.conflicts {
+
+				@include breakpoint(xsm){
+					order: 2;				
+				}
+			}
+
+			padding: 0;
+
+
+			@include breakpoint(xsm){
+				padding-left: 15px;				
+			}
+			@include breakpoint(sm){
+				padding-left: 20px;
+			}
+			> ul {
+				flex-flow: row-reverse;	
+				justify-content: flex-start;
+			}
+			li {
+				direction: ltr;
+			}
+
+			> ul > li:not(.arabic) {
+				text-align: left;
+				ul {
+					direction: ltr;
+					text-align: left;
+				}
+				
+			}
+		}
+	}
+
+	.tooltip .tooltip-content {
+	    margin-right: -111px;
+	    .grade {
+	    	font-weight: bold;
+	    }
+
+	}
+	.mobile-page-title {
+		padding-right: 20px !important;
+
+	}
+	.page-title {
+		padding-right: 0;
+	}
+
+	section.title {
+		h1 {
+			font-weight: bold;
+		}
+	}
+
+	.nav-conflict {
+		padding-right: 15px;
+		@include breakpoint(xsm){
+			padding-right: 0;
+		}	
+		a {
+			text-indent: 0;
+		}
+	}
+	.action h1 {
+		font-weight: bold;
+	}
+	section.preview {
+		.content.civcas {
+			.conflict {
+				h1 {
+					direction: rtl;
+					text-align: initial;
+					font-weight: bold;
+				}
+			}
+		}
+		.content.named-victim {
+			direction: rtl;
+			h1, p, .incident {
+				direction: ltr;
+			}
+		}
+	}
+
+	#civcas-map-timeline {
+		#timeline-bars .published {
+			text-align: right;
+			padding-right: 6px;
+		}
+	}
+	.map-controls-sidebar {
+		.option {
+			direction: rtl;
+		}
+		.map-legend {
+			justify-content: flex-end;
+		}
+	}
+	.chart-container {
+		flex-direction: row-reverse;
+		.chart-information {
+			padding: 0 0 20px 25px;
+			.langswitcher {
+				justify-content: flex-end;
+			}
+		}
+		.credit, .legend-controls, .date-link {
+			direction: rtl;
+		}
+		.legend-controls {			
+			.color {
+				margin: 0 0 0 10px;
+			}
+		}
+		.inner-tooltip {
+			direction: rtl;
+			.grade .color {
+				margin-right: 0;
+				margin-left: 5px;
+			}
+		}
+	}
+
+	span.statistic {
+		font-family: 'Atlas-Grotesk-Web';
+	}
+	section.gradings-breakdown {
+		direction: rtl;
+		.victim-breakdown {
+			.victim-value {
+				text-align: left;
+				margin-left: 5px;
+				margin-right: 0;
+			}
+			.type {
+				text-align: right;
+				margin-right: 5px;
+				margin-left: 0;
+			}
+		
+
+		}
+		.total {
+			.grading {
+				font-weight: bold;
+			}
+		}
+		.gradings > div {
+			padding: 15px 15px 15px 8px;
+		}
+
+		
+		.confirmed-fair {
+			border-right: 2px solid $bg-color;
+
+		}
+		.weak {
+			border-right: 2px solid $bg-color;
+			@include breakpoint(xsm){
+				border-right: none;
+			}
+		}
+		.discounted {
+			border-right: 2px solid $bg-color;
+			@include breakpoint(xsm){
+				border-right: none;
+			}
+		}
+
+
+
+		.confirmed-fair {
+			h1 {
+				color: darken($confirmed-color, 10%);
+				span.grading {
+					padding-bottom: 0;
+					.confirmed-label {
+						border-bottom: none;
+					}
+					.fair-label {
+						border-bottom: none;
+					}
+					
+				}
+				a:link, a:visited {
+					color: darken($confirmed-color, 10%);
+					border-bottom: 2px solid darken($confirmed-color, 10%);;
+				}
+				
+			}
+		}
+	}
+
+	#map-container {
+
+		.incidents {
+			padding-left: 5px;
+		}
+		.incident {
+			direction: rtl;
+
+			.reporting {
+				flex: 0 1 23%;
+			}
+			.date {
+				flex: 0 1 32%;
+			}
+		}
+	}
+
+	
+
+
+}
+
+[dir="rtl"]{
+	font-family: 'Noto Kufi Arabic', 'Atlas-Grotesk-Web';
+	//@include arabic;
+}

@@ -7,7 +7,7 @@ import { S3Client, HeadObjectCommand } from "@aws-sdk/client-s3";
 import { Upload } from "@aws-sdk/lib-storage";
 
 const DB_DIR = "setup/database";
-const BUCKET = "airwars-greenhost-backup";
+const BUCKET = process.env.R2_BUCKET || "airwars-greenhost-backup";
 
 const required = (name) => {
   const val = process.env[name];
@@ -19,8 +19,8 @@ const required = (name) => {
 };
 
 const accountId = required("CLOUDFLARE_ACCOUNT_ID");
-const accessKeyId = required("AWS_ACCESS_KEY_ID");
-const secretAccessKey = required("AWS_SECRET_ACCESS_KEY");
+const accessKeyId = required("R2_ACCESS_KEY_ID");
+const secretAccessKey = required("R2_SECRET_ACCESS_KEY");
 
 const client = new S3Client({
   region: "auto",

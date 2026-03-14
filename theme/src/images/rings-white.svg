@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="45px" height="59.334px" viewBox="0 0 45 59.334" enable-background="new 0 0 45 59.334" xml:space="preserve">
+<g transform="translate(1 1)">
+	<circle fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0" cx="21.5" cy="22" r="6">
+	
+		<animate  fill="remove" accumulate="none" values="6;22" repeatCount="indefinite" dur="3s" additive="replace" calcMode="linear" attributeName="r" begin="1.5s" restart="always">
+		</animate>
+	
+		<animate  fill="remove" accumulate="none" values="1;0" repeatCount="indefinite" dur="3s" additive="replace" calcMode="linear" attributeName="stroke-opacity" begin="1.5s" restart="always">
+		</animate>
+	
+		<animate  fill="remove" accumulate="none" values="2;0" repeatCount="indefinite" dur="3s" additive="replace" calcMode="linear" attributeName="stroke-width" begin="1.5s" restart="always">
+		</animate>
+	</circle>
+	<circle fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0" cx="21.5" cy="22" r="6">
+	
+		<animate  fill="remove" accumulate="none" values="6;22" repeatCount="indefinite" dur="3s" additive="replace" calcMode="linear" attributeName="r" begin="3s" restart="always">
+		</animate>
+	
+		<animate  fill="remove" accumulate="none" values="1;0" repeatCount="indefinite" dur="3s" additive="replace" calcMode="linear" attributeName="stroke-opacity" begin="3s" restart="always">
+		</animate>
+	
+		<animate  fill="remove" accumulate="none" values="2;0" repeatCount="indefinite" dur="3s" additive="replace" calcMode="linear" attributeName="stroke-width" begin="3s" restart="always">
+		</animate>
+	</circle>
+	<circle fill="none" stroke="#ffffff" stroke-width="2" cx="21.5" cy="22" r="8">
+	
+		<animate  fill="remove" accumulate="none" values="6;1;2;3;4;5;6" repeatCount="indefinite" dur="1.5s" additive="replace" calcMode="linear" attributeName="r" begin="0s" restart="always">
+		</animate>
+	</circle>
+</g>
+<g>
+	<path fill="#ffffff" d="M9.197,47.503h0.72v6.301h-0.72V47.503z"/>
+	<path fill="#ffffff" d="M11.037,51.693c0-1.304,0.72-2.207,1.896-2.207c1.255,0,1.879,0.903,1.879,2.207
+		c0,1.318-0.712,2.214-1.896,2.214C11.677,53.907,11.037,53.012,11.037,51.693z M11.781,51.693c0,1.031,0.344,1.654,1.159,1.654
+		c0.783,0,1.127-0.623,1.127-1.654c0-1.023-0.336-1.655-1.144-1.655C12.156,50.038,11.781,50.67,11.781,51.693z"/>
+	<path fill="#ffffff" d="M15.829,50.741c0.016-0.743,0.583-1.255,1.591-1.255c1.048,0,1.56,0.439,1.56,1.566v1.72
+		c0,0.336,0.071,0.472,0.384,0.479v0.584h-0.089c-0.671,0-0.896-0.24-0.967-0.744h-0.017c-0.224,0.496-0.728,0.784-1.351,0.784
+		c-0.84,0-1.336-0.456-1.336-1.208c0-0.463,0.2-0.848,0.632-1.063c0.44-0.231,1.096-0.312,2.039-0.344v-0.184
+		c0-0.76-0.288-1.056-0.88-1.056c-0.623,0-0.855,0.36-0.879,0.72H15.829z M18.275,51.893v-0.096
+		c-0.911,0.04-1.432,0.112-1.703,0.312c-0.16,0.12-0.231,0.296-0.231,0.52c0,0.433,0.279,0.664,0.735,0.664
+		C17.611,53.292,18.275,52.933,18.275,51.893z"/>
+	<path fill="#ffffff" d="M23.834,53.804h-0.688v-0.695h-0.023c-0.224,0.415-0.68,0.799-1.327,0.799c-0.896,0-1.719-0.56-1.719-2.183
+		c0-1.447,0.751-2.238,1.814-2.238c0.632,0,1.04,0.352,1.208,0.743h0.016v-2.727h0.719V53.804z M23.131,51.533
+		c0-0.896-0.472-1.472-1.144-1.472c-0.808,0-1.175,0.64-1.175,1.632c0,0.951,0.279,1.646,1.119,1.646
+		c0.744,0,1.199-0.592,1.199-1.359V51.533z"/>
+	<path fill="#ffffff" d="M25.324,47.855h0.76v0.775h-0.76V47.855z M25.34,49.59h0.729v4.214H25.34V49.59z"/>
+	<path fill="#ffffff" d="M30.25,51.205c0-0.304,0-0.64-0.15-0.84c-0.145-0.199-0.385-0.279-0.664-0.279
+		c-0.783,0-1.145,0.504-1.145,1.191v2.526h-0.719V49.59h0.68v0.712h0.016c0.201-0.432,0.688-0.815,1.359-0.815
+		c0.809,0,1.344,0.384,1.344,1.383v2.935H30.25V51.205z"/>
+	<path fill="#ffffff" d="M32.164,54.228h0.697c0.078,0.359,0.352,0.592,1.039,0.592c0.799,0,1.199-0.296,1.199-1.224v-0.623h-0.008
+		c-0.217,0.415-0.713,0.775-1.344,0.775c-0.879,0-1.688-0.552-1.688-2.111c0-1.391,0.736-2.15,1.775-2.15
+		c0.68,0,1.088,0.376,1.264,0.768h0.016V49.59h0.688v4.11c0,1.183-0.775,1.694-1.918,1.694
+		C33.084,55.395,32.26,55.099,32.164,54.228z M35.115,51.469c0-0.839-0.473-1.415-1.199-1.415c-0.76,0-1.119,0.632-1.119,1.583
+		c0,0.928,0.264,1.567,1.15,1.567c0.68,0,1.168-0.592,1.168-1.312V51.469z"/>
+</g>
+</svg>
